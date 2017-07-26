@@ -1,1 +1,30 @@
-{{track}}
+{% extends "ggit_platform/base_admin.html" %}
+
+
+{% block title %}
+
+<title>Tracks</title>
+
+{% endblock title %}   
+
+
+{% block content %}
+    <table>
+        <thead>
+            <th>Nr.</th>
+            <th><b>Track name</b></th>
+            <th><b>Track motto</b></th>
+            <th><b>About</b></th>
+        </thead>
+        <tbody>
+                {% for track in tracks %}
+                    <tr>
+                        <td>{{ track.id }}</td>
+                        <td>{{ track.title }}</td>
+                        <td>{{ track.subtitle }} </td>
+                        <td>{{ track.short_description }}</td>
+                    </tr>
+                {% endfor %}
+        </tbody>
+    </table> 
+{% endblock %}
