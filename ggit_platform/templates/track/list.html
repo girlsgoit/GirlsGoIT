@@ -1,12 +1,10 @@
 {% extends "ggit_platform/base_admin.html" %}
 
-
-{% block title %}
-
-<title>Tracks</title>
-
-{% endblock title %}   
-
+<title> 
+    {% block title %} 
+        Tracks 
+    {% endblock %} 
+</title>
 
 {% block content %}
     <table>
@@ -20,11 +18,15 @@
                 {% for track in tracks %}
                     <tr>
                         <td>{{ track.id }}</td>
-                        <td>{{ track.title }}</td>
+                        <td> 
+                            <a href="{% url 'track_detail' id=track.id %}"> 
+                                {{ track.title }}
+                            </a>
+                        </td>
                         <td>{{ track.subtitle }} </td>
                         <td>{{ track.short_description }}</td>
                     </tr>
                 {% endfor %}
         </tbody>
     </table> 
-{% endblock %}
+{% endblock content %}
