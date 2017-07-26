@@ -37,7 +37,7 @@ class Member(models.Model):
 # Event model
 
 
-class Event(model.Model):
+class Event(models.Model):
 	title = models.CharField(max_length=50)
 	short_description = models.TextField()
 	start_date = models.DateTimeField()
