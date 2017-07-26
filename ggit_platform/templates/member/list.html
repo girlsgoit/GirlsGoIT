@@ -18,8 +18,8 @@ Administrare  Membri{% endblock title %}
   <tbody>
     {% for member in members %}
     <tr>
-      <td><a href="{% url 'member_detail' id=member.id%}">{{ member.name }}</a></td>
-      <td><a href="#">{{ member.surname }}</a></td>
+      <td><a href="{% url 'member_details' id=member.id%}">{{ member.name }}</a></td>
+      <td><a href="{% url 'member_details' id=member.id%}">{{ member.surname }}</a></td>
       <td><a href="#">{{ member.region }}</a></td>
       <td><a class="button button-clear" href="#">Șterge</a></td>
     </tr>

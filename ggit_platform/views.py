@@ -38,7 +38,7 @@ def member_list(request):
 def member_details(request, id):
     member = get_object_or_404(Member, id=id)
 
-    return render(request, 'member/member_details.html', {'member': member})
+    return render(request, 'member/details.html', {'member': member})
 
 # Event views
 def event_list(request):
