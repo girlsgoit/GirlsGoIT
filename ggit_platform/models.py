@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from markdownx.models import MarkdownxField
+from django.utils import timezone
 
 # Track model
 class Track(models.Model):
@@ -8,15 +9,15 @@ class Track(models.Model):
     icon = models.CharField(max_length=100)
     short_description = models.TextField()
     subtitle = models.TextField()
-    hero_imgae= models.CharField(max_length=200)
+    hero_image= models.CharField(max_length=200)
     long_description = MarkdownxField()
 
 
 # Region model
 class Region(models.Model):
     name = models.CharField(max_length=30)
-    thumbnail_img = models.CharField(max_length=200)
-    hero_img = models.CharField(max_length=200)
+    thumbnail_image = models.CharField(max_length=200)
+    hero_image = models.CharField(max_length=200)
     motto = models.TextField()
     description = models.TextField()
 
@@ -35,8 +36,6 @@ class Member(models.Model):
         return self.name +' '+ self.surname
 
 # Event model
-
-
 class Event(models.Model):
 	title = models.CharField(max_length=50)
 	short_description = models.TextField()
@@ -48,13 +47,14 @@ class Event(models.Model):
 	long_description = MarkdownxField()
 	application_start_date = models.DateTimeField(null=True, blank=True)
 	application_end_date = models.DateTimeField(null=True, blank=True)
-	region = models.ForeignKey("Region", null=True, blank=True)
+	region = models.ForeignKey(Region, null=True, blank=True)
+
 # Story model
 class Story(models.Model):
-    title = models.CharField(max_lenght=100)
-    short_descr = models.TextField()
-    create_date = models.DateTimeField(defaul=datetime.now())
-    thumbnail_image = models.CharField(max_lenght=200)
-    subtitle = models.CharField(max_lenght=200)
-    long_desc = models.MarkdownFieldx()
-    region = ForeignKey("Region", blank=True, null=True)
+    title = models.CharField(max_length=100)
+    short_description = models.TextField()
+    create_date = models.DateTimeField(default=timezone.now)
+    thumbnail_image = models.CharField(max_length=200)
+    subtitle = models.CharField(max_length=200)
+    long_description = MarkdownxField()
+    region = models.ForeignKey(Region, blank=True, null=True)

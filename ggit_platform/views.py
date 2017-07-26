@@ -38,16 +38,16 @@ def member_list(request):
 # Event views
 def event_list(request):
     events= Event.objects.all()
-    return render (request,'event/list.html' , {'events':events})
+    return render (request, 'event/list.html', {'events':events})
 
 
 # Story views
 def stories_list(request):
     stories = Story.objects.all()
 
-    return render(request, 'story/list.html',{'stories': stories} )
+    return render(request, 'story/list.html', {'stories': stories})
 
 def stories_detail(request, id):
     story = get_object_or_404(Story, id=id)
 
-    return render(request, 'story/detail.html,' {'story':story})
+    return render(request, 'story/detail.html', {'story':story})
