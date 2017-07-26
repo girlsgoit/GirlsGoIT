@@ -35,6 +35,11 @@ def member_list(request):
 
     return render(request, 'member/list.html', {'members': members})
 
+def member_details(request, id):
+    member = get_object_or_404(Member, id=id)
+
+    return render(request, 'member/member_details.html', {'member': member})
+
 # Event views
 def event_list(request):
     events= Event.objects.all()
