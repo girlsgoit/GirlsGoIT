@@ -15,11 +15,9 @@ def track_list(request):
     tracks = Track.objects.all()
     return render(request, 'track/list.html', {'tracks': tracks})
 
-
 def track_detail(request, id):
     track = get_object_or_404(Track, id=id)
     return render(request, 'track/detail.html', {'track': track})
-
 
 # Region views
 def region_list(request):
@@ -49,12 +47,10 @@ def event_detail(request, id):
     return render(request, 'story/detail.html', {'story':story})
 
 # Story views
-def stories_list(request):
+def story_list(request):
     stories = Story.objects.all()
-
     return render(request, 'story/list.html', {'stories': stories})
 
-def stories_detail(request, id):
+def story_detail(request, id):
     story = get_object_or_404(Story, id=id)
-
     return render(request, 'story/detail.html', {'story':story})

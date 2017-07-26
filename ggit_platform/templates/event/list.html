@@ -1,6 +1,6 @@
 {% extends "ggit_platform/base_admin.html"%}
 {%  block title %}
-Eveniment
+Administrare Evenimente
 {% endblock title %}
 
 {% block content %}
@@ -8,20 +8,24 @@ Eveniment
 <table>
     <thead>
         <tr>
-            <td>ID</td>
-            <td>Titlu</td>
-            <td>Regiune</td>
-            <td>Începutul evenimentului</td>
+            <th>Titlu</th>
+            <th>Regiune</th>
+            <th>Începutul evenimentului</th>
+            <th>Acțiuni</th>
         </tr>
     </thead>
 
     <tbody>
         {% for event in events %}
         <tr>
-            <td><a href="#">{{event.id}}</a></td>
-            <td><a href="#">{{event.title}}</a></td>
-            <td><a href="#">{{event.region.name}}</a></td>
-            <td><a href="#">{{event.start_date}}</a></td>
+            <td><a href="{% url 'event_detail' id=event.id %}">{{event.title}}</a></td>
+            <td>
+                {% if event.region %} 
+                <a href="{% url 'region_detail' id=event.region.id %}" >{{ event.region }}</a>
+                {% endif %}
+            </td>
+            <td>{{event.start_date}}</td>
+            <td><a class="button button-outline" href="#">Șterge</a></td>
         </tr>
         {% endfor %}
     </tbody>
