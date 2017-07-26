@@ -2,10 +2,6 @@ from django.db import models
 from datetime import datetime
 from markdownx.models import MarkdownxField
 
-	
-# Create your tests here.
-
-
 # Track model
 class Track(models.Model):
     title = models.CharField(max_length=50)
