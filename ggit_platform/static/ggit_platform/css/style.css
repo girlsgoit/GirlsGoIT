@@ -70,6 +70,10 @@ textarea {
 	max-width: 100%;
 }
 
+td:last-child {
+	width: 10em;
+}
+
 /* End of Content */
 
 /* Footer */

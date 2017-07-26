@@ -1,32 +1,28 @@
 {% extends "ggit_platform/base_admin.html" %}
 
-<title> 
-    {% block title %} 
-        Tracks 
-    {% endblock %} 
-</title>
+{% block title %} 
+Administrare Blocuri 
+{% endblock %} 
 
 {% block content %}
-    <table>
-        <thead>
-            <th>Nr.</th>
-            <th><b>Track name</b></th>
-            <th><b>Track motto</b></th>
-            <th><b>About</b></th>
-        </thead>
-        <tbody>
-                {% for track in tracks %}
-                    <tr>
-                        <td>{{ track.id }}</td>
-                        <td> 
-                            <a href="{% url 'track_detail' id=track.id %}"> 
-                                {{ track.title }}
-                            </a>
-                        </td>
-                        <td>{{ track.subtitle }} </td>
-                        <td>{{ track.short_description }}</td>
-                    </tr>
-                {% endfor %}
-        </tbody>
-    </table> 
+<h1>Blocuri de învățare</h1>
+
+<table>
+    <thead>
+        <th>Nume</th>
+        <th>Acțiuni</th>
+    </thead>
+    <tbody>
+        {% for track in tracks %}
+        <tr>
+            <td> 
+                <a href="{% url 'track_detail' id=track.id %}"> 
+                    {{ track.title }}
+                </a>
+            </td>
+            <td><a class="button button-outline" href="#">Șterge</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table> 
 {% endblock content %}
