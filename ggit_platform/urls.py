@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^tracks/$', views.track_list, name='track_list'),
     url(r'^track_detail/(?P<id>\d+)$', views.track_detail, name='track_detail'),
     url(r'^regions/$', views.region_list, name='region_list'),
-    url(r'^members/$', views.member_list, name='members_list'),
+    url(r'^members/$', views.member_list, name='member_list'),
+    url(r'^members/(?P<id>\d+)$', views.member_details, name='member_details'),
     url(r'^$', views.index, name='index'),
 ]

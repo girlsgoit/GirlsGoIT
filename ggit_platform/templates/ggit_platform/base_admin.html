@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <title> {% block title %} Admin Panel {% endblock %}</title>
   <!-- Font -->
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700&amp;subset=latin-ext" rel="stylesheet">
 
   <!-- CSS Reset -->
   <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
@@ -32,6 +32,7 @@
               <li><a href="{% url 'track_list' %}" class="active">Tracks</a></li>
               <li><a href="#">Regions</a></li>
               <li><a href="{% url 'region_list' %}">Regions</a></li>
+              <li><a href="{% url 'member_list' %}">Members</a></li>
               <li><a href="#">Stories</a></li>
               <li><a href="{% url 'event_list' %}">Events</a></li>
               <li><a href="#">Sign out</a></li>
