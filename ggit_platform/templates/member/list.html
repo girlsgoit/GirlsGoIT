@@ -1,1 +1,29 @@
-{{members}}
+{% extends "ggit_platform/base_admin.html" %}
+
+{% block title %}
+Administrare  Membri{% endblock title %}
+
+{% block content %}
+<h1> Membri</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Nume</td>  
+      <td>Prenume</td>  
+      <td>Regiune</td>  
+      <td>Actiuni</td>  
+    </tr>
+  </thead>
+  <tbody>
+    {% for member in members %}
+    <tr>
+      <td><a href="{% url 'member_detail' id=member.id %}">{{ member.name }}</a></td>
+      <td><a href="{% url 'member_detail' id=member.id %}">{{ member.surname }}</a></td>
+      <td><a href="#">{{ member.region }}</a></td>
+      <td><a class="button button-clear" href="#">Șterge</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}

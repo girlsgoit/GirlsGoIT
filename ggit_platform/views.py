@@ -11,7 +11,7 @@ def index(request):
     return render(request, 'ggit_platform/index.html')
 
 # Track views
-def tracks_list(request):
+def track_list(request):
     tracks = Track.objects.all()
 
     return render(request, 'track/list.html', {'tracks': tracks})
@@ -29,17 +29,30 @@ def region_list(request):
 
     return render(request, 'region/list.html', {'regions': regions})
 
+def region_detail(request, id):
+    region = get_object_or_404(Region, id=id)
+    return render(request, 'region/detail.html', {'region' : region})
+
 # Member views
 def member_list(request):
     members = Member.objects.all()
 
     return render(request, 'member/list.html', {'members': members})
 
+def member_detail(request, id):
+    member = get_object_or_404(Member, id=id)
+
+    return render(request, 'member/detail.html', {'member': member})
+
 # Event views
 def event_list(request):
     events= Event.objects.all()
     return render (request, 'event/list.html', {'events':events})
 
+def event_detail(request, id):
+    event = get_object_or_404(Event, id=id)
+
+    return render(request, 'story/detail.html', {'story':story})
 
 # Story views
 def stories_list(request):

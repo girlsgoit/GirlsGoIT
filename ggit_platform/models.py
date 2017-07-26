@@ -12,6 +12,9 @@ class Track(models.Model):
     hero_image= models.CharField(max_length=200)
     long_description = MarkdownxField()
 
+    def __str__(self):
+        return self.title
+
 
 # Region model
 class Region(models.Model):
