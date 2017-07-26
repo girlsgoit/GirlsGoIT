@@ -17,7 +17,7 @@ Administrare Regiuni
   <tbody>
     {% for region in regions %}
     <tr>
-      <td><a href="#">{{ region.name }}</a></td>
+      <td><a href="{% url 'region_detail' id=region.id %}">{{ region.name }}</a></td>
       <td><a class="button button-clear" href="#">Șterge</a></td>
     </tr>
     {% endfor %}

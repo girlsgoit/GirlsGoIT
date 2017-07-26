@@ -29,6 +29,10 @@ def region_list(request):
 
     return render(request, 'region/list.html', {'regions': regions})
 
+def region_detail(request, id):
+    region = get_object_or_404(Region, id=id)
+    return render(request, 'region/detail.html', {'region' : region})
+
 # Member views
 def member_list(request):
     members = Member.objects.all()
