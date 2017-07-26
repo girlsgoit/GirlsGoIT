@@ -6,6 +6,10 @@ from .models import Member
 from .models import Region
 from .models import Event
 
+# Index page
+def index(request):
+    return render(request, 'ggit_platform/index.html')
+
 # Track views
 def tracks_list(request):
     tracks = Track.objects.all()

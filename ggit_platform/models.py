@@ -1,6 +1,7 @@
 from django.db import models
 from markdownx.models import MarkdownxField
 
+
 # Track model
 class Track(models.Model):
     title = models.CharField(max_length=50)
