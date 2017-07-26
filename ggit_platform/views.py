@@ -11,7 +11,7 @@ def index(request):
     return render(request, 'ggit_platform/index.html')
 
 # Track views
-def tracks_list(request):
+def track_list(request):
     tracks = Track.objects.all()
 
     return render(request, 'track/list.html', {'tracks': tracks})
