@@ -13,20 +13,17 @@ def index(request):
 # Track views
 def track_list(request):
     tracks = Track.objects.all()
-
     return render(request, 'track/list.html', {'tracks': tracks})
 
 
 def track_detail(request, id):
     track = get_object_or_404(Track, id=id)
-
     return render(request, 'track/detail.html', {'track': track})
 
 
 # Region views
 def region_list(request):
     regions = Region.objects.all()
-
     return render(request, 'region/list.html', {'regions': regions})
 
 def region_detail(request, id):
@@ -36,12 +33,10 @@ def region_detail(request, id):
 # Member views
 def member_list(request):
     members = Member.objects.all()
-
     return render(request, 'member/list.html', {'members': members})
 
 def member_detail(request, id):
     member = get_object_or_404(Member, id=id)
-
     return render(request, 'member/detail.html', {'member': member})
 
 # Event views
@@ -51,7 +46,6 @@ def event_list(request):
 
 def event_detail(request, id):
     event = get_object_or_404(Event, id=id)
-
     return render(request, 'story/detail.html', {'story':story})
 
 # Story views

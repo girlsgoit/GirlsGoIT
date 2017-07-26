@@ -8,7 +8,7 @@ from .models import Event
 from .models import Story
 
 admin.site.register(Track, MarkdownxModelAdmin)
-admin.site.register(Member)
 admin.site.register(Region)
-admin.site.register(Event)
-admin.site.register(Story)
+admin.site.register(Member)
+admin.site.register(Event, MarkdownxModelAdmin)
+admin.site.register(Story, MarkdownxModelAdmin)
