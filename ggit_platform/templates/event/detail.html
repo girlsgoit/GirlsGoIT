@@ -1,12 +1,6 @@
-{% extends  "ggit_platform/base_admin.html" %}
-
-{% block title %}
-Eveniment
-{% endblock title %}
+{% extends "ggit_platform/base_admin.html" %}
 
 {% block content %}
-
-<h1><b> {{ event.title}}</b> </h1>
-
-
+    <h1>{{ event.name }}</h1>
+    <p>{{ event.short_description }}</p>
 {% endblock content %}

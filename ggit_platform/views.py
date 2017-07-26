@@ -40,11 +40,11 @@ def member_detail(request, id):
 # Event views
 def event_list(request):
     events= Event.objects.all()
-    return render (request, 'event/list.html', {'events':events})
+    return render(request, 'event/list.html', {'events':events})
 
 def event_detail(request, id):
     event = get_object_or_404(Event, id=id)
-    return render(request, 'story/detail.html', {'story':story})
+    return render(request, 'event/detail.html', {'event':event})
 
 # Story views
 def story_list(request):
