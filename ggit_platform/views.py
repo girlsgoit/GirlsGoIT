@@ -11,7 +11,7 @@ def index(request):
     return render(request, 'ggit_platform/index.html')
 
 # Track views
-def tracks_list(request):
+def track_list(request):
     tracks = Track.objects.all()
 
     return render(request, 'track/list.html', {'tracks': tracks})
@@ -34,6 +34,11 @@ def member_list(request):
     members = Member.objects.all()
 
     return render(request, 'member/list.html', {'members': members})
+
+def member_details(request, id):
+    member = get_object_or_404(Member, id=id)
+
+    return render(request, 'member/details.html', {'member': member})
 
 # Event views
 def event_list(request):
