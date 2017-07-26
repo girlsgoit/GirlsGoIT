@@ -1,15 +1,6 @@
 from django.shortcuts import render
 
-# Track views
 
-
-# Region views
-
-
-# Member views
-
-
-# Event views
-
-
-# Story views
+def event_list(request):
+    events= Event.objects.all()
+    return render (request,'event/list.html' , {'events':events})
