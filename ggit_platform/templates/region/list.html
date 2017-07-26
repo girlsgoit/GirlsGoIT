@@ -1,1 +1,26 @@
-{{regions}}
+{% extends "ggit_platform/base_admin.html" %}
+
+{% block title %}
+Administrare Regiuni
+{% endblock title %}
+
+{% block content %}
+<h1>Regiuni</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Nume</td>  
+      <td>Acțiuni</td>  
+    </tr>
+  </thead>
+  <tbody>
+    {% for region in regions %}
+    <tr>
+      <td><a href="#">{{ region.name }}</a></td>
+      <td><a class="button button-clear" href="#">Șterge</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
