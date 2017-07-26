@@ -1,3 +1,15 @@
 from django.shortcuts import render
 
-# Create your views here.
+# Track views
+
+
+# Region views
+
+
+# Member views
+
+
+# Event views
+
+
+# Story views
