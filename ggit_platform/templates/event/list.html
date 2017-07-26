@@ -1,0 +1,28 @@
+{% extends "ggit_platform/base_admin.html"%}
+{%  block title %}
+Eveniment
+{% endblock title %}
+
+{% block content %}
+<h1>Evenimente</h1>
+<table>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Title</td>
+            <td>Region</td>
+        </tr>
+    </thead>
+
+    <tbody>
+{% for event in events %}
+        <tr>
+            <td><a href="#">{{event.id}}</a></td>
+            <td><a href="#">{{event.title}}</a></td>
+            <td><a href="#">{{event.region.name}}</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
