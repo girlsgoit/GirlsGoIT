@@ -7,7 +7,7 @@
 }
 
 .logo {
-	// color: #333;
+	
 }
 
 .menu {
@@ -60,6 +60,10 @@
 
 .panel {
 	margin-bottom: 4rem;
+}
+
+table .button {
+	margin-bottom: 0;
 }
 
 .panel:last-child {
