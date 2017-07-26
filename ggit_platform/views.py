@@ -45,6 +45,10 @@ def event_list(request):
     events= Event.objects.all()
     return render (request, 'event/list.html', {'events':events})
 
+def event_detail(request, id):
+    events = get_object_or_404(Event, id=id)
+
+    return render(request, 'story/detail.html', {'story':story})
 
 # Story views
 def stories_list(request):
