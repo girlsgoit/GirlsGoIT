@@ -2,6 +2,10 @@ from django.db import models
 from datetime import datetime
 from markdownx.models import MarkdownxField
 
+	
+# Create your tests here.
+
+
 # Track model
 class Track(models.Model):
     title = models.CharField(max_length=50)
@@ -37,6 +41,18 @@ class Member(models.Model):
 # Event model
 
 
+class Event(model.Model):
+	title = models.CharField(max_length=50)
+	short_description = models.TextField()
+	start_date = models.DateTimeField()
+	end_date = models.DateTimeField(null =True, blank=True)
+	thumbnail_image = models.CharField(max_length=200)
+	hero_image = models.CharField(max_length=200)
+	aplly_form = models.CharField(max_length=200)
+	long_description = MarkdownxField()
+	application_start_date = models.DateTimeField(null=True, blank=True)
+	application_end_date = models.DateTimeField(null=True, blank=True)
+	region = models.ForeignKey("Region", null=True, blank=True)
 # Story model
 class Story(models.Model):
     title = models.CharField(max_lenght=100)

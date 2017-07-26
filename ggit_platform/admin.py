@@ -1,4 +1,10 @@
 from django.contrib import admin
+
+from .models import Event
+admin.site.register(Event)
+
+
+
 from markdownx.admin import MarkdownxModelAdmin
 from .models import Track
 from .models import Region
