@@ -1,1 +1,30 @@
-{{stories}}
+{% extends "ggit_platform/base_admin.html" %}
+
+{% block title %}
+Administrare Stories
+{% endblock title %}
+
+{% block content %}
+<h1>Stories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Titlu</td>
+      <td>Regiune</td>
+      <td>Data creării</td>
+      <td>Acțiuni</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for story in stories %}
+    <tr>
+      <td><a href="{% url 'stories_detail' id=story.id %}">{{ story.title }}</a></td>
+      <td><a href="#"></a>{{ story.region }}</td>
+      <td><a href="#"></a>{{ story.create_date }}</td>
+      <td><a class="button button-clear" href="#">Șterge</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock content %}
