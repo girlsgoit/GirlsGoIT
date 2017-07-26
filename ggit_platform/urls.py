@@ -7,7 +7,6 @@ urlpatterns = [
     url(r'^events$', views.event_list, name='event_list'),
     url(r'^tracks/$', views.track_list, name='track_list'),
     url(r'^tracks/(?P<id>\d+)$', views.track_detail, name='track_detail'),
-    url(r'^regions/$', views.region_list, name='regions_list'),
     url(r'^tracks/$', views.track_list, name='track_list'),
     url(r'^track_detail/(?P<id>\d+)$', views.track_detail, name='track_detail'),
     url(r'^regions/$', views.region_list, name='region_list'),
