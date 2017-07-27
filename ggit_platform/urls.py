@@ -17,7 +17,9 @@ urlpatterns = [
     url(r'^regions/(?P<id>\d+)/$', views.region_detail, name='region_detail'),
 
     url(r'^members/$', views.member_list, name='member_list'),
-    url(r'^members/(?P<id>\d+)/$', views.member_detail, name='member_detail'),
+    url(r'^members/new/$', views.member_new, name='member_new'),
+    url(r'^members/(?P<id>\d+)/edit/$', views.member_edit, name='member_edit'),
+    url(r'^members/(?P<id>\d+)/delete/$', views.member_delete, name='member_delete'),
 
     url(r'^/$', views.index, name='index'),
 ]
