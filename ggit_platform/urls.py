@@ -3,10 +3,14 @@ from . import views
 
 urlpatterns = [
     url(r'^stories/$', views.story_list, name='story_list'),
-    url(r'^stories/(?P<id>\d+)/$', views.story_detail, name='story_detail'),
+    url(r'^stories/(?P<id>\d+)/$', views.story_new, name='story_new'),
+    url(r'^tracks/(?P<id>\d+)/edit/$', views.story_edit, name='story_edit'),
+    url(r'^tracks/(?P<id>\d+)/delete/$', views.story_delete, name='story_delete'),
 
     url(r'^events/$', views.event_list, name='event_list'),
-    url(r'^events/(?P<id>\d+)/$', views.event_detail, name='event_detail'),
+    url(r'^events/new/$', views.event_new, name='event_new'),
+    url(r'^events/(?P<id>\d+)/edit/$', views.event_edit, name='event_edit'),
+    url(r'^events/(?P<id>\d+)/delete/$', views.event_delete, name='event_delete'),
 
     url(r'^tracks/$', views.track_list, name='track_list'),
     url(r'^tracks/new/$', views.track_new, name='track_new'),

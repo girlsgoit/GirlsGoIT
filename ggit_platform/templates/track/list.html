@@ -5,9 +5,14 @@ Administrare Blocuri
 {% endblock %}
 
 {% block content %}
-<h1>Blocuri de învățare</h1>
-
-<a class="button button-outline float-right" href="{% url 'track_new' %}">Adaugă Bloc</a>
+<div class="row">
+  <div class="column">
+    <h1>Blocuri de învățare</h1>
+  </div>
+  <div class="column">
+    <a class="button button-outline float-right" href="{% url 'track_new' %}">Adaugă Bloc</a>
+  </div>
+</div>
 
 <table>
     <thead>
