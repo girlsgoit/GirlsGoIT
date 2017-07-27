@@ -17,11 +17,15 @@ urlpatterns = [
     url(r'^admin/tracks/(?P<id>\d+)/edit/$', views.track_edit, name='track_edit'),
     url(r'^admin/tracks/(?P<id>\d+)/delete/$', views.track_delete, name='track_delete'),
 
+
     url(r'^regions/$', views.region_list, name='region_list'),
     url(r'^regions/(?P<id>\d+)/detail/$', views.region_detail, name='region_detail'),
     url(r'^regions/new/$', views.region_new, name='region_new'),    
     url(r'^regions/(?P<id>\d+)/edit/$', views.region_edit, name='region_edit'),
     url(r'^regions/(?P<id>\d+)/delete/$', views.region_delete, name='region_delete'),
+
+    url(r'^tracks/(?P<id>\d+)/detail/$', views.track_detail, name='track_detail'),
+
 
     url(r'^admin/regions/$', views.region_list, name='region_list'),
     url(r'^admin/regions/(?P<id>\d+)/edit/$', views.region_detail, name='region_detail'),
