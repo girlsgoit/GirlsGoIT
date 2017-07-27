@@ -188,76 +188,29 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 		<div class="container">
 			<article class="list-view">
 				<div class="row">
+					{% for story in stories %}
 					<div class="column column-40" >
-						<a class="preview" href="#">
-							<img src="{% static 'ggit_platform/img/stories/1.jpg' %}">
+						<a class="story-preview" href="#">
+							<img src="{{ story.thumbnail_image }}" alt="Story thumbnail_image image">
 						</a>
 					</div>
 					<div class="column column-60"> 
 						<div class="content">
-							<h6>IULIE 26 2017</h6>
+							<h6>{{ story.create_date }}</h6>
 							<a href="#">	
-								<h3>Lorem ipsum dolor sit amet</h3>	
+								<h3>{{ story.title }}</h3>	
 							</a>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.
+							{{ story.short_description }}
 							</p>
 							<a href="#" class="button button button-outline"> Apply Now </a>
 						</div>
 					</div>
+					{% endfor %}
 				</div>
 			</article>
-			<article class="list-view">
-				<div class="row">
-					<div class="column column-40">
-						<a class="preview" href="#">
-							<img src="{% static 'ggit_platform/img/stories/2.jpg' %}">
-						</a>
-					</div>
-					<div class="column column-60">
-						<div class="content">
-							<h6>IULIE 26 2017</h6>
-							<a href="#">	
-								<h3>Lorem ipsum dolor sit amet</h3>	
-							</a>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.
-							</p>
-							<a href="#" class="button button button-outline"> Apply Now </a>
-						</div>
-					</div>
-				</div>
-			</article>
-			<article class="list-view">
-				<div class="row">
-					<div class="column column-40">
-						<a class="preview" href="#">
-							<img src="{% static 'ggit_platform/img/stories/3.jpg' %}">
-						</a>
-					</div>
-					<div class="column column-60">
-						<div class="content">
-							<h6>IULIE 26 2017</h6>
-							<a href="#">	
-								<h3>Lorem ipsum dolor sit amet</h3>	
-							</a>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.
-							</p>
-							<a href="#" class="button button button-outline"> Apply Now </a>
-						</div>
-					</div>
-				</div>
-			</article>
+			
+			
 		</div>
 	</section>
 <!-- End of latest stories -->
