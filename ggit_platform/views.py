@@ -88,6 +88,10 @@ def region_list(request):
 
 def region_detail(request, id):
     region = get_object_or_404(Region, id=id)
+    events = Event.objects.filter(region=region).order_by('-start_date')[:3]
+    stories = Story.objects.filter(region=region).order_by('-create_date')[:3]
+    members = Member.objects.filter(region=region)
+    return render(request, 'region/detail.html', {'region' : region, 'events':events, 'stories':stories, 'members':members})
     return render(request, 'region/admin_detail.html', {'region' : region})
 
 def region_new(request):
@@ -169,8 +173,12 @@ def member_delete(request, id):
 
 
 def event_list(request):
-    events= Event.objects.all()
-    return render(request, 'event/list.html', {'events':events})
+    event= Event.objects.all()
+    return render(request, 'event/list.html', {'event':event})
+
+def event_detail(request, id):
+	event = get_object_or_404(Event, id=id)
+	return render(request, 'event/detail.html', {'event': event})
 
 
 def event_new(request):

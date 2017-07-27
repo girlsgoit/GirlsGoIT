@@ -27,16 +27,16 @@ urlpatterns = [
     url(r'^regions/(?P<id>\d+)/edit/$', views.region_edit, name='region_edit'),
     url(r'^regions/(?P<id>\d+)/delete/$', views.region_delete, name='region_delete'),
 
-    url(r'^tracks/(?P<id>\d+)/detail/$', views.track_detail, name='track_detail'),
-    url(r'^events/(?P<id>\d+)/detail/$', views.event_detail, name='event_detail'),
+    url(r'^tracks/(?P<id>\d+)/$', views.track_detail, name='track_detail'),
+    url(r'^events/(?P<id>\d+)/$', views.event_detail, name='event_detail'),
 
 
 
     url(r'^admin/regions/$', views.region_list, name='region_list'),
-    url(r'^admin/regions/(?P<id>\d+)/detail/$', views.region_detail, name='region_detail'),
     url(r'^admin/regions/new/$', views.region_new, name='region_new'),    
     url(r'^admin/regions/(?P<id>\d+)/edit/$', views.region_edit, name='region_edit'),
     url(r'^admin/regions/(?P<id>\d+)/delete/$', views.region_delete, name='region_delete'),
+    url(r'^regions/(?P<id>\d+)/$', views.region_detail, name='region_detail'),
 
     url(r'^admin/members/$', views.member_list, name='member_list'),
     url(r'^admin/members/new/$', views.member_new, name='member_new'),

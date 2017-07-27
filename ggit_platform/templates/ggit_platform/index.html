@@ -52,137 +52,143 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 	<div class="container">
 		<div class="row">
 			{% for track in tracks %}
-				<div class="column"> 
-					<div class="track-preview"> 
-						<img src="{{ track.icon }}" alt="Track icon image"> 
-						<h4>{{ track.title }}</h4>
-						<p> {{ track.short_description}}  </p>
-						<a href="{% url 'track_detail' id=track.id %}"> read more</a>
-					</div>
-				</div> 
+			<div class="column"> 
+				<div class="track-preview"> 
+					<img src="{{ track.icon }}" alt="Track icon image"> 
+					<h4>{{ track.title }}</h4>
+					<p> {{ track.short_description}}  </p>
+					<a href="{% url 'track_detail' id=track.id %}"> read more</a>
+				</div>
+			</div> 
 			{% endfor %}
 		</div>
 	</div>
 </section>
-			<!-- End of Tracks -->
+<!-- End of Tracks -->
 
-			<!-- Regions -->
-			<section class="regions section">
-				<header class="section-title">
-					<h2>
-						Regions
-					</h2>
-					<p>
-						Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
-					</p>
-				</header>
+<!-- Regions -->
+<section class="regions section">
+	<header class="section-title">
+		<h2>
+			Regions
+		</h2>
+		<p>
+			Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
+		</p>
+	</header>
 
-				<div class="container">
-					<div class="row">
-					{% for region in regions %}
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{{ region.thumbnail_image }}">
-								<h3>{{ region.name }}</h3>
-							</a>
-						</div>
-					{% endfor %}
-						</div>
-				</div>
 
-					<div class="row">
-						<div class="column">
-							<!-- Region Button -->
-							<div class="cta">
-								<p>Haven't seen your region in the list</p>
-								<a class="button button-outline" href="#">Bring <span>GilsGoIt</span> to your region</a>
-							</div>
-							<!-- Region Button -->
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- End of Regions -->
+	<div class="container">
+		<div class="row">
+			{% for region in regions %}
+			<div class="column region-column">
+				<a href="{% url 'region_detail' id=region.id %}" class="region-preview">
+					<img src="{{ region.thumbnail_image }}">
+					<h3>{{ region.name }}</h3>
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="row">
+		<div class="column">
+			<!-- Region Button -->
+			<div class="region-button">
+				<p>Haven't seen your region in the list</p>
+				<a class="button button-outline" href="#">Bring <span>GilsGoIt</span> to your region</a>
+			</div>
+			<!-- Region Button -->
+		</div>
+	</div>
+	</div>
 
-			<!-- Events -->
-			<section class="events section">
-				<header class="section-title">
-					<h2>Events</h2>
-					<p>
-						Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
-					</p>
-				</header>
+</div>
+</section>
+<!-- End of Regions -->
 
-                
-				<div class="container">
-					<div class="row">
-						<div class="column">
-							<article class="event-preview">
-								<div class="thumb">
-									<img src="{{ last_event.thumbnail_image }}">
-									<div class="overlay">
-										<h3>{{ last_event.title  }}</h3>
-									</div>
-								</div>
-								<div class="details clearfix">
-									<h5 class="date float-left">{{ last_event.start_date }}</h5>
-									<h5 class="type float-right">{{ last_event.end_date }}</h5>
-								</div>
-							</article>
-						</div>
-						
-						<div class="column">
-							<article class="event-preview">
-								<div class="thumb">
-									<img src="{{ upcoming_event.thumbnail_image }}">
-									<div class="overlay">
-										<h3>{{ upcoming_event.title }}</h3>
-									</div>
-								</div>
-								<div class="details clearfix">
-									<h5 class="date float-left">{{ upcoming_event.start_date }}</h5>
-									<h5 class="type float-right">{{ upcoming_event.end_date }}</h5>
-								</div>
-							</article>
+<!-- Events -->
+<section class="events section">
+	<header class="section-title">
+		<h2>Events</h2>
+		<p>
+			Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
+		</p>
+	</header>
+
+	
+	<div class="container">
+		<div class="row">
+			<div class="column">
+				<article class="event-preview">
+					<div class="thumb">
+						<img src="{{ last_event.thumbnail_image }}">
+						<div class="overlay">
+							<h3>{{ last_event.title  }}</h3>
 						</div>
 					</div>
-				</div>	
-			</section>
-			<!-- End of Events -->
-
+					<div class="details clearfix">
+						<h5 class="date float-left">{{ last_event.start_date }}</h5>
+						<h5 class="type float-right">{{ last_event.end_date }}</h5>
+					</div>
+				</article>
+			</div>
+			
+			<div class="column">
+				<article class="event-preview">
+					<div class="thumb">
+						<img src="{{ upcoming_event.thumbnail_image }}">
+						<div class="overlay">
+							<h3>{{ upcoming_event.title }}</h3>
+						</div>
+					</div>
+					<div class="details clearfix">
+						<h5 class="date float-left">{{ upcoming_event.start_date }}</h5>
+						<h5 class="type float-right">{{ upcoming_event.end_date }}</h5>
+						{% if upcoming_event.short_description > 100 %}
+						<a href="{% url 'event_detail' id=upcoming_event.id %}">Mai mult</a>
+						{% endif %}
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>	
+</section>
+<!-- End of Events -->
 <!-- Latest stories -->
-	<section>
-		<header class="section-title">
-			<h2>Stories</h2>
-			<p>
-				Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
-			</p>
-		</header>
-		<div class="container">
-			<article class="list-view">
-				<div class="row">
-					{% for story in last_stories %}
-					<div class="column column-40" >
-						<a class="story-preview" href="#">
-							<img src="{{ story.thumbnail_image }}" alt="Story thumbnail_image image">
+<section>
+	<header class="section-title">
+		<h2>Stories</h2>
+		<p>
+			Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
+		</p>
+	</header>
+	<div class="container">
+		<article class="list-view">
+			<div class="row">
+				{% for story in stories %}
+				<div class="column column-40" >
+					<a class="story-preview" href="#">
+						<img src="{{ story.thumbnail_image }}" alt="Story thumbnail_image image">
+					</a>
+				</div>
+				<div class="column column-60"> 
+					<div class="content">
+						<h6>{{ story.create_date }}</h6>
+						<a href="#">	
+							<h3>{{ story.title }}</h3>	
 						</a>
-					</div>
-					<div class="column column-60"> 
-						<div class="content">
-							<h6>{{ story.create_date }}</h6>
-							<a href="#">	
-								<h3>{{ story.title }}</h3>	
-							</a>
-							<p>
+						<p>
 							{{ story.short_description }}
 							</p>
 							<a href="{% url 'story_detail' id=story.id%}" class="button button button-outline"> Mai Mult </a>
 						</div>
+						</p>
+						<a href="{% url 'views.story_detail' %}" class="button button button-outline"> Mai Mult </a>
 					</div>
-					{% endfor %}
 				</div>
-			</article>
-		</div>
-	</section>
+				{% endfor %}
+			</div>
+		</article>		
+	</div>
+</section>
 <!-- End of latest stories -->
 {% endblock content %}
