@@ -7,6 +7,7 @@ from .models import Event
 from .models import Story
 
 from .forms import TrackForm
+from .forms import EventForm
 from .forms import StoryForm
 
 
@@ -112,10 +113,6 @@ def event_delete(request, id):
     if request.method == 'POST':
         event.delete()
     return redirect('event_list')
-
-
-
-
 
 # Story views
 def story_list(request):
