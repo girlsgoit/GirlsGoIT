@@ -1,9 +1,8 @@
 from django import forms
 
 from .models import Track
-<<<<<<< HEAD
+from .models import Region
 from .models import Member 
-
 from .models import Event
 from .models import Story
 
