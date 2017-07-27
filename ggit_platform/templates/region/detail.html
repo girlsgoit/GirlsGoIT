@@ -2,7 +2,7 @@
 
 <h1>
     {% block title %}
-        Regiunea {{ region.name }}
+    Regiunea {{ region.name }}
     {% endblock title %}
 </h1>
 
@@ -23,8 +23,8 @@
             <td>{{ region.motto }} </td>
             <td>{{ region.description }}</td>
         </tr>
-                
-</tbody>
+        
+    </tbody>
 
 </table> 
 
@@ -43,17 +43,17 @@
       <th>Nume, Prenume</th>
       <th>Pagina personală</th>
       <th>Acțiuni</th>
-    </tr>
-  </thead>
-  <tbody>
+  </tr>
+</thead>
+<tbody>
     {% for member in members %}
     <tr>
       <td><a href="{% url 'member_detail' id=member.id %}">{{ member.name }} {{ member.surname }}</a></td>
       <td><a href="{{ member.personal_page }}">{{ member.personal_page }}</a></td>
       <td><a class="button button-outline" href="#">Șterge</a></td>
-    </tr>
-    {% endfor %}
-  </tbody>
+  </tr>
+  {% endfor %}
+</tbody>
 </table>
 
 
