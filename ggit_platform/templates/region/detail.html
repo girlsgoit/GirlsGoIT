@@ -9,9 +9,9 @@
 {% block content %}
 
 
+<h2>Regiunea {{ region.name }}</h2>
 
-
-<table>
+<table style="padding-bottom: 70px">
     <thead>
         <th><b>Emblema</b></th>
         <th><b>Motto</b></th>
@@ -19,9 +19,9 @@
     </thead>
     <tbody>
         <tr>
-            <td>{{ Region.thumbnail_image }}</td>
-            <td>{{ Region.motto }} </td>
-            <td>{{ Region.description }}</td>
+            <td>{{ region.thumbnail_image }}</td>
+            <td>{{ region.motto }} </td>
+            <td>{{ region.description }}</td>
         </tr>
                 
 </tbody>
@@ -33,11 +33,11 @@
 
 
 
-<h1>Membrii regiunii {{ region.name }}</h1>
+<h3>Membrii regiunii {{ region.name }}</h3>
 
 <a class="button button-outline float-right" href="{% url 'member_new' %}">Adaugă Membru</a>
 
-<table>
+<table style="padding-bottom: 70px">
   <thead>
     <tr>
       <th>Nume, Prenume</th>
@@ -60,11 +60,12 @@
 
 
 
+<h3>Event-urile din {{ region.name }}</h3>
 <h1>Evenimente din {{ region.name }}</h1>
 
 <a class="button button-outline float-right" href="{% url 'event_new' %}">Adaugă Event</a>
 
-<table>
+<table style="padding-bottom: 70px">
     <thead>
         <tr>
             <th>Titlu</th>
