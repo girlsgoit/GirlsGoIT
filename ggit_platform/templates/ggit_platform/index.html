@@ -57,7 +57,7 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 						<img src="{{ track.icon }}" alt="Track icon image"> 
 						<h4>{{ track.title }}</h4>
 						<p> {{ track.short_description}}  </p>
-						<a href="#"> read more</a>
+						<a href="{% url 'track_detail' id=track.id %}"> read more</a>
 					</div>
 				</div> 
 			{% endfor %}
@@ -93,7 +93,7 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 					<div class="row">
 						<div class="column">
 							<!-- Region Button -->
-							<div class="region-button">
+							<div class="cta">
 								<p>Haven't seen your region in the list</p>
 								<a class="button button-outline" href="#">Bring <span>GilsGoIt</span> to your region</a>
 							</div>
@@ -176,14 +176,12 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 							<p>
 							{{ story.short_description }}
 							</p>
-							<a href="#" class="button button button-outline"> Read More </a>
+							<a href="{% url 'views.story_detail' %}" class="button button button-outline"> Mai Mult </a>
 						</div>
 					</div>
 					{% endfor %}
 				</div>
 			</article>
-			
-			
 		</div>
 	</section>
 <!-- End of latest stories -->

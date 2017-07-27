@@ -31,6 +31,12 @@ def index(request):
         }
     return render(request, 'ggit_platform/index.html', params)
 
+
+def track_detail(request, id):
+	track = get_object_or_404(Track, id=id)
+	return render(request, 'track/detail.html', {'track': track})
+
+
 # Index page
 def admin_index(request):
     return redirect('region_list')
@@ -86,6 +92,7 @@ def region_detail(request, id):
     stories = Story.objects.filter(region=region).order_by('-create_date')[:3]
     members = Member.objects.filter(region=region)
     return render(request, 'region/detail.html', {'region' : region, 'events':events, 'stories':stories, 'members':members})
+    return render(request, 'region/admin_detail.html', {'region' : region})
 
 def region_new(request):
     if request.method == 'POST':
@@ -127,7 +134,7 @@ def member_list(request):
 
 def member_detail(request, id):
     member = get_object_or_404(Member, id=id)
-    return render(request, 'member/detail.html', {'member': member})
+    return render(request, 'member/admin_detail.html', {'member': member})
 
 def member_new(request):
     if request.method == 'POST':
@@ -200,6 +207,8 @@ def event_delete(request, id):
         event.delete()
     return redirect('event_list')
 
+
+
 # Story views
 def story_list(request):
     stories = Story.objects.all()
@@ -236,3 +245,7 @@ def story_delete(request, id):
         story.delete()
 
     return redirect('story_list')
+
+def story_detail(request, id):
+    story = get_object_or_404(Story, id=id)
+    return render(request, 'story/detail.html', {'story' : story})

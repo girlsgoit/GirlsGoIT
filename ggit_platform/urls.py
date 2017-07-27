@@ -6,6 +6,8 @@ urlpatterns = [
     url(r'^admin/stories/new/$', views.story_new, name='story_new'),
     url(r'^admin/stories/(?P<id>\d+)/edit/$', views.story_edit, name='story_edit'),
     url(r'^admin/stories/(?P<id>\d+)/delete/$', views.story_delete, name='story_delete'),
+    url(r'^stories/(?P<id>\d+)$', views.story_detail, name='story_detail'),
+
 
     url(r'^admin/events/$', views.event_list, name='event_list'),
     url(r'^admin/events/new/$', views.event_new, name='event_new'),
@@ -16,6 +18,18 @@ urlpatterns = [
     url(r'^admin/tracks/new/$', views.track_new, name='track_new'),
     url(r'^admin/tracks/(?P<id>\d+)/edit/$', views.track_edit, name='track_edit'),
     url(r'^admin/tracks/(?P<id>\d+)/delete/$', views.track_delete, name='track_delete'),
+
+
+
+    url(r'^regions/$', views.region_list, name='region_list'),
+    url(r'^regions/(?P<id>\d+)/detail/$', views.region_detail, name='region_detail'),
+    url(r'^regions/new/$', views.region_new, name='region_new'),    
+    url(r'^regions/(?P<id>\d+)/edit/$', views.region_edit, name='region_edit'),
+    url(r'^regions/(?P<id>\d+)/delete/$', views.region_delete, name='region_delete'),
+
+    url(r'^tracks/(?P<id>\d+)/detail/$', views.track_detail, name='track_detail'),
+    url(r'^events/(?P<id>\d+)/detail/$', views.event_detail, name='event_detail'),
+
 
 
     url(r'^admin/regions/$', views.region_list, name='region_list'),
