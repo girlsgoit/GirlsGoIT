@@ -1,0 +1,12 @@
+{% extends "ggit_platform/base_admin.html" %}
+
+{% block title %}
+Administrare Story Form
+{% endblock %}
+
+{% block content %}
+  <form method="POST">{% csrf_token %}
+    {{ form }}
+    <button type='submit'>Salvare</button>
+  </form>
+{% endblock content %}
