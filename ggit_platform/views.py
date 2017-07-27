@@ -197,6 +197,8 @@ def event_delete(request, id):
         event.delete()
     return redirect('event_list')
 
+
+
 # Story views
 def story_list(request):
     stories = Story.objects.all()
@@ -233,3 +235,7 @@ def story_delete(request, id):
         story.delete()
 
     return redirect('story_list')
+
+def story_detail(request, id):
+    story = get_object_or_404(Story, id=id)
+    return render(request, 'story/detail.html', {'story' : story})
