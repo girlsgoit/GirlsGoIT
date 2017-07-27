@@ -31,6 +31,7 @@ class RegionForm(forms.ModelForm):
 
         
 
+
 class StoryForm(forms.ModelForm):
 
     class Meta:
