@@ -16,7 +16,7 @@ class EventForm(forms.ModelForm):
 
     class Meta:
         model = Event
-        fields = ('title', 'short_description', 'long_description', 'region')
+        fields = '__all__'
 
         
 
