@@ -82,6 +82,10 @@ def event_list(request):
     events= Event.objects.all()
     return render(request, 'event/list.html', {'events':events})
 
+def story_detail(request, id):
+    event = get_object_or_404(Event, id=id)
+    return render(request, 'event/detail.html', {'event':event})
+
 def event_new(request):
     if request.method == 'POST':
         form = EventForm(request.POST)
