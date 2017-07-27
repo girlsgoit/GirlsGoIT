@@ -81,7 +81,7 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 					<div class="row">
 					{% for region in regions %}
 						<div class="column region-column">
-							<a href="#" class="region-preview">
+							<a href="{% url 'region_detail' id=region.id %}" class="region-preview">
 								<img src="{{ region.thumbnail_image }}">
 								<h3>{{ region.name }}</h3>
 							</a>

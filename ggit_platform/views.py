@@ -82,7 +82,10 @@ def region_list(request):
 
 def region_detail(request, id):
     region = get_object_or_404(Region, id=id)
-    return render(request, 'region/detail.html', {'region' : region})
+    events = Event.objects.filter(region=region).order_by('-start_date')[:3]
+    stories = Story.objects.filter(region=region).order_by('-create_date')[:3]
+    members = Member.objects.filter(region=region)
+    return render(request, 'region/detail.html', {'region' : region, 'events':events, 'stories':stories, 'members':members})
 
 def region_new(request):
     if request.method == 'POST':
