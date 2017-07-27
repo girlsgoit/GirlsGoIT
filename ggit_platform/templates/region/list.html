@@ -7,20 +7,37 @@ Administrare Regiuni
 {% block content %}
 <h1>Regiuni</h1>
 
+<a class="button button-outline float-right" href="{% url 'region_new' %}">Adaugă Regiune</a>
 <table>
-  <thead>
-    <tr>
-      <th>Nume</th>  
-      <th>Acțiuni</th>  
-    </tr>
-  </thead>
-  <tbody>
-    {% for region in regions %}
-    <tr>
-      <td><a href="{% url 'region_detail' id=region.id %}">{{ region.name }}</a></td>
-      <td><a class="button button-outline" href="#">Șterge</a></td>
-    </tr>
-    {% endfor %}
-  </tbody>
+    <thead>
+        <th>Nume</th>
+        <th>Acțiuni</th>
+    </thead>
+    <tbody>
+        {% for region in regions %}
+        <tr>
+            <td>
+                <a href="{% url 'region_edit' id=region.id %}">
+                    {{ region.name }}
+                </a>
+            </td>
+
+            <td>
+              <form method="POST" action="{% url 'region_detail' id=region.id %}">{% csrf_token %}
+                <button class="button button-outline" type='submit'>Preview</button>
+              </form>
+
+            </td>
+
+
+            <td>
+              <form method="POST" action="{% url 'region_delete' id=region.id %}">{% csrf_token %}
+                <button class="button button-outline" type='submit'>Șterge</button>
+              </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
+
 {% endblock content %}

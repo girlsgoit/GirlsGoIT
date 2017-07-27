@@ -1,5 +1,7 @@
 from django import forms
 from .models import Track
+from .models import Region
+from .models import Member 
 from .models import Event
 from .models import Story
 
@@ -10,6 +12,10 @@ class TrackForm(forms.ModelForm):
         fields = '__all__'
 
 
+class MemberForm(forms.ModelForm):
+
+    class Meta:
+        model = Member
 
 class EventForm(forms.ModelForm):
 

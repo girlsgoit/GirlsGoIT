@@ -7,6 +7,7 @@ from .models import Event
 from .models import Story
 
 from .forms import TrackForm
+from .forms import MemberForm
 from .forms import EventForm
 from .forms import StoryForm
 
@@ -66,6 +67,41 @@ def region_detail(request, id):
     region = get_object_or_404(Region, id=id)
     return render(request, 'region/detail.html', {'region' : region})
 
+def region_new(request):
+    if request.method == 'POST':
+        form = RegionForm(request.POST)
+        if form.is_valid():
+            region = form.save()
+            return redirect('region_list')
+
+    elif request.method == 'GET':
+        form = RegionForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'region/edit.html', {'form': form})
+
+
+def region_edit(request, id):
+    region = get_object_or_404(Region, id=id)
+    if request.method == 'GET':
+        form = RegionForm(instance=region)
+
+    elif request.method == 'POST':
+        form = RegionForm(request.POST, instance=region)
+        if form.is_valid():
+            region = form.save()
+            return redirect('region_list')
+
+    return render(request, 'region/edit.html', {'form': form})
+
+
+def region_delete(request, id):
+    region = get_object_or_404(Region, id=id)
+    if request.method == 'POST':
+        region.delete()
+
+    return redirect('region_list')
+
 # Member views
 def member_list(request):
     members = Member.objects.all()
@@ -75,12 +111,48 @@ def member_detail(request, id):
     member = get_object_or_404(Member, id=id)
     return render(request, 'member/detail.html', {'member': member})
 
+def member_new(request):
+    if request.method == 'POST':
+        form = MemberForm(request.POST)
+        if form.is_valid():
+            member = form.save()
+            return redirect('member_list')
+
+    elif request.method == 'GET':
+        form = MemberForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'member/edit.html', {'form': form})
+
+
+def member_edit(request, id):
+    member = get_object_or_404(Member, id=id)
+    if request.method == 'GET':
+        form = MemberForm(instance=member)
+
+    elif request.method == 'POST':
+        form = MemberForm(request.POST, instance=member)
+        if form.is_valid():
+            member = form.save()
+            return redirect('member_list')
+
+    return render(request, 'member/edit.html', {'form': form})
+
+
+def member_delete(request, id):
+    member = get_object_or_404(Member, id=id)
+    if request.method == 'POST':
+        member.delete()
+
+    return redirect('member_list')
+
 # Event views
 
 
 def event_list(request):
     events= Event.objects.all()
     return render(request, 'event/list.html', {'events':events})
+
 
 def event_new(request):
     if request.method == 'POST':

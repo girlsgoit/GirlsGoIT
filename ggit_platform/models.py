@@ -26,10 +26,17 @@ class Region(models.Model):
     def __str__(self):
         return self.name
 
-# Member model
+# Member models
+class MemberRole(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
 class Member(models.Model):
     name = models.CharField(max_length=30)
     surname = models.CharField(max_length=30)
+    role = models.ForeignKey(MemberRole)
     photo = models.CharField(max_length=200)
     personal_page = models.CharField(max_length=200)
     region = models.ForeignKey(Region)
