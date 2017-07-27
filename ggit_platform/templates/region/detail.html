@@ -1,98 +1,301 @@
-{% extends  "ggit_platform/base_admin.html" %}
+{% extends "ggit_platform/base_front.html" %}
+{% load staticfiles %}
 
-<h1>
-    {% block title %}
-    Regiunea {{ region.name }}
-    {% endblock title %}
-</h1>
+{% block headtitle %}
+{{ region.name }}
+{% endblock headtitle %}
+
+{% block pretitle %}
+<p class="date">26 JULY 2017</p>
+{% endblock pretitle %}
+
+{% block title %}
+Summer Engineering and Technology Camp for Girls
+{% endblock title %}
+
+{% block subtitle %}
+Leverage agile frameworks to provide a robust synopsis for high level overviews
+{% endblock subtitle %}
+
+{% block heroimage %}
+{% static "ggit_platform/img/hero/home.jpg" %}
+{% endblock heroimage %}
 
 {% block content %}
+    <!-- Region description-->
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <p class="about-region"> 
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- End of Region description -->
 
 
-<h2>Regiunea {{ region.name }}</h2>
+    <!-- Members -->
 
-<table style="padding-bottom: 70px">
-    <thead>
-        <th><b>Emblema</b></th>
-        <th><b>Motto</b></th>
-        <th><b>Descriere</b></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{ region.thumbnail_image }}</td>
-            <td>{{ region.motto }} </td>
-            <td>{{ region.description }}</td>
-        </tr>
-        
-    </tbody>
+    <section class="members section section-gray"> 
 
-</table> 
+        <!-- Section title -->
 
+        <header class="section-title">
+            <h2>
+                Members
+            </h2>
+            <p>
+                Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
+            </p>
+        </header>
 
+        <!-- End of Section title -->
 
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <div class="member">
+                        <a href="#"> 
+                            <img src="static/img/members/1.jpg"> 
+                            <h3> Jamie Price </h3>
+                        </a>
+                        <h6>
+                            Ambasador
+                        </h6>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="member">
+                        <a href="#"> 
+                            <img src="static/img/members/2.jpg"> 
+                            <h3> Brandie Stone </h3>
+                        </a>
+                        <h6>
+                            Ambasador
+                        </h6>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="member">
+                        <a href="#"> 
+                            <img src="static/img/members/3.jpg"> 
+                            <h3> Bessie Patterson </h3>
+                        </a>
+                        <h6>
+                            Ambasador
+                        </h6>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="member">
+                        <a href="#"> 
+                            <img src="static/img/members/4.jpg"> 
+                            <h3> Regina Walters </h3>
+                        </a>
+                        <h6>
+                            Ambasador
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
+    <!-- Members -->
 
+    <!-- List view -->
 
-<h3>Membrii regiunii {{ region.name }}</h3>
+    <section class="section">
+        <!-- Section title -->
 
-<a class="button button-outline float-right" href="{% url 'member_new' %}">Adaugă Membru</a>
+        <header class="section-title">
+            <h2>
+                Events
+            </h2>
+            <p>
+                Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
+            </p>
+        </header>
 
-<table style="padding-bottom: 70px">
-  <thead>
-    <tr>
-      <th>Nume, Prenume</th>
-      <th>Pagina personală</th>
-      <th>Acțiuni</th>
-  </tr>
-</thead>
-<tbody>
-    {% for member in members %}
-    <tr>
-      <td><a href="{% url 'member_detail' id=member.id %}">{{ member.name }} {{ member.surname }}</a></td>
-      <td><a href="{{ member.personal_page }}">{{ member.personal_page }}</a></td>
-      <td><a class="button button-outline" href="#">Șterge</a></td>
-  </tr>
-  {% endfor %}
-</tbody>
-</table>
+        <!-- End of Section title -->
+        <div class="container">
+            <article class="list-view">
+                <div class="row">
+                    <div class="column column-40" >
+                        <a class="preview" href="#">
+                            <img src="static\img\Listview\event-1.jpg">
+                        </a>
+                    </div>
+                    <div class="column column-60"> 
+                        <div class="content">
+                            <h6>IULIE 26 2017</h6>
+                            <a href="#">    
+                                <h3>Lorem ipsum dolor sit amet</h3> 
+                            </a>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+                            <a href="#" class="button button button-outline"> Apply Now </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="list-view">
+                <div class="row">
+                    <div class="column column-40">
+                        <a class="preview" href="#">
+                            <img src="static\img\Listview\event-2.jpg">
+                        </a>
+                    </div>
+                    <div class="column column-60">
+                        <div class="content">
+                            <h6>IULIE 26 2017</h6>
+                            <a href="#">    
+                                <h3>Lorem ipsum dolor sit amet</h3> 
+                            </a>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+                            <a href="#" class="button button button-outline"> Apply Now </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="list-view">
+                <div class="row">
+                    <div class="column column-40">
+                        <a class="preview" href="#">
+                            <img src="static\img\Listview\event-3.jpg">
+                        </a>
+                    </div>
+                    <div class="column column-60">
+                        <div class="content">
+                            <h6>IULIE 26 2017</h6>
+                            <a href="#">    
+                                <h3>Lorem ipsum dolor sit amet</h3> 
+                            </a>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+                            <a href="#" class="button button button-outline"> Apply Now </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- End of List view -->
+    
+    <!-- List view -->
 
+    <section class="section">
+        <!-- Section title -->
 
+        <header class="section-title">
+            <h2>
+                Stories
+            </h2>
+            <p>
+                Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
+            </p>
+        </header>
 
-
-
-<h3>Event-urile din {{ region.name }}</h3>
-<h1>Evenimente din {{ region.name }}</h1>
-
-<a class="button button-outline float-right" href="{% url 'event_new' %}">Adaugă Event</a>
-
-<table style="padding-bottom: 70px">
-    <thead>
-        <tr>
-            <th>Titlu</th>
-            <th>Regiune</th>
-            <th>Începutul evenimentului</th>
-            <th>Acțiuni</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        {% for event in events %}
-        <tr>
-            <td><a href="{% url 'event_detail' id=event.id %}">{{event.title}}</a></td>
-            <td>
-                {% if event.region %} 
-                <a href="{% url 'region_detail' id=event.region.id %}" >{{ event.region }}</a>
-                {% endif %}
-            </td>
-            <td>{{event.start_date}}</td>
-            <td><a class="button button-outline" href="#">Șterge</a></td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
-
-
+        <!-- End of Section title -->
+        <div class="container">
+            <article class="list-view">
+                <div class="row">
+                    <div class="column column-40" >
+                        <a class="preview" href="#">
+                            <img src="static\img\Listview\event-1.jpg">
+                        </a>
+                    </div>
+                    <div class="column column-60"> 
+                        <div class="content">
+                            <h6>IULIE 26 2017</h6>
+                            <a href="#">    
+                                <h3>Lorem ipsum dolor sit amet</h3> 
+                            </a>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+                            <a href="#" class="button button button-outline"> Apply Now </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="list-view">
+                <div class="row">
+                    <div class="column column-40">
+                        <a class="preview" href="#">
+                            <img src="static\img\Listview\event-2.jpg">
+                        </a>
+                    </div>
+                    <div class="column column-60">
+                        <div class="content">
+                            <h6>IULIE 26 2017</h6>
+                            <a href="#">    
+                                <h3>Lorem ipsum dolor sit amet</h3> 
+                            </a>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+                            <a href="#" class="button button button-outline"> Apply Now </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="list-view">
+                <div class="row">
+                    <div class="column column-40">
+                        <a class="preview" href="#">
+                            <img src="static\img\Listview\event-3.jpg">
+                        </a>
+                    </div>
+                    <div class="column column-60">
+                        <div class="content">
+                            <h6>IULIE 26 2017</h6>
+                            <a href="#">    
+                                <h3>Lorem ipsum dolor sit amet</h3> 
+                            </a>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat.
+                            </p>
+                            <a href="#" class="button button button-outline"> Apply Now </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    <!-- End of List view -->
 
 {% endblock content %}
-
