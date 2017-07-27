@@ -7,6 +7,7 @@ from .models import Event
 from .models import Story
 
 from .forms import TrackForm
+from .forms import EventForm
 from .forms import StoryForm
 
 
@@ -113,30 +114,21 @@ def event_delete(request, id):
         event.delete()
     return redirect('event_list')
 
-
-
-
-
 # Story views
 def story_list(request):
     stories = Story.objects.all()
     return render(request, 'story/list.html', {'stories': stories})
 
-def story_detail(request, id):
-    story = get_object_or_404(Story, id=id)
-    return render(request, 'story/detail.html', {'story':story})
-
 def story_new(request):
     if request.method == 'POST':
         form = StoryForm(request.POST)
         if form.is_valid():
-            track = form.save()
+            story = form.save()
             return redirect('story_list')
 
     elif request.method == 'GET':
-        form = TrackForm()
-    else:
-        print('nu știu ce vrei de la mine')
+        form = StoryForm()
+        
     return render(request, 'story/edit.html', {'form': form})
 
 def story_edit(request, id):
@@ -145,9 +137,9 @@ def story_edit(request, id):
         form = StoryForm(instance=story)
 
     elif request.method == 'POST':
-        form = StoryForm(request.POST, instance=track)
+        form = StoryForm(request.POST, instance=story)
         if form.is_valid():
-            track = form.save()
+            story = form.save()
             return redirect('story_list')
 
     return render(request, 'story/edit.html', {'form': form})
