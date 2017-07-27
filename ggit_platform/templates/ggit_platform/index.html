@@ -51,36 +51,19 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 
 	<div class="container">
 		<div class="row">
-			<div class="column"> 
-				<div class="track-preview"> 
-					<img src="{% static 'ggit_platform/img/track/web.png' %}" alt="Mac IOS"> 
-					<h4>Web Development</h4>
-					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua.  </p>
-						<a href="#" > read more</a>
+			{% for track in tracks %}
+				<div class="column"> 
+					<div class="track-preview"> 
+						<img src="{{ track.icon }}" alt="Track icon image"> 
+						<h4>{{ track.title }}</h4>
+						<p> {{ track.short_description}}  </p>
+						<a href="#"> read more</a>
 					</div>
 				</div> 
-				<div class="column">
-					<div class="track-preview">
-						<img src="{% static 'ggit_platform/img/track/3d-printing.png' %}" alt="Rocket"> 
-						<h4>3D Printing</h4>
-						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua.  </p>
-							<a href="#" > read more</a>
-						</div>
-					</div>
-					<div class="column">
-						<div class="track-preview">
-							<img src="{% static 'ggit_platform/img/track/robotics.png' %}" alt="Robo"> 
-							<h4>Robotics</h4>
-							<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua.  </p>
-								<a href="#" > read more</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			{% endfor %}
+		</div>
+	</div>
+</section>
 			<!-- End of Tracks -->
 
 			<!-- Regions -->
