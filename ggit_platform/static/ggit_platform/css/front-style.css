@@ -91,6 +91,7 @@ a.logo {
 /* Hero */
 .hero {
 	position: relative;
+	background-image: url("../img/hero/home.jpg");
 	background-size: cover;
 	background-position: center;
 }
@@ -290,21 +291,26 @@ a.logo {
 /* End of Regions Preview */
 
 /* Region Button */
-.region-button {
+.cta {
 	text-align: center;
 }
 
-.region-button .button {
+.cta-white {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.cta .button {
 	border-color: #d74078;
 	color:  #d74078;
 	border-radius: 0;
 }
 
-.region-button span {
+.cta span {
 	font-weight: 900;
 }
 
-.region-button p {
+.cta p {
 	text-align: center;
 	font-size: 15px;
 	font-weight: normal;
@@ -387,73 +393,6 @@ a.logo {
 }
 /* Ends of Event preview */
 
-/* List View */
-.list-view {
-	margin-bottom: 40px;
-}
-
-.list-view .row {
-	align-items: center;
-}
-
-.list-view .content {
-	padding-left: 20px;
-}
-
-.list-view .preview {
-	display: block;
-	line-height: 0;
-}
-
-.list-view h6 {
-	font-size: 14px;
-	color: #979797;
-	letter-spacing: 0.7px;
-	margin-bottom: 0;
-}
-
-.list-view h3 {
-	font-size: 27px;
-	font-weight: bold;
-	letter-spacing: 1px;
-	line-height: 1.5;
-	letter-spacing: 0.9;
-	color: black;	
-}
- 
-.list-view p {
-	font-size: 16px;
-	color: black;
-	line-height: 1.5;
-	letter-spacing: 0.9;
-}
-
-.list-view .button {
-	color: #D74078;
-	border-color: #D74078;
-}
-
-.list-view:last-child {
-   	margin-bottom: 0;
-}
-
-@media screen and (max-width: 639px) {
-    .list-view .content {
-        padding-left: 0px;
-    }
-
-    .list-view .column.column-40, .list-view .column.column-60 {
-    	width: 100%;
-    	max-width: 100%;
-    }
-
-    .list-view .preview {
-    	margin-bottom: 20px;
-    }
-}
-
-/* End of List view */
-
 /* Partners */
 .partners .row {
 	align-items: center;
@@ -522,3 +461,176 @@ a.logo {
 	font-size: 15px;
 }
 /* End of Footer */
+
+/* Article */
+
+.article {
+	font-size: 20px;
+	color: #5d5d5d;
+	font-weight: normal;
+	line-height: 1.75;
+	padding: 0 20px;
+}
+
+.article h1,
+.article h2,
+.article h3 {
+	font-weight: bold;
+}
+
+.article img {
+	display: block;
+	margin-bottom: 2.5rem;
+	max-width: 100%;
+	height: auto;
+}
+
+.article a {
+	color: #D74078;
+}
+
+/* End of Article */
+
+/* List View */
+.list-view {
+	margin-bottom: 40px;
+}
+
+.list-view .row {
+	align-items: center;
+}
+
+.list-view .content {
+	padding-left: 20px;
+}
+
+.list-view .preview {
+	display: block;
+	line-height: 0;
+}
+
+.list-view h6 {
+	font-size: 14px;
+	color: #979797;
+	letter-spacing: 0.7px;
+	margin-bottom: 0;
+}
+
+.list-view h3 {
+	font-size: 27px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	line-height: 1.5;
+	letter-spacing: 0.9;
+	color: black;	
+}
+ 
+.list-view p {
+	font-size: 16px;
+	color: black;
+	line-height: 1.5;
+	letter-spacing: 0.9;
+}
+
+.list-view .button {
+	color: #D74078;
+	border-color: #D74078;
+}
+
+.list-view:last-child {
+   	margin-bottom: 0;
+}
+
+@media screen and (max-width: 639px) {
+    .list-view .content {
+        padding-left: 0px;
+    }
+
+    .list-view .column.column-40, .list-view .column.column-60 {
+    	width: 100%;
+    	max-width: 100%;
+    }
+
+    .list-view .preview {
+    	margin-bottom: 20px;
+    }
+}
+
+/* End of List view */
+
+/* Member */
+
+.member {
+	letter-spacing: 0.5px;
+	text-align: center;
+	margin-bottom: 25px;
+}
+.member img {
+	max-width: 100%;
+	margin-bottom: 10px;
+}
+
+.member h3 {
+	font-weight: bold;
+	font-size: 18px;
+	color: black;
+	margin-bottom: 10px;
+}
+
+.member h6 {
+	font-size: 14px;
+	color: #979797;
+	margin-bottom: 0;
+}
+
+@media screen and (max-width: 850px) {
+	.members .row {
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+	.members  .column {
+		width: 50%;
+		padding-left: 10px; 
+		padding-right: 10px;
+	}
+}
+
+@media screen and (max-width: 530px) {
+	.members  .column {
+		width: 100%;
+	}
+}
+
+/* End of Member */
+
+/* About region */
+
+.about-region  {
+	font-size: 20px;
+	line-height: 1.75;
+	color: #868686;
+	text-align: center;
+	padding-top: 150px;
+	padding-bottom: 150px;
+	display: block;
+	margin: 0 auto;	
+	max-width: 900px;
+}
+
+@media screen and (max-width: 800px ) {
+	.about-region {
+		font-size: 18px;
+		padding-top: 60px; 
+		padding-bottom: 60px ;
+	}
+}
+
+@media screen and (max-width: 500px ) {
+	.about-region {
+		font-size: 15px;
+		padding-bottom: 40px; 
+		padding-top: 40px ;
+	}
+}
+
+/* End of about region */
