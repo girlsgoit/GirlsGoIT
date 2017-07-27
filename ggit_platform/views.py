@@ -31,6 +31,12 @@ def index(request):
         }
     return render(request, 'ggit_platform/index.html', params)
 
+
+def track_detail(request, id):
+	track = get_object_or_404(Track, id=id)
+	return render(request, 'track/detail.html', {'track': track})
+
+
 # Index page
 def admin_index(request):
     return redirect('region_list')

@@ -57,7 +57,7 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 						<img src="{{ track.icon }}" alt="Track icon image"> 
 						<h4>{{ track.title }}</h4>
 						<p> {{ track.short_description}}  </p>
-						<a href="#"> read more</a>
+						<a href="{% url 'track_detail' id=track.id %}"> read more</a>
 					</div>
 				</div> 
 			{% endfor %}
