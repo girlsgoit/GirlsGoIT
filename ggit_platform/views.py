@@ -1,10 +1,13 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import Track
 from .models import Member
 from .models import Region
 from .models import Event
 from .models import Story
+
+from .forms import TrackForm
+
 
 # Index page
 def index(request):
@@ -15,9 +18,42 @@ def track_list(request):
     tracks = Track.objects.all()
     return render(request, 'track/list.html', {'tracks': tracks})
 
-def track_detail(request, id):
+
+def track_new(request):
+    if request.method == 'POST':
+        form = TrackForm(request.POST)
+        if form.is_valid():
+            track = form.save()
+            return redirect('track_list')
+
+    elif request.method == 'GET':
+        form = TrackForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'track/edit.html', {'form': form})
+
+
+def track_edit(request, id):
     track = get_object_or_404(Track, id=id)
-    return render(request, 'track/detail.html', {'track': track})
+    if request.method == 'GET':
+        form = TrackForm(instance=track)
+
+    elif request.method == 'POST':
+        form = TrackForm(request.POST, instance=track)
+        if form.is_valid():
+            track = form.save()
+            return redirect('track_list')
+
+    return render(request, 'track/edit.html', {'form': form})
+
+
+def track_delete(request, id):
+    track = get_object_or_404(Track, id=id)
+    if request.method == 'POST':
+        track.delete()
+
+    return redirect('track_list')
+
 
 # Region views
 def region_list(request):
