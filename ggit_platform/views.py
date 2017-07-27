@@ -21,12 +21,13 @@ def index(request):
     now = datetime.datetime.now()
     last_event = Event.objects.filter(end_date__lt=now).order_by('-end_date').first()
     upcoming_event = Event.objects.filter(start_date__lt=now).order_by('start_date').first()
-    last_stories = Story.objects.filter(create_date__gte=now).order_by('-create_date')[:5]
+    last_stories = Story.objects.all().order_by('-create_date')[:5]
     params = {
         'regions': regions, 
         'tracks': tracks, 
         'last_event': last_event,
-        'upcoming_event': upcoming_event
+        'upcoming_event': upcoming_event,
+        'last_stories': last_stories,
         }
     return render(request, 'ggit_platform/index.html', params)
 
