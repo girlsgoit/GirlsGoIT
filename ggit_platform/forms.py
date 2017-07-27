@@ -1,7 +1,7 @@
 from django import forms
-from .models import Track
-from .models import Region
+from markdownx.fields import MarkdownxFormField
 
+from .models import Track
 from .models import Member 
 from .models import Event
 from .models import Story
@@ -22,6 +22,7 @@ class MemberForm(forms.ModelForm):
 
 
 class EventForm(forms.ModelForm):
+    long_description = MarkdownxFormField()
 
     class Meta:
         model = Event

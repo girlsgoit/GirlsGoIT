@@ -53,10 +53,10 @@ class Event(models.Model):
     thumbnail_image = models.CharField(max_length=200)
     hero_image = models.CharField(max_length=200)
     aplly_form = models.CharField(max_length=200)
-    long_description = MarkdownxField()
     application_start_date = models.DateTimeField(null=True, blank=True)
     application_end_date = models.DateTimeField(null=True, blank=True)
     region = models.ForeignKey(Region, null=True, blank=True)
+    long_description = MarkdownxField()
 
     def __str__(self):
         return self.title
