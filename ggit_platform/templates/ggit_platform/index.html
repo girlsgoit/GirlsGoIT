@@ -1,2 +1,209 @@
-{% extends "ggit_platform/base_admin.html" %}
+{% extends "ggit_platform/base_front.html" %}
+{% load staticfiles %}
 
+{% block headtitle %}
+Home page
+{% endblock headtitle %}
+
+{% block pretitle %}
+<p class="date">26 JULY 2017</p>
+{% endblock pretitle %}
+
+{% block title %}
+Summer Engineering and Technology Camp for Girls
+{% endblock title %}
+
+{% block subtitle %}
+Leverage agile frameworks to provide a robust synopsis for high level overviews
+{% endblock subtitle %}
+
+{% block heroimage %}
+{% static "ggit_platform/img/hero/home.jpg" %}
+{% endblock heroimage %}
+
+{% block content %}
+<!-- About -->
+<section class="section-wide about">
+	<div class="container">
+		<div class="row">
+			<div class="column">
+				<h2>About GGIT</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- End of About -->
+
+<!-- Tracks -->
+<section class="section section-gray">
+	<header class="section-title">
+		<h2>Tracks</h2>
+		<p>
+			Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
+		</p>
+	</header>
+
+	<div class="container">
+		<div class="row">
+			<div class="column"> 
+				<div class="track-preview"> 
+					<img src="{% static 'ggit_platform/img/track/web.png' %}" alt="Mac IOS"> 
+					<h4>Web Development</h4>
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.  </p>
+						<a href="#" > read more</a>
+					</div>
+				</div> 
+				<div class="column">
+					<div class="track-preview">
+						<img src="{% static 'ggit_platform/img/track/3d-printing.png' %}" alt="Rocket"> 
+						<h4>3D Printing</h4>
+						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut labore et dolore magna aliqua.  </p>
+							<a href="#" > read more</a>
+						</div>
+					</div>
+					<div class="column">
+						<div class="track-preview">
+							<img src="{% static 'ggit_platform/img/track/robotics.png' %}" alt="Robo"> 
+							<h4>Robotics</h4>
+							<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua.  </p>
+								<a href="#" > read more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End of Tracks -->
+
+			<!-- Regions -->
+			<section class="regions section">
+				<header class="section-title">
+					<h2>
+						Regions
+					</h2>
+					<p>
+						Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
+					</p>
+				</header>
+
+				<div class="container">
+					<div class="row">
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/1.jpg' %}">
+								<h3>Rezina</h3>
+							</a>
+						</div>
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/2.jpg' %}">
+								<h3>Ștefan Vodă</h3>
+							</a>
+						</div>
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/3.jpg' %}">
+								<h3>Comrat</h3>
+							</a>
+						</div>
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/4.jpg' %}">
+								<h3>Sălcuța</h3>
+							</a>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/5.jpg' %}">
+								<h3>Strășeni</h3>
+							</a>
+						</div>
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/6.jpg' %}">
+								<h3>Orhei</h3>
+							</a>
+						</div>
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/7.jpg' %}">
+								<h3>Chișinău</h3>
+							</a>
+						</div>
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/8.jpg' %}">
+								<h3>Ungheni</h3>
+							</a>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="column">
+							<!-- Region Button -->
+							<div class="region-button">
+								<p>Haven't seen your region in the list</p>
+								<a class="button button-outline" href="#">Bring <span>GilsGoIt</span> to your region</a>
+							</div>
+							<!-- Region Button -->
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- End of Regions -->
+
+			<!-- Events -->
+			<section class="events section">
+				<header class="section-title">
+					<h2>Events</h2>
+					<p>
+						Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
+					</p>
+				</header>
+
+				<div class="container">
+					<div class="row">
+						<div class="column">
+							<article class="event-preview">
+								<div class="thumb">
+									<img src="{% static 'ggit_platform/img/event preview/bootcamp.jpg' %}">
+									<div class="overlay">
+										<h3>BOOTCAMP</h3>
+									</div>
+								</div>
+								<div class="details clearfix">
+									<h5 class="date float-left">24 May 2017</h5>
+									<h5 class="type float-right">Event ended</h5>
+								</div>
+							</article>
+						</div>
+						<div class="column">
+							<article class="event-preview">
+								<div class="thumb">
+									<img src="{% static 'ggit_platform/img/event preview/summercamp.jpg' %}">
+									<div class="overlay">
+										<h3>SUMMERCAMP</h3>
+									</div>
+								</div>
+								<div class="details clearfix">
+									<h5 class="date float-left">31 July 2015</h5>
+									<h5 class="type float-right">Upcomming event</h5>
+								</div>
+							</article>
+						</div>
+					</div>
+				</div>	
+			</section>
+			<!-- End of Events -->
+			{% endblock content %}

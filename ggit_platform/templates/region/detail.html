@@ -1,8 +1,10 @@
 {% extends  "ggit_platform/base_admin.html" %}
 
-{% block title %}
-<h1>Regiunea {{ region.name }}</h1>
-{% endblock title %}
+<h1>
+    {% block title %}
+        Regiunea {{ region.name }}
+    {% endblock title %}
+</h1>
 
 {% block content %}
 
@@ -58,7 +60,7 @@
 
 
 
-<h1>Event-urile din {{ region.name }}</h1>
+<h1>Evenimente din {{ region.name }}</h1>
 
 <a class="button button-outline float-right" href="{% url 'event_new' %}">Adaugă Event</a>
 

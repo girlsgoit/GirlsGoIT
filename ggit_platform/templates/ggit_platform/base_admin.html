@@ -14,7 +14,7 @@
   <!-- Milligram CSS -->
   <link rel="stylesheet" href="{% static 'ggit_platform/css/milligram.css' %}">
 
-  <link rel="stylesheet" href="{% static 'ggit_platform/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'ggit_platform/css/admin-style.css' %}">
 </head>
 <body>
 
@@ -33,8 +33,8 @@
               <li><a href="{% url 'member_list' %}">Members</a></li>
               <li><a href="{% url 'story_list' %}">Stories</a></li>
               <li><a href="{% url 'event_list' %}">Events</a></li>
-              <li><a href="#">Sign out</a></li>
               <li><a href="{% url 'track_list' %}" class="active">Tracks</a></li>
+              <li><a href="#">Sign out</a></li>
             </ul>
           </nav>
         </div>
