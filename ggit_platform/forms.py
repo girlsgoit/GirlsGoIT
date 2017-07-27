@@ -23,7 +23,13 @@ class EventForm(forms.ModelForm):
         model = Event
         fields = '__all__'
 
+class RegionForm(forms.ModelForm):
 
+    class Meta:
+        model = Region
+        fields = '__all__'
+
+        
 
 class StoryForm(forms.ModelForm):
 
