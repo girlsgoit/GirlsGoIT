@@ -8,6 +8,8 @@ from .models import Story
 
 from .forms import TrackForm
 from .forms import MemberForm
+from .forms import EventForm
+from .forms import StoryForm
 
 
 # Index page
@@ -65,6 +67,41 @@ def region_detail(request, id):
     region = get_object_or_404(Region, id=id)
     return render(request, 'region/detail.html', {'region' : region})
 
+def region_new(request):
+    if request.method == 'POST':
+        form = RegionForm(request.POST)
+        if form.is_valid():
+            region = form.save()
+            return redirect('region_list')
+
+    elif request.method == 'GET':
+        form = RegionForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'region/edit.html', {'form': form})
+
+
+def region_edit(request, id):
+    region = get_object_or_404(Region, id=id)
+    if request.method == 'GET':
+        form = RegionForm(instance=region)
+
+    elif request.method == 'POST':
+        form = RegionForm(request.POST, instance=region)
+        if form.is_valid():
+            region = form.save()
+            return redirect('region_list')
+
+    return render(request, 'region/edit.html', {'form': form})
+
+
+def region_delete(request, id):
+    region = get_object_or_404(Region, id=id)
+    if request.method == 'POST':
+        region.delete()
+
+    return redirect('region_list')
+
 # Member views
 def member_list(request):
     members = Member.objects.all()
@@ -110,13 +147,44 @@ def member_delete(request, id):
     return redirect('member_list')
 
 # Event views
+
+
 def event_list(request):
     events= Event.objects.all()
     return render(request, 'event/list.html', {'events':events})
 
-def event_detail(request, id):
+
+def event_new(request):
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            event = form.save()
+            return redirect('event_list')
+
+    elif request.method == 'GET':
+        form = EventForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'event/edit.html', {'form': form})
+
+def event_edit(request, id):
     event = get_object_or_404(Event, id=id)
-    return render(request, 'event/detail.html', {'event':event})
+    if request.method == 'GET':
+        form = EventForm(instance=event)
+
+    elif request.method == 'POST':
+        form = EventForm(request.POST, instance=event)
+        if form.is_valid():
+            event = form.save()
+            return redirect('event_list')
+
+    return render(request, 'event/edit.html', {'form': form})
+
+def event_delete(request, id):
+    event = get_object_or_404(Event, id=id)
+    if request.method == 'POST':
+        event.delete()
+    return redirect('event_list')
 
 # Story views
 def story_list(request):
@@ -126,3 +194,36 @@ def story_list(request):
 def story_detail(request, id):
     story = get_object_or_404(Story, id=id)
     return render(request, 'story/detail.html', {'story':story})
+
+def story_new(request):
+    if request.method == 'POST':
+        form = StoryForm(request.POST)
+        if form.is_valid():
+            track = form.save()
+            return redirect('story_list')
+
+    elif request.method == 'GET':
+        form = StoryForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'story/edit.html', {'form': form})
+
+def story_edit(request, id):
+    story = get_object_or_404(Story, id=id)
+    if request.method == 'GET':
+        form = StoryForm(instance=story)
+
+    elif request.method == 'POST':
+        form = StoryForm(request.POST, instance=story)
+        if form.is_valid():
+            track = form.save()
+            return redirect('story_list')
+
+    return render(request, 'story/edit.html', {'form': form})
+
+def story_delete(request, id):
+    story = get_object_or_404(Story, id=id)
+    if request.method == 'POST':
+        story.delete()
+
+    return redirect('story_list')

@@ -6,7 +6,7 @@ Administrare Istorii
 
 {% block content %}
 <h1>Istorii</h1>
-
+<a class="button button-outline float-right" href="{% url 'story_new' %}">Adaugă Bloc</a>
 <table>
   <thead>
     <tr>
@@ -19,14 +19,15 @@ Administrare Istorii
   <tbody>
     {% for story in stories %}
     <tr>
-      <td><a href="{% url 'story_detail' id=story.id %}">{{ story.title }}</a></td>
+      <td><a href="{% url 'story_edit' id=story.id %}">{{ story.title }}</a></td>
       <td>
         {% if story.region %} 
-        <a href="{% url 'region_detail' id=story.region.id %}">{{ story.region }}</a>
+        <a href="{% url 'region_edit' id=story.region.id %}">{{ story.region }}</a>
         {% endif %}
       </td>
+      <form method="POST" action="{% url 'story_delete' id=story.id %}">{% csrf_token %}
       <td>{{ story.create_date }}</td>
-      <td><a class="button button-outline" href="#">Șterge</a></td>
+      <td><a class="button button-outline" type='submit'>Șterge</a></td>
     </tr>
     {% endfor %}
   </tbody>
