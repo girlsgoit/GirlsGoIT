@@ -184,7 +184,9 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 					<div class="details clearfix">
 						<h5 class="date float-left">{{ upcoming_event.start_date }}</h5>
 						<h5 class="type float-right">{{ upcoming_event.end_date }}</h5>
+						{% if upcoming_event.short_description > 100 %}
 						<a href="{% url 'event_detail' id=upcoming_event.id %}">Mai mult</a>
+						{% endif %}
 					</div>
 				</article>
 			</div>
@@ -218,14 +220,12 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 						<p>
 							{{ story.short_description }}
 						</p>
-						<a href="#" class="button button button-outline"> Apply Now </a>
+							<a href="{% url 'views.story_detail' %}" class="button button button-outline"> Mai Mult </a>
 					</div>
 				</div>
 				{% endfor %}
 			</div>
-		</article>
-		
-		
+		</article>		
 	</div>
 </section>
 <!-- End of latest stories -->
