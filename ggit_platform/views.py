@@ -121,8 +121,6 @@ def member_new(request):
 
     elif request.method == 'GET':
         form = MemberForm()
-    else:
-        print('nu știu ce vrei de la mine')
     return render(request, 'member/edit.html', {'form': form})
 
 
