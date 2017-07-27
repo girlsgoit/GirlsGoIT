@@ -9,6 +9,7 @@ from .models import Story
 from .forms import TrackForm
 from .forms import EventForm
 from .forms import StoryForm
+from .forms import RegionForm
 
 
 # Index page
@@ -163,7 +164,7 @@ def story_new(request):
     if request.method == 'POST':
         form = StoryForm(request.POST)
         if form.is_valid():
-            track = form.save()
+            story = form.save()
             return redirect('story_list')
 
     elif request.method == 'GET':
@@ -180,7 +181,7 @@ def story_edit(request, id):
     elif request.method == 'POST':
         form = StoryForm(request.POST, instance=story)
         if form.is_valid():
-            track = form.save()
+            story = form.save()
             return redirect('story_list')
 
     return render(request, 'story/edit.html', {'form': form})
