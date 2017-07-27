@@ -14,7 +14,9 @@ urlpatterns = [
     url(r'^tracks/(?P<id>\d+)/delete/$', views.track_delete, name='track_delete'),
 
     url(r'^regions/$', views.region_list, name='region_list'),
-    url(r'^regions/(?P<id>\d+)/$', views.region_detail, name='region_detail'),
+    url(r'^regions/new/$', views.region_new, name='region_new'),    
+    url(r'^regions/(?P<id>\d+)/edit/$', views.region_edit, name='region_edit'),
+    url(r'^regions/(?P<id>\d+)/delete/$', views.region_delete, name='region_delete'),
 
     url(r'^members/$', views.member_list, name='member_list'),
     url(r'^members/(?P<id>\d+)/$', views.member_detail, name='member_detail'),
