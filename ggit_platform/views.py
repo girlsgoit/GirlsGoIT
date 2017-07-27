@@ -15,7 +15,7 @@ from .forms import RegionForm
 
 # Index page
 def index(request):
-    return render(request, 'ggit_platform/index.html')
+    return redirect('region_list')
 
 # Track views
 def track_list(request):
@@ -32,8 +32,6 @@ def track_new(request):
 
     elif request.method == 'GET':
         form = TrackForm()
-    else:
-        print('nu știu ce vrei de la mine')
     return render(request, 'track/edit.html', {'form': form})
 
 
@@ -77,8 +75,6 @@ def region_new(request):
 
     elif request.method == 'GET':
         form = RegionForm()
-    else:
-        print('nu știu ce vrei de la mine')
     return render(request, 'region/edit.html', {'form': form})
 
 
@@ -121,8 +117,6 @@ def member_new(request):
 
     elif request.method == 'GET':
         form = MemberForm()
-    else:
-        print('nu știu ce vrei de la mine')
     return render(request, 'member/edit.html', {'form': form})
 
 
@@ -164,8 +158,6 @@ def event_new(request):
 
     elif request.method == 'GET':
         form = EventForm()
-    else:
-        print('nu știu ce vrei de la mine')
     return render(request, 'event/edit.html', {'form': form})
 
 def event_edit(request, id):
