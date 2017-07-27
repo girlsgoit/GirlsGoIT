@@ -5,7 +5,6 @@ from .models import Member
 from .models import Region
 from .models import Event
 from .models import Story
-
 from .forms import TrackForm
 from .forms import MemberForm
 from .forms import EventForm
@@ -22,12 +21,13 @@ def index(request):
     now = datetime.datetime.now()
     last_event = Event.objects.filter(end_date__lt=now).order_by('-end_date').first()
     upcoming_event = Event.objects.filter(start_date__lt=now).order_by('start_date').first()
-    last_stories = Story.objects.filter(create_date__gte=now).order_by('-create_date')[:5]
+    last_stories = Story.objects.all().order_by('-create_date')[:5]
     params = {
         'regions': regions, 
         'tracks': tracks, 
         'last_event': last_event,
-        'upcoming_event': upcoming_event
+        'upcoming_event': upcoming_event,
+        'last_stories': last_stories,
         }
     return render(request, 'ggit_platform/index.html', params)
 
@@ -88,7 +88,7 @@ def region_list(request):
 
 def region_detail(request, id):
     region = get_object_or_404(Region, id=id)
-    return render(request, 'region/detail.html', {'region' : region})
+    return render(request, 'region/admin_detail.html', {'region' : region})
 
 def region_new(request):
     if request.method == 'POST':
@@ -130,7 +130,7 @@ def member_list(request):
 
 def member_detail(request, id):
     member = get_object_or_404(Member, id=id)
-    return render(request, 'member/detail.html', {'member': member})
+    return render(request, 'member/admin_detail.html', {'member': member})
 
 def member_new(request):
     if request.method == 'POST':
@@ -203,6 +203,8 @@ def event_delete(request, id):
         event.delete()
     return redirect('event_list')
 
+
+
 # Story views
 def story_list(request):
     stories = Story.objects.all()
@@ -239,3 +241,7 @@ def story_delete(request, id):
         story.delete()
 
     return redirect('story_list')
+
+def story_detail(request, id):
+    story = get_object_or_404(Story, id=id)
+    return render(request, 'story/detail.html', {'story' : story})

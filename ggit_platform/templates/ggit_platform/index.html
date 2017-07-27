@@ -79,63 +79,21 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 
 				<div class="container">
 					<div class="row">
+					{% for region in regions %}
 						<div class="column region-column">
 							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/1.jpg' %}">
-								<h3>Rezina</h3>
+								<img src="{{ region.thumbnail_image }}">
+								<h3>{{ region.name }}</h3>
 							</a>
 						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/2.jpg' %}">
-								<h3>Ștefan Vodă</h3>
-							</a>
+					{% endfor %}
 						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/3.jpg' %}">
-								<h3>Comrat</h3>
-							</a>
-						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/4.jpg' %}">
-								<h3>Sălcuța</h3>
-							</a>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/5.jpg' %}">
-								<h3>Strășeni</h3>
-							</a>
-						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/6.jpg' %}">
-								<h3>Orhei</h3>
-							</a>
-						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/7.jpg' %}">
-								<h3>Chișinău</h3>
-							</a>
-						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/8.jpg' %}">
-								<h3>Ungheni</h3>
-							</a>
-						</div>
-					</div>
+				</div>
 
 					<div class="row">
 						<div class="column">
 							<!-- Region Button -->
-							<div class="region-button">
+							<div class="cta">
 								<p>Haven't seen your region in the list</p>
 								<a class="button button-outline" href="#">Bring <span>GilsGoIt</span> to your region</a>
 							</div>
@@ -167,8 +125,8 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 									</div>
 								</div>
 								<div class="details clearfix">
-									<h5 class="date float-left">{{ start_date.start_date }}</h5>
-									<h5 class="type float-right">{{ end_date.end_date }}</h5>
+									<h5 class="date float-left">{{ last_event.start_date }}</h5>
+									<h5 class="type float-right">{{ last_event.end_date }}</h5>
 								</div>
 							</article>
 						</div>
@@ -182,8 +140,8 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 									</div>
 								</div>
 								<div class="details clearfix">
-									<h5 class="date float-left">{{ start_date.start_date }}</h5>
-									<h5 class="type float-right">{{ end_date.end_date }}</h5>
+									<h5 class="date float-left">{{ upcoming_event.start_date }}</h5>
+									<h5 class="type float-right">{{ upcoming_event.end_date }}</h5>
 								</div>
 							</article>
 						</div>
@@ -203,7 +161,7 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 		<div class="container">
 			<article class="list-view">
 				<div class="row">
-					{% for story in stories %}
+					{% for story in last_stories %}
 					<div class="column column-40" >
 						<a class="story-preview" href="#">
 							<img src="{{ story.thumbnail_image }}" alt="Story thumbnail_image image">
@@ -218,7 +176,7 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 							<p>
 							{{ story.short_description }}
 							</p>
-							<a href="#" class="button button button-outline"> Apply Now </a>
+							<a href="#" class="button button button-outline"> Read More </a>
 						</div>
 					</div>
 					{% endfor %}
