@@ -7,6 +7,7 @@ from .models import Event
 from .models import Story
 
 from .forms import TrackForm
+from .forms import StoryForm
 
 
 # Index page
@@ -124,3 +125,36 @@ def story_list(request):
 def story_detail(request, id):
     story = get_object_or_404(Story, id=id)
     return render(request, 'story/detail.html', {'story':story})
+
+def story_new(request):
+    if request.method == 'POST':
+        form = StoryForm(request.POST)
+        if form.is_valid():
+            track = form.save()
+            return redirect('story_list')
+
+    elif request.method == 'GET':
+        form = TrackForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'story/edit.html', {'form': form})
+
+def story_edit(request, id):
+    story = get_object_or_404(Story, id=id)
+    if request.method == 'GET':
+        form = StoryForm(instance=story)
+
+    elif request.method == 'POST':
+        form = StoryForm(request.POST, instance=track)
+        if form.is_valid():
+            track = form.save()
+            return redirect('story_list')
+
+    return render(request, 'story/edit.html', {'form': form})
+
+def story_delete(request, id):
+    story = get_object_or_404(Story, id=id)
+    if request.method == 'POST':
+        story.delete()
+
+    return redirect('story_list')
