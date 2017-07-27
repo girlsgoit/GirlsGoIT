@@ -5,7 +5,6 @@ from .models import Member
 from .models import Region
 from .models import Event
 from .models import Story
-
 from .forms import TrackForm
 from .forms import MemberForm
 from .forms import EventForm

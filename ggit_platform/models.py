@@ -68,8 +68,7 @@ class Story(models.Model):
     create_date = models.DateTimeField(default=timezone.now)
     thumbnail_image = models.CharField(max_length=200)
     subtitle = models.CharField(max_length=200)
-    long_description = MarkdownxField()
     region = models.ForeignKey(Region, blank=True, null=True)
-
+    long_description = MarkdownxField()
     def __str__(self):
         return self.title
