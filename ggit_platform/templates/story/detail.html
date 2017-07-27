@@ -1,1 +1,21 @@
-{% extends "ggit_platform/base_admin.html" %}
+{% extends "ggit_platform/base_front.html" %}
+
+{% block title %}
+{{ story.title }}
+{% endblock title %}
+
+{% block subtitle %}
+{{ story.subtitle}}
+{% endblock subtitle %}
+
+
+{% block long_descriprion %}
+{{ story.long_descriprion }}
+{% endblock long_descriprion %}
+
+{% block heroimage %}
+{{ story.heroimage}}
+{% endblock heroimage %}
+
+{% block content %}
+{% endblock content%}
