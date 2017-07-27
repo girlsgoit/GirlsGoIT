@@ -27,8 +27,8 @@ urlpatterns = [
     url(r'^regions/(?P<id>\d+)/edit/$', views.region_edit, name='region_edit'),
     url(r'^regions/(?P<id>\d+)/delete/$', views.region_delete, name='region_delete'),
 
-    url(r'^tracks/(?P<id>\d+)/detail/$', views.track_detail, name='track_detail'),
-    url(r'^events/(?P<id>\d+)/detail/$', views.event_detail, name='event_detail'),
+    url(r'^tracks/(?P<id>\d+)/$', views.track_detail, name='track_detail'),
+    url(r'^events/(?P<id>\d+)/$', views.event_detail, name='event_detail'),
 
 
 
