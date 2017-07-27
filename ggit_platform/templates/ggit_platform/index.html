@@ -77,72 +77,31 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 		</p>
 	</header>
 
+
 	<div class="container">
 		<div class="row">
+			{% for region in regions %}
 			<div class="column region-column">
-				<a href="#" class="region-preview">
-					<img src="{% static 'ggit_platform/img/region/1.jpg' %}">
-					<h3>Rezina</h3>
+				<a href="{% url 'region_detail' id=region.id %}" class="region-preview">
+					<img src="{{ region.thumbnail_image }}">
+					<h3>{{ region.name }}</h3>
 				</a>
 			</div>
-			<div class="column region-column">
-				<a href="#" class="region-preview">
-					<img src="{% static 'ggit_platform/img/region/2.jpg' %}">
-					<h3>Ștefan Vodă</h3>
-				</a>
-			</div>
-			<div class="column region-column">
-				<a href="#" class="region-preview">
-					<img src="{% static 'ggit_platform/img/region/3.jpg' %}">
-					<h3>Comrat</h3>
-				</a>
-			</div>
-			<div class="column region-column">
-				<a href="#" class="region-preview">
-					<img src="{% static 'ggit_platform/img/region/4.jpg' %}">
-					<h3>Sălcuța</h3>
-				</a>
-			</div>
+			{% endfor %}
 		</div>
-
 		<div class="row">
-			<div class="column region-column">
-				<a href="#" class="region-preview">
-					<img src="{% static 'ggit_platform/img/region/5.jpg' %}">
-					<h3>Strășeni</h3>
-				</a>
+		<div class="column">
+			<!-- Region Button -->
+			<div class="region-button">
+				<p>Haven't seen your region in the list</p>
+				<a class="button button-outline" href="#">Bring <span>GilsGoIt</span> to your region</a>
 			</div>
-			<div class="column region-column">
-				<a href="#" class="region-preview">
-					<img src="{% static 'ggit_platform/img/region/6.jpg' %}">
-					<h3>Orhei</h3>
-				</a>
-			</div>
-			<div class="column region-column">
-				<a href="#" class="region-preview">
-					<img src="{% static 'ggit_platform/img/region/7.jpg' %}">
-					<h3>Chișinău</h3>
-				</a>
-			</div>
-			<div class="column region-column">
-				<a href="#" class="region-preview">
-					<img src="{% static 'ggit_platform/img/region/8.jpg' %}">
-					<h3>Ungheni</h3>
-				</a>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="column">
-				<!-- Region Button -->
-				<div class="region-button">
-					<p>Haven't seen your region in the list</p>
-					<a class="button button-outline" href="#">Bring <span>GilsGoIt</span> to your region</a>
-				</div>
-				<!-- Region Button -->
-			</div>
+			<!-- Region Button -->
 		</div>
 	</div>
+	</div>
+
+</div>
 </section>
 <!-- End of Regions -->
 
@@ -220,7 +179,7 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 						<p>
 							{{ story.short_description }}
 						</p>
-							<a href="{% url 'views.story_detail' %}" class="button button button-outline"> Mai Mult </a>
+						<a href="{% url 'views.story_detail' %}" class="button button button-outline"> Mai Mult </a>
 					</div>
 				</div>
 				{% endfor %}

@@ -29,12 +29,7 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
             <div class="row">
                 <div class="column">
                     <p class="about-region"> 
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        {{ region.description }}
                     </p>
                 </div>
             </div>
@@ -64,49 +59,19 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
         <div class="container">
             <div class="row">
                 <div class="column">
+                    {% for member in members %}
                     <div class="member">
                         <a href="#"> 
-                            <img src="static/img/members/1.jpg"> 
-                            <h3> Jamie Price </h3>
+                            <img src="{{ member.photo }}"> 
+                            <h3> {{ member.name }} {{ member.surname }} </h3>
                         </a>
                         <h6>
-                            Ambasador
+                            {{ member.role }}
                         </h6>
                     </div>
+                    {% endfor %}
                 </div>
-                <div class="column">
-                    <div class="member">
-                        <a href="#"> 
-                            <img src="static/img/members/2.jpg"> 
-                            <h3> Brandie Stone </h3>
-                        </a>
-                        <h6>
-                            Ambasador
-                        </h6>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="member">
-                        <a href="#"> 
-                            <img src="static/img/members/3.jpg"> 
-                            <h3> Bessie Patterson </h3>
-                        </a>
-                        <h6>
-                            Ambasador
-                        </h6>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="member">
-                        <a href="#"> 
-                            <img src="static/img/members/4.jpg"> 
-                            <h3> Regina Walters </h3>
-                        </a>
-                        <h6>
-                            Ambasador
-                        </h6>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -131,76 +96,28 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
         <!-- End of Section title -->
         <div class="container">
             <article class="list-view">
+                {% for event in events  %}
                 <div class="row">
                     <div class="column column-40" >
+                        
                         <a class="preview" href="#">
-                            <img src="static\img\Listview\event-1.jpg">
+                            <img src="{{ event.thumbnail_image }}">
                         </a>
                     </div>
                     <div class="column column-60"> 
                         <div class="content">
-                            <h6>IULIE 26 2017</h6>
+                            <h6> {{ event.start_date }} </h6>
                             <a href="#">    
-                                <h3>Lorem ipsum dolor sit amet</h3> 
+                                <h3> {{ event.name }} </h3> 
                             </a>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.
+                                {{ event.short_description }}
                             </p>
-                            <a href="#" class="button button button-outline"> Apply Now </a>
+                            <a href="#" class="button button button-outline"> Read more </a>
                         </div>
                     </div>
                 </div>
-            </article>
-            <article class="list-view">
-                <div class="row">
-                    <div class="column column-40">
-                        <a class="preview" href="#">
-                            <img src="static\img\Listview\event-2.jpg">
-                        </a>
-                    </div>
-                    <div class="column column-60">
-                        <div class="content">
-                            <h6>IULIE 26 2017</h6>
-                            <a href="#">    
-                                <h3>Lorem ipsum dolor sit amet</h3> 
-                            </a>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.
-                            </p>
-                            <a href="#" class="button button button-outline"> Apply Now </a>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="list-view">
-                <div class="row">
-                    <div class="column column-40">
-                        <a class="preview" href="#">
-                            <img src="static\img\Listview\event-3.jpg">
-                        </a>
-                    </div>
-                    <div class="column column-60">
-                        <div class="content">
-                            <h6>IULIE 26 2017</h6>
-                            <a href="#">    
-                                <h3>Lorem ipsum dolor sit amet</h3> 
-                            </a>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.
-                            </p>
-                            <a href="#" class="button button button-outline"> Apply Now </a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </article>
         </div>
     </section>
@@ -223,77 +140,29 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
         <!-- End of Section title -->
         <div class="container">
             <article class="list-view">
+                {% for story in stories %}
                 <div class="row">
                     <div class="column column-40" >
                         <a class="preview" href="#">
-                            <img src="static\img\Listview\event-1.jpg">
+                            <img src="{{ story.thumbnail_image }}">
                         </a>
                     </div>
                     <div class="column column-60"> 
                         <div class="content">
-                            <h6>IULIE 26 2017</h6>
+                            <h6>{{ story.create_date }}</h6>
                             <a href="#">    
-                                <h3>Lorem ipsum dolor sit amet</h3> 
+                                <h3>{{ story.title }}</h3> 
                             </a>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.
+                                {{ story.short_description }}
                             </p>
-                            <a href="#" class="button button button-outline"> Apply Now </a>
+                            <a href="#" class="button button button-outline"> Read More </a>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </article>
-            <article class="list-view">
-                <div class="row">
-                    <div class="column column-40">
-                        <a class="preview" href="#">
-                            <img src="static\img\Listview\event-2.jpg">
-                        </a>
-                    </div>
-                    <div class="column column-60">
-                        <div class="content">
-                            <h6>IULIE 26 2017</h6>
-                            <a href="#">    
-                                <h3>Lorem ipsum dolor sit amet</h3> 
-                            </a>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.
-                            </p>
-                            <a href="#" class="button button button-outline"> Apply Now </a>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="list-view">
-                <div class="row">
-                    <div class="column column-40">
-                        <a class="preview" href="#">
-                            <img src="static\img\Listview\event-3.jpg">
-                        </a>
-                    </div>
-                    <div class="column column-60">
-                        <div class="content">
-                            <h6>IULIE 26 2017</h6>
-                            <a href="#">    
-                                <h3>Lorem ipsum dolor sit amet</h3> 
-                            </a>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.
-                            </p>
-                            <a href="#" class="button button button-outline"> Apply Now </a>
-                        </div>
-                    </div>
-                </div>
-            </article>
+            
         </div>
     </section>
     <!-- End of List view -->
