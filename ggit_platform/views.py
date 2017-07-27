@@ -82,7 +82,7 @@ def region_list(request):
 
 def region_detail(request, id):
     region = get_object_or_404(Region, id=id)
-    return render(request, 'region/detail.html', {'region' : region})
+    return render(request, 'region/admin_detail.html', {'region' : region})
 
 def region_new(request):
     if request.method == 'POST':
@@ -124,7 +124,7 @@ def member_list(request):
 
 def member_detail(request, id):
     member = get_object_or_404(Member, id=id)
-    return render(request, 'member/detail.html', {'member': member})
+    return render(request, 'member/admin_detail.html', {'member': member})
 
 def member_new(request):
     if request.method == 'POST':
