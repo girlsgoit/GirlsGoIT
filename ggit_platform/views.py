@@ -7,6 +7,7 @@ from .models import Event
 from .models import Story
 
 from .forms import TrackForm
+from .forms import MemberForm
 from .forms import EventForm
 from .forms import StoryForm
 
@@ -110,6 +111,41 @@ def member_detail(request, id):
     member = get_object_or_404(Member, id=id)
     return render(request, 'member/detail.html', {'member': member})
 
+def member_new(request):
+    if request.method == 'POST':
+        form = MemberForm(request.POST)
+        if form.is_valid():
+            member = form.save()
+            return redirect('member_list')
+
+    elif request.method == 'GET':
+        form = MemberForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'member/edit.html', {'form': form})
+
+
+def member_edit(request, id):
+    member = get_object_or_404(Member, id=id)
+    if request.method == 'GET':
+        form = MemberForm(instance=member)
+
+    elif request.method == 'POST':
+        form = MemberForm(request.POST, instance=member)
+        if form.is_valid():
+            member = form.save()
+            return redirect('member_list')
+
+    return render(request, 'member/edit.html', {'form': form})
+
+
+def member_delete(request, id):
+    member = get_object_or_404(Member, id=id)
+    if request.method == 'POST':
+        member.delete()
+
+    return redirect('member_list')
+
 # Event views
 
 
@@ -155,21 +191,16 @@ def story_list(request):
     stories = Story.objects.all()
     return render(request, 'story/list.html', {'stories': stories})
 
-def story_detail(request, id):
-    story = get_object_or_404(Story, id=id)
-    return render(request, 'story/detail.html', {'story':story})
-
 def story_new(request):
     if request.method == 'POST':
         form = StoryForm(request.POST)
         if form.is_valid():
-            track = form.save()
+            story = form.save()
             return redirect('story_list')
 
     elif request.method == 'GET':
         form = StoryForm()
-    else:
-        print('nu știu ce vrei de la mine')
+        
     return render(request, 'story/edit.html', {'form': form})
 
 def story_edit(request, id):
@@ -180,7 +211,7 @@ def story_edit(request, id):
     elif request.method == 'POST':
         form = StoryForm(request.POST, instance=story)
         if form.is_valid():
-            track = form.save()
+            story = form.save()
             return redirect('story_list')
 
     return render(request, 'story/edit.html', {'form': form})
