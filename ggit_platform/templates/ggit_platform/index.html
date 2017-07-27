@@ -96,57 +96,14 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 
 				<div class="container">
 					<div class="row">
+					{% for region in regions %}
 						<div class="column region-column">
 							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/1.jpg' %}">
-								<h3>Rezina</h3>
+								<img src="{{ region.thumbnail_image }}">
+								<h3>{{ region.name }}</h3>
 							</a>
 						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/2.jpg' %}">
-								<h3>Ștefan Vodă</h3>
-							</a>
-						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/3.jpg' %}">
-								<h3>Comrat</h3>
-							</a>
-						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/4.jpg' %}">
-								<h3>Sălcuța</h3>
-							</a>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/5.jpg' %}">
-								<h3>Strășeni</h3>
-							</a>
-						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/6.jpg' %}">
-								<h3>Orhei</h3>
-							</a>
-						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/7.jpg' %}">
-								<h3>Chișinău</h3>
-							</a>
-						</div>
-						<div class="column region-column">
-							<a href="#" class="region-preview">
-								<img src="{% static 'ggit_platform/img/region/8.jpg' %}">
-								<h3>Ungheni</h3>
-							</a>
-						</div>
+					{% endfor %}
 					</div>
 
 					<div class="row">
