@@ -8,6 +8,7 @@ from .models import Story
 from .models import Region
 
 class TrackForm(forms.ModelForm):
+    long_description = MarkdownxFormField()
 
     class Meta:
         model = Track
@@ -29,7 +30,6 @@ class EventForm(forms.ModelForm):
         fields = '__all__'
 
 class RegionForm(forms.ModelForm):
-
     class Meta:
         model = Region
         fields = '__all__'
@@ -38,7 +38,7 @@ class RegionForm(forms.ModelForm):
 
 
 class StoryForm(forms.ModelForm):
-
+    long_description = MarkdownxFormField()
     class Meta:
         model = Story
         fields = '__all__'
