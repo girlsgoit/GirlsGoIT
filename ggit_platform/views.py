@@ -7,6 +7,8 @@ from .models import Event
 from .models import Story
 
 from .forms import TrackForm
+from .forms import EventForm
+from .forms import StoryForm
 
 
 # Index page
@@ -74,13 +76,47 @@ def member_detail(request, id):
     return render(request, 'member/detail.html', {'member': member})
 
 # Event views
+
+
 def event_list(request):
     events= Event.objects.all()
     return render(request, 'event/list.html', {'events':events})
 
-def event_detail(request, id):
+def story_detail(request, id):
     event = get_object_or_404(Event, id=id)
     return render(request, 'event/detail.html', {'event':event})
+
+def event_new(request):
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            event = form.save()
+            return redirect('event_list')
+
+    elif request.method == 'GET':
+        form = EventForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'event/edit.html', {'form': form})
+
+def event_edit(request, id):
+    event = get_object_or_404(Event, id=id)
+    if request.method == 'GET':
+        form = EventForm(instance=event)
+
+    elif request.method == 'POST':
+        form = EventForm(request.POST, instance=event)
+        if form.is_valid():
+            event = form.save()
+            return redirect('event_list')
+
+    return render(request, 'event/edit.html', {'form': form})
+
+def event_delete(request, id):
+    event = get_object_or_404(Event, id=id)
+    if request.method == 'POST':
+        event.delete()
+    return redirect('event_list')
 
 # Story views
 def story_list(request):
@@ -90,3 +126,36 @@ def story_list(request):
 def story_detail(request, id):
     story = get_object_or_404(Story, id=id)
     return render(request, 'story/detail.html', {'story':story})
+
+def story_new(request):
+    if request.method == 'POST':
+        form = StoryForm(request.POST)
+        if form.is_valid():
+            track = form.save()
+            return redirect('story_list')
+
+    elif request.method == 'GET':
+        form = StoryForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'story/edit.html', {'form': form})
+
+def story_edit(request, id):
+    story = get_object_or_404(Story, id=id)
+    if request.method == 'GET':
+        form = StoryForm(instance=story)
+
+    elif request.method == 'POST':
+        form = StoryForm(request.POST, instance=story)
+        if form.is_valid():
+            track = form.save()
+            return redirect('story_list')
+
+    return render(request, 'story/edit.html', {'form': form})
+
+def story_delete(request, id):
+    story = get_object_or_404(Story, id=id)
+    if request.method == 'POST':
+        story.delete()
+
+    return redirect('story_list')
