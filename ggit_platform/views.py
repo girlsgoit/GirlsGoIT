@@ -15,8 +15,7 @@ from .forms import RegionForm
 
 # Index page
 def index(request):
-    tracks = Track.objects.all()
-    return render(request, 'ggit_platform/index.html', {'tracks': tracks})
+    return render(request, 'ggit_platform/index.html', {})
 
 # Index page
 def admin_index(request):
