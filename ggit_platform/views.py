@@ -5,17 +5,31 @@ from .models import Member
 from .models import Region
 from .models import Event
 from .models import Story
-
 from .forms import TrackForm
 from .forms import MemberForm
 from .forms import EventForm
 from .forms import StoryForm
 from .forms import RegionForm
 
+import datetime
 
 # Index page
 def index(request):
-    return render(request, 'ggit_platform/index.html', {})
+    tracks = Track.objects.all()
+    regions = Region.objects.all()
+    
+    now = datetime.datetime.now()
+    last_event = Event.objects.filter(end_date__lt=now).order_by('-end_date').first()
+    upcoming_event = Event.objects.filter(start_date__lt=now).order_by('start_date').first()
+    last_stories = Story.objects.all().order_by('-create_date')[:5]
+    params = {
+        'regions': regions, 
+        'tracks': tracks, 
+        'last_event': last_event,
+        'upcoming_event': upcoming_event,
+        'last_stories': last_stories,
+        }
+    return render(request, 'ggit_platform/index.html', params)
 
 # Index page
 def admin_index(request):
