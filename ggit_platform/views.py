@@ -15,6 +15,10 @@ from .forms import RegionForm
 
 # Index page
 def index(request):
+    return render(request, 'ggit_platform/index.html', {})
+
+# Index page
+def admin_index(request):
     return redirect('region_list')
 
 # Track views
