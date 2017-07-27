@@ -5,6 +5,8 @@ Administrare Evenimente
 
 {% block content %}
 <h1>Evenimente</h1>
+<a class="button button-outline float-right" href="{% url 'event_new' %}">Adaugă Bloc</a>
+
 <table>
     <thead>
         <tr>
@@ -25,10 +27,12 @@ Administrare Evenimente
                 {% endif %}
             </td>
             <td>{{event.start_date}}</td>
-            <td><a class="button button-outline" href="#">Șterge</a></td>
+            <td><form method="POST" action="{% url 'event_delete' id=event.id %}">{% csrf_token %}
+                <button class="button button-outline" type='submit'>Șterge</button>></td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
 {% endblock content %}
+
 
