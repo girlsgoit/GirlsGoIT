@@ -6,6 +6,8 @@ Administrare Regiuni
 
 {% block content %}
 
+<h2>Regiuni</h2>
+
 <a class="button button-outline float-right" href="{% url 'region_new' %}">Adaugă Regiune</a>
 <table>
     <thead>
@@ -21,18 +23,18 @@ Administrare Regiuni
                 </a>
             </td>
 
-            <td>
-              <form method="POST" action="{% url 'region_edit' id=region.id %}">{% csrf_token %}
-                <button class="button button-outline" type='submit'>Preview</button>
-              </form>
-
-            </td>
+            
 
 
             <td>
-              <form method="POST" action="{% url 'region_delete' id=region.id %}">{% csrf_token %}
-                <button class="button button-outline" type='submit'>Șterge</button>
-              </form>
+              <div class="row">
+                <div class="column">
+                  <a href="{% url 'region_detail' id=region.id %}"><i class="fa fa-eye" aria-hidden="true"></i></i></a>
+                </div>
+                <div class="column">
+                  <a href="{% url 'region_delete' id=region.id %}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </div>
+              </div>
             </td>
         </tr>
         {% endfor %}
