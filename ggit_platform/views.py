@@ -7,6 +7,7 @@ from .models import Event
 from .models import Story
 
 from .forms import TrackForm
+from .forms import MemberForm
 from .forms import EventForm
 from .forms import StoryForm
 
@@ -109,6 +110,41 @@ def member_list(request):
 def member_detail(request, id):
     member = get_object_or_404(Member, id=id)
     return render(request, 'member/detail.html', {'member': member})
+
+def member_new(request):
+    if request.method == 'POST':
+        form = MemberForm(request.POST)
+        if form.is_valid():
+            member = form.save()
+            return redirect('member_list')
+
+    elif request.method == 'GET':
+        form = MemberForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'member/edit.html', {'form': form})
+
+
+def member_edit(request, id):
+    member = get_object_or_404(Member, id=id)
+    if request.method == 'GET':
+        form = MemberForm(instance=member)
+
+    elif request.method == 'POST':
+        form = MemberForm(request.POST, instance=member)
+        if form.is_valid():
+            member = form.save()
+            return redirect('member_list')
+
+    return render(request, 'member/edit.html', {'form': form})
+
+
+def member_delete(request, id):
+    member = get_object_or_404(Member, id=id)
+    if request.method == 'POST':
+        member.delete()
+
+    return redirect('member_list')
 
 # Event views
 
