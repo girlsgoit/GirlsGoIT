@@ -134,7 +134,7 @@ def story_new(request):
             return redirect('story_list')
 
     elif request.method == 'GET':
-        form = TrackForm()
+        form = StoryForm()
     else:
         print('nu știu ce vrei de la mine')
     return render(request, 'story/edit.html', {'form': form})
@@ -145,7 +145,7 @@ def story_edit(request, id):
         form = StoryForm(instance=story)
 
     elif request.method == 'POST':
-        form = StoryForm(request.POST, instance=track)
+        form = StoryForm(request.POST, instance=story)
         if form.is_valid():
             track = form.save()
             return redirect('story_list')
