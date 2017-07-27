@@ -5,7 +5,6 @@ Administrare Regiuni
 {% endblock title %}
 
 {% block content %}
-<h1>Regiuni</h1>
 
 <a class="button button-outline float-right" href="{% url 'region_new' %}">Adaugă Regiune</a>
 <table>
@@ -23,7 +22,7 @@ Administrare Regiuni
             </td>
 
             <td>
-              <form method="POST" action="{% url 'region_detail' id=region.id %}">{% csrf_token %}
+              <form method="POST" action="{% url 'region_edit' id=region.id %}">{% csrf_token %}
                 <button class="button button-outline" type='submit'>Preview</button>
               </form>
 

@@ -7,7 +7,7 @@
 }
 
 .logo {
-	
+	// color: #333;
 }
 
 .menu {
@@ -62,20 +62,12 @@
 	margin-bottom: 4rem;
 }
 
-table .button {
-	margin-bottom: 0;
-}
-
 .panel:last-child {
 	margin-bottom: 0;
 }
 
 textarea {
 	max-width: 100%;
-}
-
-td:last-child {
-	width: 10em;
 }
 
 /* End of Content */
@@ -93,3 +85,7 @@ td:last-child {
 }
 
 /* End of Footer */
+
+td:last-child {
+	width: 10em;
+}
