@@ -79,14 +79,57 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 
 				<div class="container">
 					<div class="row">
-					{% for region in regions %}
 						<div class="column region-column">
 							<a href="#" class="region-preview">
-								<img src="{{ region.thumbnail_image }}">
-								<h3>{{ region.name }}</h3>
-								</a>
+								<img src="{% static 'ggit_platform/img/region/1.jpg' %}">
+								<h3>Rezina</h3>
+							</a>
 						</div>
-					{% endfor %}
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/2.jpg' %}">
+								<h3>Ștefan Vodă</h3>
+							</a>
+						</div>
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/3.jpg' %}">
+								<h3>Comrat</h3>
+							</a>
+						</div>
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/4.jpg' %}">
+								<h3>Sălcuța</h3>
+							</a>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/5.jpg' %}">
+								<h3>Strășeni</h3>
+							</a>
+						</div>
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/6.jpg' %}">
+								<h3>Orhei</h3>
+							</a>
+						</div>
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/7.jpg' %}">
+								<h3>Chișinău</h3>
+							</a>
+						</div>
+						<div class="column region-column">
+							<a href="#" class="region-preview">
+								<img src="{% static 'ggit_platform/img/region/8.jpg' %}">
+								<h3>Ungheni</h3>
+							</a>
+						</div>
 					</div>
 
 					<div class="row">
@@ -112,33 +155,35 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 					</p>
 				</header>
 
+                
 				<div class="container">
 					<div class="row">
 						<div class="column">
 							<article class="event-preview">
 								<div class="thumb">
-									<img src="{% static 'ggit_platform/img/event preview/bootcamp.jpg' %}">
+									<img src="{{ last_event.thumbnail_image }}">
 									<div class="overlay">
-										<h3>BOOTCAMP</h3>
+										<h3>{{ last_event.title  }}</h3>
 									</div>
 								</div>
 								<div class="details clearfix">
-									<h5 class="date float-left">24 May 2017</h5>
-									<h5 class="type float-right">Event ended</h5>
+									<h5 class="date float-left">{{ start_date.start_date }}</h5>
+									<h5 class="type float-right">{{ end_date.end_date }}</h5>
 								</div>
 							</article>
 						</div>
+						
 						<div class="column">
 							<article class="event-preview">
 								<div class="thumb">
-									<img src="{% static 'ggit_platform/img/event preview/summercamp.jpg' %}">
+									<img src="{{ upcoming_event.thumbnail_image }}">
 									<div class="overlay">
-										<h3>SUMMERCAMP</h3>
+										<h3>{{ upcoming_event.title }}</h3>
 									</div>
 								</div>
 								<div class="details clearfix">
-									<h5 class="date float-left">31 July 2015</h5>
-									<h5 class="type float-right">Upcomming event</h5>
+									<h5 class="date float-left">{{ start_date.start_date }}</h5>
+									<h5 class="type float-right">{{ end_date.start_date }}</h5>
 								</div>
 							</article>
 						</div>
@@ -146,6 +191,9 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 				</div>	
 			</section>
 			<!-- End of Events -->
+<<<<<<< HEAD
+			{% endblock content %}
+=======
 <!-- Latest stories -->
 	<section>
 		<header class="section-title">
@@ -157,77 +205,31 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 		<div class="container">
 			<article class="list-view">
 				<div class="row">
+					{% for story in stories %}
 					<div class="column column-40" >
-						<a class="preview" href="#">
-							<img src="{% static 'ggit_platform/img/stories/1.jpg' %}">
+						<a class="story-preview" href="#">
+							<img src="{{ story.thumbnail_image }}" alt="Story thumbnail_image image">
 						</a>
 					</div>
 					<div class="column column-60"> 
 						<div class="content">
-							<h6>IULIE 26 2017</h6>
+							<h6>{{ story.create_date }}</h6>
 							<a href="#">	
-								<h3>Lorem ipsum dolor sit amet</h3>	
+								<h3>{{ story.title }}</h3>	
 							</a>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.
+							{{ story.short_description }}
 							</p>
 							<a href="#" class="button button button-outline"> Apply Now </a>
 						</div>
 					</div>
+					{% endfor %}
 				</div>
 			</article>
-			<article class="list-view">
-				<div class="row">
-					<div class="column column-40">
-						<a class="preview" href="#">
-							<img src="{% static 'ggit_platform/img/stories/2.jpg' %}">
-						</a>
-					</div>
-					<div class="column column-60">
-						<div class="content">
-							<h6>IULIE 26 2017</h6>
-							<a href="#">	
-								<h3>Lorem ipsum dolor sit amet</h3>	
-							</a>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.
-							</p>
-							<a href="#" class="button button button-outline"> Apply Now </a>
-						</div>
-					</div>
-				</div>
-			</article>
-			<article class="list-view">
-				<div class="row">
-					<div class="column column-40">
-						<a class="preview" href="#">
-							<img src="{% static 'ggit_platform/img/stories/3.jpg' %}">
-						</a>
-					</div>
-					<div class="column column-60">
-						<div class="content">
-							<h6>IULIE 26 2017</h6>
-							<a href="#">	
-								<h3>Lorem ipsum dolor sit amet</h3>	
-							</a>
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-								consequat.
-							</p>
-							<a href="#" class="button button button-outline"> Apply Now </a>
-						</div>
-					</div>
-				</div>
-			</article>
+			
+			
 		</div>
 	</section>
 <!-- End of latest stories -->
 {% endblock content %}
+>>>>>>> b722a1fe94ee3119d7f3593d4e99207900670278
