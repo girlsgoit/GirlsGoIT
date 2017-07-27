@@ -191,4 +191,45 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 				</div>	
 			</section>
 			<!-- End of Events -->
+<<<<<<< HEAD
 			{% endblock content %}
+=======
+<!-- Latest stories -->
+	<section>
+		<header class="section-title">
+			<h2>Stories</h2>
+			<p>
+				Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
+			</p>
+		</header>
+		<div class="container">
+			<article class="list-view">
+				<div class="row">
+					{% for story in stories %}
+					<div class="column column-40" >
+						<a class="story-preview" href="#">
+							<img src="{{ story.thumbnail_image }}" alt="Story thumbnail_image image">
+						</a>
+					</div>
+					<div class="column column-60"> 
+						<div class="content">
+							<h6>{{ story.create_date }}</h6>
+							<a href="#">	
+								<h3>{{ story.title }}</h3>	
+							</a>
+							<p>
+							{{ story.short_description }}
+							</p>
+							<a href="#" class="button button button-outline"> Apply Now </a>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</article>
+			
+			
+		</div>
+	</section>
+<!-- End of latest stories -->
+{% endblock content %}
+>>>>>>> b722a1fe94ee3119d7f3593d4e99207900670278
