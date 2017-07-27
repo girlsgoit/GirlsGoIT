@@ -10,6 +10,7 @@ from .forms import TrackForm
 from .forms import MemberForm
 from .forms import EventForm
 from .forms import StoryForm
+from .forms import RegionForm
 
 
 # Index page
