@@ -1,6 +1,99 @@
-{% extends "ggit_platform/base_admin.html" %}
+{% extends  "ggit_platform/base_admin.html" %}
+
+{% block title %}
+<h1>Regiunea {{ region.name }}</h1>
+{% endblock title %}
 
 {% block content %}
-    <h1>{{ region.name }}</h1>
-    <p>{{ region.short_description }}</p>
+
+
+
+
+<table>
+    <thead>
+        <th><b>Emblema</b></th>
+        <th><b>Motto</b></th>
+        <th><b>Descriere</b></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ Region.thumbnail_image }}</td>
+            <td>{{ Region.motto }} </td>
+            <td>{{ Region.description }}</td>
+        </tr>
+                
+</tbody>
+
+</table> 
+
+
+
+
+
+
+<h1>Membrii regiunii {{ region.name }}</h1>
+
+<a class="button button-outline float-right" href="{% url 'member_new' %}">Adaugă Membru</a>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nume, Prenume</th>
+      <th>Pagina personală</th>
+      <th>Acțiuni</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for member in members %}
+    <tr>
+      <td><a href="{% url 'member_detail' id=member.id %}">{{ member.name }} {{ member.surname }}</a></td>
+      <td><a href="{{ member.personal_page }}">{{ member.personal_page }}</a></td>
+      <td><a class="button button-outline" href="#">Șterge</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+
+
+
+<h1>Event-urile din {{ region.name }}</h1>
+
+<a class="button button-outline float-right" href="{% url 'event_new' %}">Adaugă Event</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Titlu</th>
+            <th>Regiune</th>
+            <th>Începutul evenimentului</th>
+            <th>Acțiuni</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for event in events %}
+        <tr>
+            <td><a href="{% url 'event_detail' id=event.id %}">{{event.title}}</a></td>
+            <td>
+                {% if event.region %} 
+                <a href="{% url 'region_detail' id=event.region.id %}" >{{ event.region }}</a>
+                {% endif %}
+            </td>
+            <td>{{event.start_date}}</td>
+            <td><a class="button button-outline" href="#">Șterge</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+
 {% endblock content %}
+  <h1> {{ region.name }} </h1>
+  <p> {{ region.short_description }} </p>
+{% endblock content %}
+
