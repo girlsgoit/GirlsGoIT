@@ -74,13 +74,47 @@ def member_detail(request, id):
     return render(request, 'member/detail.html', {'member': member})
 
 # Event views
+
+
 def event_list(request):
     events= Event.objects.all()
     return render(request, 'event/list.html', {'events':events})
 
-def event_detail(request, id):
+def event_new(request):
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            event = form.save()
+            return redirect('event_list')
+
+    elif request.method == 'GET':
+        form = EventForm()
+    else:
+        print('nu știu ce vrei de la mine')
+    return render(request, 'event/edit.html', {'form': form})
+
+def event_edit(request, id):
     event = get_object_or_404(Event, id=id)
-    return render(request, 'event/detail.html', {'event':event})
+    if request.method == 'GET':
+        form = EventForm(instance=event)
+
+    elif request.method == 'POST':
+        form = EventForm(request.POST, instance=event)
+        if form.is_valid():
+            event = form.save()
+            return redirect('event_list')
+
+    return render(request, 'event/edit.html', {'form': form})
+
+def event_delete(request, id):
+    event = get_object_or_404(Event, id=id)
+    if request.method == 'POST':
+        event.delete()
+    return redirect('event_list')
+
+
+
+
 
 # Story views
 def story_list(request):
