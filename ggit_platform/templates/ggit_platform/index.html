@@ -176,14 +176,12 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 							<p>
 							{{ story.short_description }}
 							</p>
-							<a href="{% url 'story_list' %}" class="button button button-outline"> Mai Mult </a>
+							<a href="{% url 'views.story_detail' %}" class="button button button-outline"> Mai Mult </a>
 						</div>
 					</div>
 					{% endfor %}
 				</div>
 			</article>
-			
-			
 		</div>
 	</section>
 <!-- End of latest stories -->
