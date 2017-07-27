@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     url(r'^stories/$', views.story_list, name='story_list'),
-    url(r'^stories/(?P<id>\d+)/$', views.story_new, name='story_new'),
+    url(r'^stories/new/$', views.story_new, name='story_new'),
     url(r'^stories/(?P<id>\d+)/edit/$', views.story_edit, name='story_edit'),
     url(r'^stories/(?P<id>\d+)/delete/$', views.story_delete, name='story_delete'),
 

@@ -7,6 +7,6 @@ Administrare Story Form
 {% block content %}
   <form method="POST">{% csrf_token %}
     {{ form }}
-    <button type='submit'>Salvare</button>
+    <button class="button button-outline" type='submit'>Salvare</button>
   </form>
 {% endblock content %}

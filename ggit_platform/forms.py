@@ -1,5 +1,4 @@
 from django import forms
-
 from .models import Track
 from .models import Region
 
@@ -27,7 +26,7 @@ class EventForm(forms.ModelForm):
         model = Event
         fields = '__all__'
 
-        
+
 
 class StoryForm(forms.ModelForm):
 

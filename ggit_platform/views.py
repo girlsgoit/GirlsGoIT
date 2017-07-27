@@ -191,21 +191,16 @@ def story_list(request):
     stories = Story.objects.all()
     return render(request, 'story/list.html', {'stories': stories})
 
-def story_detail(request, id):
-    story = get_object_or_404(Story, id=id)
-    return render(request, 'story/detail.html', {'story':story})
-
 def story_new(request):
     if request.method == 'POST':
         form = StoryForm(request.POST)
         if form.is_valid():
-            track = form.save()
+            story = form.save()
             return redirect('story_list')
 
     elif request.method == 'GET':
         form = StoryForm()
-    else:
-        print('nu știu ce vrei de la mine')
+        
     return render(request, 'story/edit.html', {'form': form})
 
 def story_edit(request, id):
@@ -216,7 +211,7 @@ def story_edit(request, id):
     elif request.method == 'POST':
         form = StoryForm(request.POST, instance=story)
         if form.is_valid():
-            track = form.save()
+            story = form.save()
             return redirect('story_list')
 
     return render(request, 'story/edit.html', {'form': form})
