@@ -1,8 +1,10 @@
 {% extends  "ggit_platform/base_admin.html" %}
 
-{% block title %}
-<h1>Regiunea {{ region.name }}</h1>
-{% endblock title %}
+<h1>
+    {% block title %}
+        Regiunea {{ region.name }}
+    {% endblock title %}
+</h1>
 
 {% block content %}
 
