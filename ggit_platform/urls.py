@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     url(r'^stories/$', views.story_list, name='story_list'),
-    url(r'^stories/(?P<id>\d+)/$', views.story_new, name='story_new'),
+    url(r'^stories/new/$', views.story_new, name='story_new'),
     url(r'^stories/(?P<id>\d+)/edit/$', views.story_edit, name='story_edit'),
     url(r'^stories/(?P<id>\d+)/delete/$', views.story_delete, name='story_delete'),
 
@@ -18,12 +18,15 @@ urlpatterns = [
     url(r'^tracks/(?P<id>\d+)/delete/$', views.track_delete, name='track_delete'),
 
     url(r'^regions/$', views.region_list, name='region_list'),
+    url(r'^regions/(?P<id>\d+)/edit/$', views.region_detail, name='region_detail'),
     url(r'^regions/new/$', views.region_new, name='region_new'),    
     url(r'^regions/(?P<id>\d+)/edit/$', views.region_edit, name='region_edit'),
     url(r'^regions/(?P<id>\d+)/delete/$', views.region_delete, name='region_delete'),
 
     url(r'^members/$', views.member_list, name='member_list'),
-    url(r'^members/(?P<id>\d+)/$', views.member_detail, name='member_detail'),
+    url(r'^members/new/$', views.member_new, name='member_new'),
+    url(r'^members/(?P<id>\d+)/edit/$', views.member_edit, name='member_edit'),
+    url(r'^members/(?P<id>\d+)/delete/$', views.member_delete, name='member_delete'),
 
     url(r'^/$', views.index, name='index'),
 ]
