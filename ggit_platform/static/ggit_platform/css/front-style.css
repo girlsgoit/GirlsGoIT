@@ -387,6 +387,73 @@ a.logo {
 }
 /* Ends of Event preview */
 
+/* List View */
+.list-view {
+	margin-bottom: 40px;
+}
+
+.list-view .row {
+	align-items: center;
+}
+
+.list-view .content {
+	padding-left: 20px;
+}
+
+.list-view .preview {
+	display: block;
+	line-height: 0;
+}
+
+.list-view h6 {
+	font-size: 14px;
+	color: #979797;
+	letter-spacing: 0.7px;
+	margin-bottom: 0;
+}
+
+.list-view h3 {
+	font-size: 27px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	line-height: 1.5;
+	letter-spacing: 0.9;
+	color: black;	
+}
+ 
+.list-view p {
+	font-size: 16px;
+	color: black;
+	line-height: 1.5;
+	letter-spacing: 0.9;
+}
+
+.list-view .button {
+	color: #D74078;
+	border-color: #D74078;
+}
+
+.list-view:last-child {
+   	margin-bottom: 0;
+}
+
+@media screen and (max-width: 639px) {
+    .list-view .content {
+        padding-left: 0px;
+    }
+
+    .list-view .column.column-40, .list-view .column.column-60 {
+    	width: 100%;
+    	max-width: 100%;
+    }
+
+    .list-view .preview {
+    	margin-bottom: 20px;
+    }
+}
+
+/* End of List view */
+
 /* Partners */
 .partners .row {
 	align-items: center;
