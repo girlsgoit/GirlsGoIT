@@ -20,10 +20,10 @@ Administrare Evenimente
     <tbody>
         {% for event in events %}
         <tr>
-            <td><a href="{% url 'event_detail' id=event.id %}">{{event.title}}</a></td>
+            <td><a href="{% url 'event_edit' id=event.id %}">{{event.title}}</a></td>
             <td>
                 {% if event.region %} 
-                <a href="{% url 'region_detail' id=event.region.id %}" >{{ event.region }}</a>
+                <a href="{% url 'region_edit' id=event.region.id %}" >{{ event.region }}</a>
                 {% endif %}
             </td>
             <td>{{event.start_date}}</td>
