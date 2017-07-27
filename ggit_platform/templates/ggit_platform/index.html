@@ -203,7 +203,7 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 		<div class="container">
 			<article class="list-view">
 				<div class="row">
-					{% for story in stories %}
+					{% for story in last_stories %}
 					<div class="column column-40" >
 						<a class="story-preview" href="#">
 							<img src="{{ story.thumbnail_image }}" alt="Story thumbnail_image image">
@@ -218,7 +218,7 @@ Leverage agile frameworks to provide a robust synopsis for high level overviews
 							<p>
 							{{ story.short_description }}
 							</p>
-							<a href="#" class="button button button-outline"> Apply Now </a>
+							<a href="#" class="button button button-outline"> Read More </a>
 						</div>
 					</div>
 					{% endfor %}
