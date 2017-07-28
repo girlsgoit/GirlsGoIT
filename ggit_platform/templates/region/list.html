@@ -25,17 +25,13 @@
                     </a>
                 </td>
 
-                <td>
-                    <div class="row">
-                        <div class="column">
-                            <a href="{% url 'region_detail' id=region.id %}"><i class="fa fa-eye"
-                                                                                aria-hidden="true"></i></i></a>
-                        </div>
-                        <div class="column">
-                            <a href="{% url 'region_delete' id=region.id %}"><i class="fa fa-trash"
-                                                                                aria-hidden="true"></i></a>
-                        </div>
-                    </div>
+                <td class="actions">
+                    <a href="{% url 'region_detail' id=region.id %}">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                    <form action="{% url 'region_delete' id=region.id %}" method="post">{% csrf_token %}
+                        <button class="button button-clear"><i class="fa fa-trash"></i></button>
+                    </form>
                 </td>
             </tr>
         {% endfor %}

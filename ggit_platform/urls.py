@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^admin/tracks/(?P<id>\d+)/delete/$', views.track_delete, name='track_delete'),
 
     url(r'^admin/regions/$', views.region_list, name='region_list'),
+    url(r'^admin/regions/(?P<id>\d+)/detail$', views.region_admin_detail, name='region_admin_detail'),
     url(r'^admin/regions/new/$', views.region_new, name='region_new'),
     url(r'^admin/regions/(?P<id>\d+)/edit/$', views.region_edit, name='region_edit'),
     url(r'^admin/regions/(?P<id>\d+)/delete/$', views.region_delete, name='region_delete'),

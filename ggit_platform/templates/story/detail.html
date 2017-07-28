@@ -1,31 +1,48 @@
 {% extends "ggit_platform/base_front.html" %}
 
 {% block headtitle %}
-    {{ story.title }}
+{{ story.title }}
 {% endblock headtitle %}
 
 {% block title %}
-    {{ story.title }}
+{{ story.title }}
 {% endblock title %}
 
 {% block subtitle %}
-    {{ story.subtitle }}
+{{ story.subtitle }}
 {% endblock subtitle %}
 
 {% block heroimage %}
-    {{ story.hero_image }}
+{{ story.hero_image }}
 {% endblock heroimage %}
 
 {% block content %}
-    <section class="section">
-        <div class="container">
-            <div class="row">
-                <div class="column">
-                    <article class="article">
-                        {{ story.markdown | safe }}
-                    </article>
-                </div>
-            </div>
+<section class="section">
+    <div class="container">
+            {% for story in last_stories %}
+                <article class="list-view">
+                    <div class="row">
+                        <div class="column column-40">
+                            <a class="story-preview" href="#">
+                                <img src="{{ story.thumbnail_image }}" alt="Story thumbnail_image image">
+                            </a>
+                        </div>
+                        <div class="column column-60">
+                            <div class="content">
+                                <h6>{{ story.create_date }}</h6>
+                                <a href="#">
+                                    <h3>{{ story.title }}</h3>
+                                </a>
+                                <p>
+                                    {{ story.short_description }}
+                                </p>
+                                <a href="{% url 'story_detail' id=story.id %}" class="button button button-outline"> Mai
+                                    Mult </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
         </div>
-    </section>
+</section>
 {% endblock content %}

@@ -105,6 +105,12 @@ def region_detail(request, id):
     return render(request, 'region/detail.html', params)
 
 
+def region_admin_detail(request):
+    # TODO Elizabet implement this
+    params = {}
+    return render(request, 'region/admin_detail.html', params)
+
+
 def region_new(request):
     if request.method == 'POST':
         form = RegionForm(request.POST)
