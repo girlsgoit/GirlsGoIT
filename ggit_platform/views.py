@@ -102,7 +102,7 @@ def region_detail(request, id):
         'stories': stories,
         'members': members
     }
-    return render(request, 'region/detail.html', params)
+    return render(request, 'region/admin_detail.html', params)
 
 
 def region_new(request):
