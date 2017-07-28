@@ -7,10 +7,13 @@
 </h1>
 
 {% block content %}
-
-
-    <h2>Regiunea {{ region.name }}</h2>
-
+<div class="margin-bottom:50px">
+    <div class="row">
+        <div class="column"></div>
+        <div class="column"><h2>Regiunea {{ region.name }}</h2></div>
+        <div class="column"></div>
+    </div>
+</div>    
     <table style="padding-bottom: 70px">
         <thead>
         <tr>
@@ -30,8 +33,14 @@
 
     </table>
 
-    <h3>Membrii regiunii {{ region.name }}</h3>
-    <a class="button button-outline float-right" href="{% url 'member_new' %}">Adaugă Membru</a>
+
+<div class="row">
+    <div class="column"></div>
+    <div class="column"><h3>Membrii regiunii {{ region.name }}</h3></div>
+    <div class="column"><a class="button button-outline float-right" href="{% url 'member_new' %}">Adaugă Membru</a></div>
+</div>
+    
+    
 
     <table style="padding-bottom: 70px">
         <thead>
@@ -53,11 +62,11 @@
     </table>
 
 
-
-
-
-    <h3>Evenimente din {{ region.name }}</h3>
-    <a class="button button-outline float-right" href="{% url 'event_new' %}">Adaugă eveniment</a>
+<div class="row">
+        <div class="column"></div>
+        <div class="column"> <h3>Evenimente din {{ region.name }}</h3></div>
+        <div class="column"> <a class="button button-outline float-right" href="{% url 'event_new' %}">Adaugă eveniment</a></div>
+</div>
 
     <table style="padding-bottom: 70px">
         <thead>
