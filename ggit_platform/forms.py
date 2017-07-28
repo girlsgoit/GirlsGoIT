@@ -1,5 +1,4 @@
 from django import forms
-from markdownx.fields import MarkdownxFormField
 
 from .models import Event
 from .models import Member
@@ -9,8 +8,6 @@ from .models import Track
 
 
 class TrackForm(forms.ModelForm):
-    long_description = MarkdownxFormField()
-
     class Meta:
         model = Track
         fields = '__all__'
@@ -23,8 +20,6 @@ class MemberForm(forms.ModelForm):
 
 
 class EventForm(forms.ModelForm):
-    long_description = MarkdownxFormField()
-
     class Meta:
         model = Event
         fields = '__all__'
@@ -37,8 +32,6 @@ class RegionForm(forms.ModelForm):
 
 
 class StoryForm(forms.ModelForm):
-    long_description = MarkdownxFormField()
-
     class Meta:
         model = Story
         fields = '__all__'

@@ -1,5 +1,9 @@
 {% extends "ggit_platform/base_front.html" %}
 
+{% block headtitle %}
+  {{ story.title }}
+{% endblock headtitle %}
+
 {% block title %}
   {{ story.title }}
 {% endblock title %}
@@ -8,14 +12,10 @@
   {{ story.subtitle }}
 {% endblock subtitle %}
 
-
-{% block long_descriprion %}
-  {{ story.long_descriprion }}
-{% endblock long_descriprion %}
-
 {% block heroimage %}
-  {{ story.thumbnail_image }}
+  {{ story.hero_image }}
 {% endblock heroimage %}
 
 {% block content %}
+  {{ story.long_descriprion }}
 {% endblock content %}

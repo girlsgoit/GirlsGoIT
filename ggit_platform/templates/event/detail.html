@@ -1,35 +1,32 @@
-{% extends "../ggit_platform/base_front.html" %}
-
-{% load staticfiles %}
+{% extends "ggit_platform/base_front.html" %}
 
 {% block headtitle %}
-  Detail Event  page
+  {{ event.title }}
 {% endblock headtitle %}
 
-{% block pretitle %}
-  <p class="date">26 JULY 2017</p>
-{% endblock pretitle %}
-
 {% block title %}
-  Summer Engineering and Technology Camp for Girls
+  {{ event.title }}
 {% endblock title %}
 
 {% block subtitle %}
-  Leverage agile frameworks to provide a robust synopsis for high level overviews
+  {{ event.subtitle }}
 {% endblock subtitle %}
 
 {% block heroimage %}
-  {% static "ggit_platform/img/hero/home.jpg" %}
+  {{ event.hero_image }}
 {% endblock heroimage %}
 
 {% block content %}
-  <section class="section-wide about">
+  {{ event.long_descriprion }}
+
+  <!-- Region button -->
+  <div class="cta cta-white">
     <div class="container">
-      <div class="row">
-        <div class="column">
-          <p>{% block sub %} Visit our details{% endblock sub %}</p>
-        </div>
-      </div>
+      <a class="button button-outline" href="#">
+        aplică acum
+      </a>
     </div>
-  </section>
+  </div>
+  <!-- End of Region button -->
+
 {% endblock content %}

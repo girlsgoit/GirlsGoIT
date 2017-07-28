@@ -1,36 +1,23 @@
-{% extends "../ggit_platform/base_front.html" %}
+{% extends "ggit_platform/base_front.html" %}
 
 {% load staticfiles %}
 
 {% block headtitle %}
-  Detail page
+  {{ track.name }}
 {% endblock headtitle %}
 
-{% block pretitle %}
-  <p class="date">26 JULY 2017</p>
-{% endblock pretitle %}
-
 {% block title %}
-  Summer Engineering and Technology Camp for Girls
+  {{ track.name }}
 {% endblock title %}
 
 {% block subtitle %}
-  Leverage agile frameworks to provide a robust synopsis for high level overviews
+  {{ track.subtitle }}
 {% endblock subtitle %}
 
 {% block heroimage %}
-  {% static "ggit_platform/img/hero/home.jpg" %}
+  {{ track.hero_image }}
 {% endblock heroimage %}
 
 {% block content %}
-  <section class="section-wide about">
-    <div class="container">
-      <div class="row">
-        <div class="column">
-          <p>{% block sub %} Visit our details{% endblock sub %}</p>
-
-        </div>
-      </div>
-    </div>
-  </section>
+  {{ track.long_description }}
 {% endblock content %}
