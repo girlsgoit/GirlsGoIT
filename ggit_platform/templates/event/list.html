@@ -1,40 +1,41 @@
 {% extends "ggit_platform/base_admin.html" %}
 {% block title %}
-  Administrare Evenimente
+    Administrare Evenimente
 {% endblock title %}
 
 {% block content %}
-  <h1>Evenimente</h1>
-  <a class="button button-outline float-right" href="{% url 'event_new' %}">Adaugă Eveniment</a>
+    <h1>Evenimente</h1>
+    <a class="button button-outline float-right" href="{% url 'event_new' %}">Adaugă Eveniment</a>
 
-  <table>
-    <thead>
-    <tr>
-      <th>Titlu</th>
-      <th>Regiune</th>
-      <th>Începutul evenimentului</th>
-      <th>Acțiuni</th>
-    </tr>
-    </thead>
+    <table>
+        <thead>
+        <tr>
+            <th>Titlu</th>
+            <th>Regiune</th>
+            <th>Începutul evenimentului</th>
+            <th>Acțiuni</th>
+        </tr>
+        </thead>
 
-    <tbody>
-    {% for event in events %}
-      <tr>
-        <td><a href="{% url 'event_edit' id=event.id %}">{{ event.title }}</a></td>
-        <td>
-          {% if event.region %}
-            <a href="{% url 'region_edit' id=event.region.id %}">{{ event.region }}</a>
-          {% endif %}
-        </td>
-        <td>{{ event.start_date }}</td>
-        <td>
-          <form method="POST" action="{% url 'event_delete' id=event.id %}">{% csrf_token %}
-            <button class="button button-outline" type='submit'> Șterge</button>
-        </td>
-      </tr>
-    {% endfor %}
-    </tbody>
-  </table>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td><a href="{% url 'event_edit' id=event.id %}">{{ event.title }}</a></td>
+                <td>
+                    {% if event.region %}
+                        <a href="{% url 'region_edit' id=event.region.id %}">{{ event.region }}</a>
+                    {% endif %}
+                </td>
+                <td>{{ event.start_date }}</td>
+                <td>
+                    <form method="POST" action="{% url 'event_delete' id=event.id %}">{% csrf_token %}
+                        <button class="button button-outline">Șterge</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}
 
 

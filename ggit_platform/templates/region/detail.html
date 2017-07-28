@@ -2,169 +2,167 @@
 {% load staticfiles %}
 
 {% block headtitle %}
-  {{ region.name }}
+    {{ region.name }}
 {% endblock headtitle %}
 
 {% block pretitle %}
-  <p class="date">26 JULY 2017</p>
+    <p class="date">26 JULY 2017</p>
 {% endblock pretitle %}
 
 {% block title %}
-  Summer Engineering and Technology Camp for Girls
+    Summer Engineering and Technology Camp for Girls
 {% endblock title %}
 
 {% block subtitle %}
-  Leverage agile frameworks to provide a robust synopsis for high level overviews
+    Leverage agile frameworks to provide a robust synopsis for high level overviews
 {% endblock subtitle %}
 
 {% block heroimage %}
-  {% static "ggit_platform/img/hero/home.jpg" %}
+    {% static "ggit_platform/img/hero/home.jpg" %}
 {% endblock heroimage %}
 
 {% block content %}
-  <!-- Region description-->
+    <!-- Region description-->
 
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="column">
-          <p class="about-region">
-            {{ region.description }}
-          </p>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <p class="about-region">
+                        {{ region.description }}
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- End of Region description -->
+    <!-- End of Region description -->
 
 
-  <!-- Members -->
+    <!-- Members -->
+    <section class="members section section-gray">
 
-  <section class="members section section-gray">
+        <!-- Section title -->
 
-    <!-- Section title -->
+        <header class="section-title">
+            <h2>
+                Members
+            </h2>
+            <p>
+                Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+            </p>
+        </header>
 
-    <header class="section-title">
-      <h2>
-        Members
-      </h2>
-      <p>
-        Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-      </p>
-    </header>
+        <!-- End of Section title -->
 
-    <!-- End of Section title -->
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    {% for member in members %}
+                        <div class="member">
+                            <a href="#">
+                                <img src="{{ member.photo }}">
+                                <h3> {{ member.name }} {{ member.surname }} </h3>
+                            </a>
+                            <h6>
+                                {{ member.role }}
+                            </h6>
+                        </div>
+                    {% endfor %}
+                </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="column">
-          {% for member in members %}
-            <div class="member">
-              <a href="#">
-                <img src="{{ member.photo }}">
-                <h3> {{ member.name }} {{ member.surname }} </h3>
-              </a>
-              <h6>
-                {{ member.role }}
-              </h6>
             </div>
-          {% endfor %}
         </div>
-
-      </div>
-    </div>
-  </section>
+    </section>
 
 
-  <!-- Members -->
+    <!-- Members -->
 
-  <!-- List view -->
+    <!-- List view -->
 
-  <section class="section">
-    <!-- Section title -->
+    <section class="section">
+        <!-- Section title -->
 
-    <header class="section-title">
-      <h2>
-        Events
-      </h2>
-      <p>
-        Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-      </p>
-    </header>
+        <header class="section-title">
+            <h2>
+                Events
+            </h2>
+            <p>
+                Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+            </p>
+        </header>
 
-    <!-- End of Section title -->
-    <div class="container">
-      <article class="list-view">
-        {% for event in events %}
-          <div class="row">
-            <div class="column column-40">
+        <!-- End of Section title -->
+        <div class="container">
+            <article class="list-view">
+                {% for event in events %}
+                    <div class="row">
+                        <div class="column column-40">
+                            <a class="preview" href="#">
+                                <img src="{{ event.thumbnail_image }}">
+                            </a>
+                        </div>
+                        <div class="column column-60">
+                            <div class="content">
+                                <h6> {{ event.start_date }} </h6>
+                                <a href="#">
+                                    <h3> {{ event.name }} </h3>
+                                </a>
+                                <p>
+                                    {{ event.short_description }}
+                                </p>
+                                <a href="#" class="button button button-outline"> Read more </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </article>
+        </div>
+    </section>
+    <!-- End of List view -->
 
-              <a class="preview" href="#">
-                <img src="{{ event.thumbnail_image }}">
-              </a>
-            </div>
-            <div class="column column-60">
-              <div class="content">
-                <h6> {{ event.start_date }} </h6>
-                <a href="#">
-                  <h3> {{ event.name }} </h3>
-                </a>
-                <p>
-                  {{ event.short_description }}
-                </p>
-                <a href="#" class="button button button-outline"> Read more </a>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </article>
-    </div>
-  </section>
-  <!-- End of List view -->
+    <!-- List view -->
 
-  <!-- List view -->
+    <section class="section">
+        <!-- Section title -->
 
-  <section class="section">
-    <!-- Section title -->
+        <header class="section-title">
+            <h2>
+                Stories
+            </h2>
+            <p>
+                Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+            </p>
+        </header>
 
-    <header class="section-title">
-      <h2>
-        Stories
-      </h2>
-      <p>
-        Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
-      </p>
-    </header>
+        <!-- End of Section title -->
+        <div class="container">
+            <article class="list-view">
+                {% for story in stories %}
+                    <div class="row">
+                        <div class="column column-40">
+                            <a class="preview" href="#">
+                                <img src="{{ story.thumbnail_image }}">
+                            </a>
+                        </div>
+                        <div class="column column-60">
+                            <div class="content">
+                                <h6>{{ story.create_date }}</h6>
+                                <a href="#">
+                                    <h3>{{ story.title }}</h3>
+                                </a>
+                                <p>
+                                    {{ story.short_description }}
+                                </p>
+                                <a href="#" class="button button button-outline"> Read More </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </article>
 
-    <!-- End of Section title -->
-    <div class="container">
-      <article class="list-view">
-        {% for story in stories %}
-          <div class="row">
-            <div class="column column-40">
-              <a class="preview" href="#">
-                <img src="{{ story.thumbnail_image }}">
-              </a>
-            </div>
-            <div class="column column-60">
-              <div class="content">
-                <h6>{{ story.create_date }}</h6>
-                <a href="#">
-                  <h3>{{ story.title }}</h3>
-                </a>
-                <p>
-                  {{ story.short_description }}
-                </p>
-                <a href="#" class="button button button-outline"> Read More </a>
-              </div>
-            </div>
-          </div>
-        {% endfor %}
-      </article>
-
-    </div>
-  </section>
-  <!-- End of List view -->
+        </div>
+    </section>
+    <!-- End of List view -->
 
 {% endblock content %}
