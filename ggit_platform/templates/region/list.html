@@ -1,4 +1,4 @@
-{% extends "ggit_platform/admin-base.html" %}
+{% extends "ggit_platform/base_admin.html" %}
 
 {% block title %}
     Administrare Regiuni
@@ -13,7 +13,7 @@
         <thead>
         <tr>
             <th>Nume</th>
-            <th class="">Acțiuni</th>
+            <th>Acțiuni</th>
         </tr>
         </thead>
         <tbody>
@@ -26,14 +26,11 @@
                 </td>
 
                 <td class="actions">
-                    <a href="{% url 'region_detail' id=region.id %}">
+                    <a href="{% url 'region_admin_detail' id=region.id %}">
                         <i class="fa fa-eye" aria-hidden="true"></i>
                     </a>
-                    <a href="{% url 'region_admin_detail' id=region.id %}">
-                        <i class="fa fa-info" aria-hidden="true"></i>
-                    </a>
                     <form action="{% url 'region_delete' id=region.id %}" method="post">{% csrf_token %}
-                        <button class="button button-clear"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        <button class="button button-clear"><i class="fa fa-trash"></i></button>
                     </form>
                 </td>
             </tr>
