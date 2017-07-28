@@ -105,10 +105,9 @@ def region_detail(request, id):
     return render(request, 'region/detail.html', params)
 
 
-def region_admin_detail(request):
-    # TODO Elizabet implement this
-    params = {}
-    return render(request, 'region/admin_detail.html', params)
+def region_admin_detail(request, id):
+    region = get_object_or_404(Region, id=id)
+    return render(request, 'region/admin_detail.html', {'region': region})
 
 
 def region_new(request):
