@@ -1,0 +1,2 @@
+# GirlsGoIT
+Platforma GirlsGoIT
