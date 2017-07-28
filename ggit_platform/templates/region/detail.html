@@ -101,13 +101,11 @@
                         <div class="column column-60">
                             <div class="content">
                                 <h6> {{ event.start_date }} </h6>
-                                <a href="#">
-                                    <h3> {{ event.name }} </h3>
-                                </a>
+                                <h3> {{ event.title }} </h3>
                                 <p>
                                     {{ event.short_description }}
                                 </p>
-                                <a href="{% url 'event_detail' id=event.id %}" class="button button button-outline"> Read more </a>
+                                <a href="{% url 'event_detail' id=event.id %}" class="button button button-outline"> Mai mult </a>
                             </div>
                         </div>
                    
@@ -139,9 +137,7 @@
                         <div class="column column-60">
                             <div class="content">
                                 <h6>{{ story.create_date }}</h6>
-                                <a href="#">
-                                    <h3>{{ story.title }}</h3>
-                                </a>
+                                <h3>{{ story.title }}</h3>
                                 <p>
                                     {{ story.short_description }}
                                 </p>
