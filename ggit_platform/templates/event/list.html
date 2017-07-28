@@ -1,11 +1,11 @@
 {% extends "ggit_platform/front-base.html" %}
 
 {% block headtitle %}
-    head title
+    Evenimente
 {% endblock headtitle %}
 
 {% block title %}
-    Title
+    Toate evenimentele
 {% endblock title %}
 
 {% block subtitle %}
@@ -20,28 +20,26 @@
     <section class="section">
         <div class="container">
             <article class="list-view">
+                {% for event in events %}
                 <div class="row">
                     <div class="column column-40">
                         <a class="preview" href="#">
-                            <img src="thumbnail image">
+                            <img src="{{event.thumbnail_image}}">
                         </a>
                     </div>
                     <div class="column column-60">
                         <div class="content">
-                            <h6>IULIE 26 2017</h6>
+                            <h6>{{ event.start_date }}</h6>
                             <a href="#">
-                                <h3>Lorem ipsum dolor sit amet</h3>
+                                <h3>{{ event.title }}</h3>
                             </a>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.
+                            <p>{{ event.short_description }}
                             </p>
-                            <a href="#" class="button button button-outline"> Apply Now </a>
+                            <a href="#" class="button button button-outline"> {{ event.apply_form }} Aplică Acum </a>
                         </div>
                     </div>
                 </div>
+                    {% endfor %}
             </article>
         </div>
     </section>
