@@ -5,20 +5,16 @@
     {{ region.name }}
 {% endblock headtitle %}
 
-{% block pretitle %}
-    <p class="date">26 JULY 2017</p>
-{% endblock pretitle %}
-
 {% block title %}
-    Summer Engineering and Technology Camp for Girls
+    {{ region.name }}
 {% endblock title %}
 
 {% block subtitle %}
-    Leverage agile frameworks to provide a robust synopsis for high level overviews
+    {{ region.motto }}
 {% endblock subtitle %}
 
 {% block heroimage %}
-    {% static "ggit_platform/img/hero/home.jpg" %}
+    {{ region.hero_image }}
 {% endblock heroimage %}
 
 {% block content %}
@@ -57,8 +53,8 @@
 
         <div class="container">
             <div class="row">
-                <div class="column">
-                    {% for member in members %}
+                {% for member in members %}
+                    <div class="column">
                         <div class="member">
                             <a href="#">
                                 <img src="{{ member.photo }}">
@@ -68,9 +64,8 @@
                                 {{ member.role }}
                             </h6>
                         </div>
-                    {% endfor %}
-                </div>
-
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -95,8 +90,8 @@
         <!-- End of Section title -->
         <div class="container">
             <article class="list-view">
-                {% for event in events %}
-                    <div class="row">
+                <div class="row">
+                    {% for event in events %}
                         <div class="column column-40">
                             <a class="preview" href="#">
                                 <img src="{{ event.thumbnail_image }}">
@@ -114,8 +109,8 @@
                                 <a href="#" class="button button button-outline"> Read more </a>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </article>
         </div>
     </section>

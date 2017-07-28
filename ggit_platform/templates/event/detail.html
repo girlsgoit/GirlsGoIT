@@ -17,7 +17,17 @@
 {% endblock heroimage %}
 
 {% block content %}
-    {{ event.long_descriprion }}
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <article class="article">
+                        {{ event.markdown | safe }}
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Region button -->
     <div class="cta cta-white">

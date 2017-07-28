@@ -162,9 +162,9 @@
             </p>
         </header>
         <div class="container">
-            <article class="list-view">
-                <div class="row">
-                    {% for story in stories %}
+            {% for story in last_stories %}
+                <article class="list-view">
+                    <div class="row">
                         <div class="column column-40">
                             <a class="story-preview" href="#">
                                 <img src="{{ story.thumbnail_image }}" alt="Story thumbnail_image image">
@@ -182,11 +182,10 @@
                                 <a href="{% url 'story_detail' id=story.id %}" class="button button button-outline"> Mai
                                     Mult </a>
                             </div>
-                            <a href="{% url 'views.story_detail' %}" class="button button button-outline"> Mai Mult </a>
                         </div>
-                    {% endfor %}
-                </div>
-            </article>
+                    </div>
+                </article>
+            {% endfor %}
         </div>
     </section>
     <!-- End of latest stories -->

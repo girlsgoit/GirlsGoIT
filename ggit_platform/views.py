@@ -1,6 +1,7 @@
 import datetime
 
 from django.shortcuts import render, get_object_or_404, redirect
+from markdownx.utils import markdownify
 
 from .forms import EventForm
 from .forms import MemberForm
@@ -40,6 +41,7 @@ def admin_index(request):
 
 def track_detail(request, id):
     track = get_object_or_404(Track, id=id)
+    track.markdown = markdownify(track.long_description)
     return render(request, 'track/detail.html', {'track': track})
 
 
@@ -145,11 +147,6 @@ def member_list(request):
     return render(request, 'member/list.html', {'members': members})
 
 
-def member_detail(request, id):
-    member = get_object_or_404(Member, id=id)
-    return render(request, 'member/admin_detail.html', {'member': member})
-
-
 def member_new(request):
     if request.method == 'POST':
         form = MemberForm(request.POST)
@@ -186,12 +183,13 @@ def member_delete(request, id):
 
 # Event views
 def event_list(request):
-    event = Event.objects.all()
-    return render(request, 'event/list.html', {'event': event})
+    events = Event.objects.all()
+    return render(request, 'event/list.html', {'events': events})
 
 
 def event_detail(request, id):
     event = get_object_or_404(Event, id=id)
+    event.markdown = markdownify(event.long_description)
     return render(request, 'event/detail.html', {'event': event})
 
 
@@ -271,4 +269,5 @@ def story_delete(request, id):
 
 def story_detail(request, id):
     story = get_object_or_404(Story, id=id)
+    story.markdown = markdownify(story.long_description)
     return render(request, 'story/detail.html', {'story': story})
