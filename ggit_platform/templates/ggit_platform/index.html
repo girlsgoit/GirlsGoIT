@@ -116,6 +116,7 @@
         <div class="container">
             <div class="row">
                 <div class="column">
+                {% if last_event.id %}
                     <a href="{% url 'event_detail' id=last_event.id %}">
                         <article class="event-preview">
                             <div class="thumb">
@@ -130,9 +131,11 @@
                             </div>
                         </article>
                     </a>
+                {% endif %}
                 </div>
 
                 <div class="column">
+                {% if upcoming_event.id %}
                     <a href="{% url 'event_detail' id=upcoming_event.id %}">
                         <article class="event-preview">
                             <div class="thumb">
@@ -150,6 +153,7 @@
                             </div>
                         </article>
                     </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
