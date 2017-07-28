@@ -29,9 +29,9 @@
                         {{ track.title }}
                     </a>
                 </td>
-                <td>
-                    <form method="POST" action="{% url 'track_delete' id=track.id %}">{% csrf_token %}
-                        <button class="button button-outline">Șterge</button>
+                <td class="actions">
+                    <form action="{% url 'track_delete' id=track.id %}" method="post">{% csrf_token %}
+                        <button class="button button-clear"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </form>
                 </td>
             </tr>
