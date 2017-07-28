@@ -1,13 +1,13 @@
-{% extends "ggit_platform/base_admin.html" %}
+{% extends "ggit_platform/admin-base.html" %}
 
 {% block title %}
-    Administrare Event
+    Administrare Story Form
 {% endblock %}
 
 {% block content %}
     <form method="POST">{% csrf_token %}
         {{ form }}
-        <button type='submit'>Salvare</button>
+        <button class="button button-outline" type='submit'>Salvare</button>
     </form>
     {{ form.media }}
 {% endblock content %}

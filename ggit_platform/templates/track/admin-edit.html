@@ -1,7 +1,7 @@
-{% extends "ggit_platform/base_admin.html" %}
+{% extends "ggit_platform/admin-base.html" %}
 
 {% block title %}
-    Administrare Member Form
+    Administrare Track Form
 {% endblock %}
 
 {% block content %}
@@ -9,4 +9,6 @@
         {{ form }}
         <button>Salvare</button>
     </form>
+    {{ form.media }}
 {% endblock content %}
+

@@ -48,7 +48,7 @@ def track_detail(request, id):
 # Track views
 def track_list(request):
     tracks = Track.objects.all()
-    return render(request, 'track/list.html', {'tracks': tracks})
+    return render(request, 'track/admin-list.html', {'tracks': tracks})
 
 
 def track_new(request):
@@ -61,7 +61,7 @@ def track_new(request):
         form = TrackForm()
     else:
         form = None
-    return render(request, 'track/edit.html', {'form': form})
+    return render(request, 'track/admin-edit.html', {'form': form})
 
 
 def track_edit(request, id):
@@ -75,7 +75,7 @@ def track_edit(request, id):
             return redirect('track_list')
     else:
         form = None
-    return render(request, 'track/edit.html', {'form': form})
+    return render(request, 'track/admin-edit.html', {'form': form})
 
 
 def track_delete(request, id):
@@ -88,7 +88,7 @@ def track_delete(request, id):
 # Region views
 def region_list(request):
     regions = Region.objects.all()
-    return render(request, 'region/list.html', {'regions': regions})
+    return render(request, 'region/admin-list.html', {'regions': regions})
 
 
 def region_detail(request, id):
@@ -107,7 +107,7 @@ def region_detail(request, id):
 
 def region_admin_detail(request, id):
     region = get_object_or_404(Region, id=id)
-    return render(request, 'region/admin_detail.html', {'region': region})
+    return render(request, 'region/admin-detail.html', {'region': region})
 
 
 def region_new(request):
@@ -121,7 +121,7 @@ def region_new(request):
         form = RegionForm()
     else:
         form = None
-    return render(request, 'region/edit.html', {'form': form})
+    return render(request, 'region/admin-edit.html', {'form': form})
 
 
 def region_edit(request, id):
@@ -136,7 +136,7 @@ def region_edit(request, id):
             return redirect('region_list')
     else:
         form = None
-    return render(request, 'region/edit.html', {'form': form})
+    return render(request, 'region/admin-edit.html', {'form': form})
 
 
 def region_delete(request, id):
@@ -149,7 +149,7 @@ def region_delete(request, id):
 # Member views
 def member_list(request):
     members = Member.objects.all()
-    return render(request, 'member/list.html', {'members': members})
+    return render(request, 'member/admin-list.html', {'members': members})
 
 
 def member_new(request):
@@ -162,7 +162,7 @@ def member_new(request):
         form = MemberForm()
     else:
         form = None
-    return render(request, 'member/edit.html', {'form': form})
+    return render(request, 'member/admin-edit.html', {'form': form})
 
 
 def member_edit(request, id):
@@ -176,7 +176,7 @@ def member_edit(request, id):
             return redirect('member_list')
     else:
         form = None
-    return render(request, 'member/edit.html', {'form': form})
+    return render(request, 'member/admin-edit.html', {'form': form})
 
 
 def member_delete(request, id):
@@ -189,7 +189,7 @@ def member_delete(request, id):
 # Event views
 def event_list(request):
     events = Event.objects.all()
-    return render(request, 'event/list.html', {'events': events})
+    return render(request, 'event/admin-list.html', {'events': events})
 
 
 def event_detail(request, id):
@@ -208,7 +208,7 @@ def event_new(request):
         form = EventForm()
     else:
         form = None
-    return render(request, 'event/edit.html', {'form': form})
+    return render(request, 'event/admin-edit.html', {'form': form})
 
 
 def event_edit(request, id):
@@ -222,7 +222,7 @@ def event_edit(request, id):
             return redirect('event_list')
     else:
         form = None
-    return render(request, 'event/edit.html', {'form': form})
+    return render(request, 'event/admin-edit.html', {'form': form})
 
 
 def event_delete(request, id):
@@ -235,7 +235,7 @@ def event_delete(request, id):
 # Story views
 def story_list(request):
     stories = Story.objects.all()
-    return render(request, 'story/list.html', {'stories': stories})
+    return render(request, 'story/admin-list.html', {'stories': stories})
 
 
 def story_new(request):
@@ -248,7 +248,7 @@ def story_new(request):
         form = StoryForm()
     else:
         form = None
-    return render(request, 'story/edit.html', {'form': form})
+    return render(request, 'story/admin-edit.html', {'form': form})
 
 
 def story_edit(request, id):
@@ -262,7 +262,7 @@ def story_edit(request, id):
             return redirect('story_list')
     else:
         form = None
-    return render(request, 'story/edit.html', {'form': form})
+    return render(request, 'story/admin-edit.html', {'form': form})
 
 
 def story_delete(request, id):
