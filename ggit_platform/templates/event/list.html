@@ -19,8 +19,8 @@
 {% block content %}
     <section class="section">
         <div class="container">
+            {% for event in events %}
             <article class="list-view">
-                {% for event in events %}
                 <div class="row">
                     <div class="column column-40">
                         <a class="preview" href="#">
@@ -39,8 +39,8 @@
                         </div>
                     </div>
                 </div>
-                    {% endfor %}
-            </article>
+            </article> 
+            {% endfor %}
         </div>
     </section>
 {% endblock content %}
