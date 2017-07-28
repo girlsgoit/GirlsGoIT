@@ -30,9 +30,12 @@
                     {% endif %}
                 </td>
                 <td>{{ story.create_date }}</td>
-                <td>
-                    <form method="POST" action="{% url 'story_delete' id=story.id %}">{% csrf_token %}
-                        <button class="button button-outline">Șterge</button>
+                <td class="actions">
+                    <a href="{% url 'story_detail' id=story.id %}">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+                    <form action="{% url 'story_delete' id=story.id %}" method="post">{% csrf_token %}
+                        <button class="button button-clear"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </form>
                 </td>
             </tr>
