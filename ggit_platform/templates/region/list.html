@@ -26,7 +26,7 @@
                 </td>
 
                 <td class="actions">
-                    <a href="{% url 'region_detail' id=region.id %}">
+                    <a href="{% url 'region_admin_detail' id=region.id %}">
                         <i class="fa fa-eye" aria-hidden="true"></i>
                     </a>
                     <form action="{% url 'region_delete' id=region.id %}" method="post">{% csrf_token %}
