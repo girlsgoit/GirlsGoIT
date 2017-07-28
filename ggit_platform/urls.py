@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^admin/events/new/$', views.admin_event_new, name='event_new'),
     url(r'^admin/events/(?P<id>\d+)/edit/$', views.event_edit, name='event_edit'),
     url(r'^admin/events/(?P<id>\d+)/delete/$', views.event_delete, name='event_delete'),
+    url(r'^admin/events/list$', views.event_list, name='event_list'),
 
     url(r'^admin/tracks/$', views.track_list, name='track_list'),
     url(r'^admin/tracks/new/$', views.track_new, name='track_new'),

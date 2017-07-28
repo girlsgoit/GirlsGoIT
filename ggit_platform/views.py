@@ -231,6 +231,9 @@ def event_delete(request, id):
         event.delete()
     return redirect('event_list')
 
+def event_list(request):
+    events = Event.objects.all()
+    return render(request,'event/list.html', {'events': events})
 
 # Story views
 def story_list(request):
