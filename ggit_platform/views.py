@@ -187,18 +187,18 @@ def member_delete(request, id):
 
 
 # Event views
-def event_list(request):
-    events = Event.objects.all()
-    return render(request, 'event/admin-list.html', {'events': events})
-
-
 def event_detail(request, id):
     event = get_object_or_404(Event, id=id)
     event.markdown = markdownify(event.long_description)
     return render(request, 'event/detail.html', {'event': event})
 
 
-def event_new(request):
+def admin_event_list(request):
+    events = Event.objects.all()
+    return render(request, 'event/admin-list.html', {'events': events})
+
+
+def admin_event_new(request):
     if request.method == 'POST':
         form = EventForm(request.POST)
         if form.is_valid():
