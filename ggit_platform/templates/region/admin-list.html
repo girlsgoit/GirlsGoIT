@@ -29,11 +29,8 @@
                     <a href="{% url 'region_detail' id=region.id %}">
                         <i class="fa fa-eye" aria-hidden="true"></i>
                     </a>
-                    <a href="{% url 'region_admin_detail' id=region.id %}">
-                        <i class="fa fa-info" aria-hidden="true"></i>
-                    </a>
                     <form action="{% url 'region_delete' id=region.id %}" method="post">{% csrf_token %}
-                        <button class="button button-clear"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        <button class="button button-clear"><i class="fa fa-trash" aria-hidden="true"></i></button>
                     </form>
                 </td>
             </tr>

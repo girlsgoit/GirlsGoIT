@@ -136,7 +136,7 @@ def region_edit(request, id):
             return redirect('region_list')
     else:
         form = None
-    return render(request, 'region/admin-edit.html', {'form': form})
+    return render(request, 'region/admin-edit.html', {'form': form, 'region': region})
 
 
 def region_delete(request, id):

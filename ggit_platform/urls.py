@@ -30,6 +30,7 @@ urlpatterns = [
     url(r'^admin/members/(?P<id>\d+)/edit/$', views.member_edit, name='member_edit'),
     url(r'^admin/members/(?P<id>\d+)/delete/$', views.member_delete, name='member_delete'),
 
+
     url(r'^admin/$', views.admin_index, name='admin_index'),
 
     url(r'^tracks/(?P<id>\d+)/$', views.track_detail, name='track_detail'),
