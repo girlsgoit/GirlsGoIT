@@ -118,26 +118,20 @@
 
     <!-- List view -->
 
-    <section class="section">
-        <!-- Section title -->
-
+    <section>
         <header class="section-title">
-            <h2>
-                Stories
-            </h2>
+            <h2>Stories</h2>
             <p>
                 Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
             </p>
         </header>
-
-        <!-- End of Section title -->
         <div class="container">
-            <article class="list-view">
-                {% for story in stories %}
+            {% for story in stories %}
+                <article class="list-view">
                     <div class="row">
                         <div class="column column-40">
-                            <a class="preview" href="#">
-                                <img src="{{ story.thumbnail_image }}">
+                            <a class="story-preview" href="#">
+                                <img src="{{ story.thumbnail_image }}" alt="Story thumbnail_image image">
                             </a>
                         </div>
                         <div class="column column-60">
@@ -149,13 +143,13 @@
                                 <p>
                                     {{ story.short_description }}
                                 </p>
-                                <a href="#" class="button button button-outline"> Read More </a>
+                                <a href="{% url 'story_detail' id=story.id %}" class="button button button-outline"> Mai
+                                    Mult </a>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            </article>
-
+                </article>
+            {% endfor %}
         </div>
     </section>
     <!-- End of List view -->

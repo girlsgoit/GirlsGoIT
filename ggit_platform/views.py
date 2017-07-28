@@ -22,7 +22,7 @@ def index(request):
 
     now = datetime.datetime.now()
     last_event = Event.objects.filter(end_date__lt=now).order_by('-end_date').first()
-    upcoming_event = Event.objects.filter(start_date__lt=now).order_by('start_date').first()
+    upcoming_event = Event.objects.filter(start_date__gt=now).order_by('start_date').first()
     last_stories = Story.objects.all().order_by('-create_date')[:5]
     params = {
         'regions': regions,
@@ -102,7 +102,7 @@ def region_detail(request, id):
         'stories': stories,
         'members': members
     }
-    return render(request, 'region/detail.html', params)
+    return render(request, 'region/admin_detail.html', params)
 
 
 def region_new(request):
