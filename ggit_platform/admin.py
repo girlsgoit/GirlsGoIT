@@ -1,12 +1,12 @@
 from django.contrib import admin
 from markdownx.admin import MarkdownxModelAdmin
 
-from .models import Track
-from .models import Region
-from .models import Member
 from .models import Event
-from .models import Story
+from .models import Member
 from .models import MemberRole
+from .models import Region
+from .models import Story
+from .models import Track
 
 admin.site.register(Track, MarkdownxModelAdmin)
 admin.site.register(Region)

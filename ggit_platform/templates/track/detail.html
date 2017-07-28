@@ -3,34 +3,34 @@
 {% load staticfiles %}
 
 {% block headtitle %}
-Detail page
+  Detail page
 {% endblock headtitle %}
 
 {% block pretitle %}
-<p class="date">26 JULY 2017</p>
+  <p class="date">26 JULY 2017</p>
 {% endblock pretitle %}
 
 {% block title %}
-Summer Engineering and Technology Camp for Girls
+  Summer Engineering and Technology Camp for Girls
 {% endblock title %}
 
 {% block subtitle %}
-Leverage agile frameworks to provide a robust synopsis for high level overviews
+  Leverage agile frameworks to provide a robust synopsis for high level overviews
 {% endblock subtitle %}
 
 {% block heroimage %}
-{% static "ggit_platform/img/hero/home.jpg" %}
+  {% static "ggit_platform/img/hero/home.jpg" %}
 {% endblock heroimage %}
 
 {% block content %}
-<section class="section-wide about">
-	<div class="container">
-		<div class="row">
-			<div class="column">
-				<p>{%block sub%} Visit our details{% endblock sub%}</p>
-				
-			</div>
-		</div>
-	</div>
-</section>
-{% endblock content%}
+  <section class="section-wide about">
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <p>{% block sub %} Visit our details{% endblock sub %}</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

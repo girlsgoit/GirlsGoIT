@@ -1,51 +1,50 @@
 {% extends "ggit_platform/base_admin.html" %}
 
 {% block title %}
-Administrare  Membri
+  Administrare  Membri
 {% endblock title %}
 
 {% block content %}
-<div class="row">
-  <div class="column">
-    <h1>Membri</h1>
+  <div class="row">
+    <div class="column">
+      <h1>Membri</h1>
+    </div>
+    <div class="column">
+      <a class="button button-outline float-right" href="{% url 'member_new' %}">Adaugă Membru</a>
+    </div>
   </div>
-  <div class="column">
-    <a class="button button-outline float-right" href="{% url 'member_new' %}">Adaugă Membru</a>
-  </div>
-</div>
 
-<table>
-  <thead>
+  <table>
+    <thead>
     <tr>
       <th>Nume, Prenume</th>
       <th>Rol</th>
       <th>Regiune</th>
       <th>Acțiuni</th>
     </tr>
-  </thead>
-  <tbody>
+    </thead>
+    <tbody>
     {% for member in members %}
-
-    <tr>
-            <td>  <a href="{% url 'member_edit' id=member.id %}">
-                    {{ member.name }} {{ member.surname }}
-                    </a>
-            </td>
-            <td>
-                   {{ member.role }}
-            </td>
-            <td>
-                <a href="{% url 'region_detail' id=member.region.id %}">
-                    {{ member.region }}
-                </a>
-            </td>
-            <td>
-              <form method="POST" action="{% url 'member_delete' id=member.id %}">{% csrf_token %}
-                <button class="button button-outline" type='submit'>Șterge</button>
-              </form>
-            </td>
-        </tr>
+      <tr>
+        <td><a href="{% url 'member_edit' id=member.id %}">
+          {{ member.name }} {{ member.surname }}
+        </a>
+        </td>
+        <td>
+          {{ member.role }}
+        </td>
+        <td>
+          <a href="{% url 'region_detail' id=member.region.id %}">
+            {{ member.region }}
+          </a>
+        </td>
+        <td>
+          <form method="POST" action="{% url 'member_delete' id=member.id %}">{% csrf_token %}
+            <button class="button button-outline" type='submit'>Șterge</button>
+          </form>
+        </td>
+      </tr>
     {% endfor %}
-  </tbody>
-</table>
+    </tbody>
+  </table>
 {% endblock content %}

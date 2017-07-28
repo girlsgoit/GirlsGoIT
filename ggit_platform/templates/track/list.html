@@ -1,39 +1,39 @@
 {% extends "ggit_platform/base_admin.html" %}
 
 {% block title %}
-Administrare Blocuri
+  Administrare Blocuri
 {% endblock %}
 
 {% block content %}
-<div class="row">
-  <div class="column">
-    <h1>Blocuri de învățare</h1>
+  <div class="row">
+    <div class="column">
+      <h1>Blocuri de învățare</h1>
+    </div>
+    <div class="column">
+      <a class="button button-outline float-right" href="{% url 'track_new' %}">Adaugă Bloc</a>
+    </div>
   </div>
-  <div class="column">
-    <a class="button button-outline float-right" href="{% url 'track_new' %}">Adaugă Bloc</a>
-  </div>
-</div>
 
-<table>
+  <table>
     <thead>
-        <th>Nume</th>
-        <th>Acțiuni</th>
+    <th>Nume</th>
+    <th>Acțiuni</th>
     </thead>
     <tbody>
-        {% for track in tracks %}
-        <tr>
-            <td>
-                <a href="{% url 'track_edit' id=track.id %}">
-                    {{ track.title }}
-                </a>
-            </td>
-            <td>
-              <form method="POST" action="{% url 'track_delete' id=track.id %}">{% csrf_token %}
-                <button class="button button-outline" type='submit'>Șterge</button>
-              </form>
-            </td>
-        </tr>
-        {% endfor %}
+    {% for track in tracks %}
+      <tr>
+        <td>
+          <a href="{% url 'track_edit' id=track.id %}">
+            {{ track.title }}
+          </a>
+        </td>
+        <td>
+          <form method="POST" action="{% url 'track_delete' id=track.id %}">{% csrf_token %}
+            <button class="button button-outline" type='submit'>Șterge</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
     </tbody>
-</table>
+  </table>
 {% endblock content %}

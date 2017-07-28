@@ -20,91 +20,91 @@
 </head>
 <body>
 
-  <!-- Header -->
+<!-- Header -->
 
-  <header class="header">
-    <div class="container">
-      <div class="row">
-        <div class="column">
-          <a href="{% url 'region_list' %}" class="logo">GGIT Moldova Admin</a>
-        </div>
-        <div class="column">
-          <nav class="menu">
-            <ul>
-              <li><a href="{% url 'region_list' %}">Regions</a></li>
-              <li><a href="{% url 'member_list' %}">Members</a></li>
-              <li><a href="{% url 'story_list' %}">Stories</a></li>
-              <li><a href="{% url 'event_list' %}">Events</a></li>
-              <li><a href="{% url 'track_list' %}" class="active">Tracks</a></li>
-              <li><a href="#">Sign out</a></li>
-            </ul>
-          </nav>
-        </div>
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <a href="{% url 'region_list' %}" class="logo">GGIT Moldova Admin</a>
+      </div>
+      <div class="column">
+        <nav class="menu">
+          <ul>
+            <li><a href="{% url 'region_list' %}">Regions</a></li>
+            <li><a href="{% url 'member_list' %}">Members</a></li>
+            <li><a href="{% url 'story_list' %}">Stories</a></li>
+            <li><a href="{% url 'event_list' %}">Events</a></li>
+            <li><a href="{% url 'track_list' %}" class="active">Tracks</a></li>
+            <li><a href="#">Sign out</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- End of Header -->
+<!-- End of Header -->
 
-  <!-- Content -->
+<!-- Content -->
 
-  <section class="content" role="main">
-    <div class="container">
-      <div class="row">
-        <div class="column">
-          <div class="panel">
-            {% block content %}
+<section class="content" role="main">
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <div class="panel">
+          {% block content %}
             <h1>Example Events</h1>
 
             <table>
               <thead>
-                <tr>
-                  <th>-Title-</th>
-                  <th>-Author-</th>
-                  <th>-Published-</th>
-                  <th>-Updated-</th>
-                </tr>
+              <tr>
+                <th>-Title-</th>
+                <th>-Author-</th>
+                <th>-Published-</th>
+                <th>-Updated-</th>
+              </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td><a href="#">Cupiditate nam consequatur optio quod</a></td>
-                  <td>Daryl Cole</td>
-                  <td>18 July 2017</td>
-                  <td>25 September 2017</td>
-                </tr>
-                <tr>
-                  <td><a href="#">Iusto nemo ut numquam culpa, hic praesentium</a></td>
-                  <td>Marsha Pena</td>
-                  <td>10 August 2017</td>
-                  <td>15 August 2017</td>
-                </tr>
+              <tr>
+                <td><a href="#">Cupiditate nam consequatur optio quod</a></td>
+                <td>Daryl Cole</td>
+                <td>18 July 2017</td>
+                <td>25 September 2017</td>
+              </tr>
+              <tr>
+                <td><a href="#">Iusto nemo ut numquam culpa, hic praesentium</a></td>
+                <td>Marsha Pena</td>
+                <td>10 August 2017</td>
+                <td>15 August 2017</td>
+              </tr>
               </tbody>
             </table>
-            {% endblock content %}
+          {% endblock content %}
 
-          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- End of Content -->
+<!-- End of Content -->
 
-  <!-- Footer -->
+<!-- Footer -->
 
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="column">
-          <p class="copyright">
-            This project was devloped under the <a href="http://girlsgoit.org">GirlsGoIT</a> STEM SummerCamp 2017.
-          </p>
-        </div>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <p class="copyright">
+          This project was devloped under the <a href="http://girlsgoit.org">GirlsGoIT</a> STEM SummerCamp 2017.
+        </p>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- End of Footer -->
+<!-- End of Footer -->
 
 </body>
 </html>

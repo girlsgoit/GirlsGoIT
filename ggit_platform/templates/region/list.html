@@ -1,44 +1,41 @@
 {% extends "ggit_platform/base_admin.html" %}
 
 {% block title %}
-Administrare Regiuni
+  Administrare Regiuni
 {% endblock title %}
 
 {% block content %}
 
-<h2>Regiuni</h2>
+  <h2>Regiuni</h2>
 
-<a class="button button-outline float-right" href="{% url 'region_new' %}">Adaugă Regiune</a>
-<table>
+  <a class="button button-outline float-right" href="{% url 'region_new' %}">Adaugă Regiune</a>
+  <table>
     <thead>
-        <th>Nume</th>
-        <th>Acțiuni</th>
+    <th>Nume</th>
+    <th>Acțiuni</th>
     </thead>
     <tbody>
-        {% for region in regions %}
-        <tr>
-            <td>
-                <a href="{% url 'region_edit' id=region.id %}">
-                    {{ region.name }}
-                </a>
-            </td>
+    {% for region in regions %}
+      <tr>
+        <td>
+          <a href="{% url 'region_edit' id=region.id %}">
+            {{ region.name }}
+          </a>
+        </td>
 
-            
-
-
-            <td>
-              <div class="row">
-                <div class="column">
-                  <a href="{% url 'region_detail' id=region.id %}"><i class="fa fa-eye" aria-hidden="true"></i></i></a>
-                </div>
-                <div class="column">
-                  <a href="{% url 'region_delete' id=region.id %}"><i class="fa fa-trash" aria-hidden="true"></i></a>
-                </div>
-              </div>
-            </td>
-        </tr>
-        {% endfor %}
+        <td>
+          <div class="row">
+            <div class="column">
+              <a href="{% url 'region_detail' id=region.id %}"><i class="fa fa-eye" aria-hidden="true"></i></i></a>
+            </div>
+            <div class="column">
+              <a href="{% url 'region_delete' id=region.id %}"><i class="fa fa-trash" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </td>
+      </tr>
+    {% endfor %}
     </tbody>
-</table>
+  </table>
 
 {% endblock content %}

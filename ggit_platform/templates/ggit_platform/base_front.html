@@ -2,184 +2,184 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% block headtitle %}{% endblock headtitle %}</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <link rel="stylesheet" href="{% static 'ggit_platform/css/milligram.css' %}">
-    <link rel="stylesheet" href="{% static 'ggit_platform/css/front-style.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block headtitle %}{% endblock headtitle %}</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" href="{% static 'ggit_platform/css/milligram.css' %}">
+  <link rel="stylesheet" href="{% static 'ggit_platform/css/front-style.css' %}">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="column">
-                    <a class="logo" href="#">
-                        <span>GirlsGoIT</span> Moldova
-                    </a>
-                </div>  
-                <div class="column">
-                    <nav class="socials">
-                        <ul>
-                            <li>
-                                <a href="https://www.facebook.com/GirlsGoIT/?fref=ts">Facebook</a>
-                            </li>
-                            <li>
-                                <a href="https://www.instagram.com/explore/tags/GirlsGoIT/">Instagram</a>
-                            </li>
-                            <li>
-                                <a href="https://www.youtube.com/channel/UCixmUgWhEp5Sj7kpzc6ZOTg">YouTube</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <a class="logo" href="#">
+          <span>GirlsGoIT</span> Moldova
+        </a>
+      </div>
+      <div class="column">
+        <nav class="socials">
+          <ul>
+            <li>
+              <a href="https://www.facebook.com/GirlsGoIT/?fref=ts">Facebook</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/explore/tags/GirlsGoIT/">Instagram</a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UCixmUgWhEp5Sj7kpzc6ZOTg">YouTube</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- End of Header -->
+
+<!-- Hero -->
+<section class="hero" style="background-image: url({% block heroimage %}{% endblock %});">
+  <div class="overlay">
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <div class="wrapper">
+            {% block pretitle %}{% endblock pretitle %}
+            <h1>{% block title %}{% endblock title %}</h1>
+            <p>{% block subtitle %}{% endblock subtitle %}</p>
+          </div>
         </div>
-    </header>
-    <!-- End of Header -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Hero -->
 
-    <!-- Hero -->
-    <section class="hero" style="background-image: url({% block heroimage %}{% endblock %});">
-        <div class="overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="column">
-                        <div class="wrapper">
-                            {% block pretitle %}{% endblock pretitle %}
-                            <h1>{% block title %}{% endblock title %}</h1>
-                            <p>{% block subtitle %}{% endblock subtitle %}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Hero -->
+{% block content %}TODO{% endblock content %}
 
-    {% block content %}TODO{% endblock content %}
+<!-- Partners -->
+<section class="section section-grey partners">
+  <header class="section-title">
+    <h2>
+      Partners
+    </h2>
+    <p>
+      Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+    </p>
+  </header>
 
-    <!-- Partners -->
-    <section class="section section-grey partners">
-        <header class="section-title">
-            <h2>
-                Partners
-            </h2>
-            <p>
-                Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut. 
-            </p>
-        </header>
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="horizontal" src="{% static 'ggit_platform/img/partners/unwomen.png' %}">
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="square" src="{% static 'ggit_platform/img/partners/Sweden.png' %}">
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="square" src="{% static 'ggit_platform/img/partners/SDC.png' %}">
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="horizontal" src="{% static 'ggit_platform/img/partners/usaid.png' %}">
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="horizontal" src="{% static 'ggit_platform/img/partners/Google.png' %}">
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="square" src="{% static 'ggit_platform/img/partners/Spark.png' %}">
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="horizontal" src="{% static 'ggit_platform/img/partners/ms.png' %}">
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="square" src="{% static 'ggit_platform/img/partners/tekedu.png' %}">
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="horizontal" src="{% static 'ggit_platform/img/partners/Moldcell.png' %}">
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="square" src="{% static 'ggit_platform/img/partners/Mixbook.png' %}">
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="horizontal" src="{% static 'ggit_platform/img/partners/FFW.png' %}">
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="square" src="{% static 'ggit_platform/img/partners/DAS.png' %}">
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="square" src="{% static 'ggit_platform/img/partners/Atelier99.png' %}">
+        </a>
+      </div>
+      <div class="column">
+        <a href="#" class="partner">
+          <img class="square" src="{% static 'ggit_platform/img/partners/UTM.png' %}">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Partners -->
 
-        <div class="container">
-            <div class="row">
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="horizontal" src="{% static 'ggit_platform/img/partners/unwomen.png' %}">
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="square" src="{% static 'ggit_platform/img/partners/Sweden.png' %}">
-                    </a>    
-                </div>
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="square" src="{% static 'ggit_platform/img/partners/SDC.png' %}">    
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="horizontal" src="{% static 'ggit_platform/img/partners/usaid.png' %}">
-                    </a>    
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="horizontal" src="{% static 'ggit_platform/img/partners/Google.png' %}">
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="square" src="{% static 'ggit_platform/img/partners/Spark.png' %}">
-                    </a>
-                </div>  
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="horizontal" src="{% static 'ggit_platform/img/partners/ms.png' %}">
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="square" src="{% static 'ggit_platform/img/partners/tekedu.png' %}">
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="horizontal" src="{% static 'ggit_platform/img/partners/Moldcell.png' %}">
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="square" src="{% static 'ggit_platform/img/partners/Mixbook.png' %}">
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="horizontal" src="{% static 'ggit_platform/img/partners/FFW.png' %}">
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="square" src="{% static 'ggit_platform/img/partners/DAS.png' %}">
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="square" src="{% static 'ggit_platform/img/partners/Atelier99.png' %}">
-                    </a>
-                </div>
-                <div class="column">
-                    <a href="#" class="partner">
-                        <img class="square" src="{% static 'ggit_platform/img/partners/UTM.png' %}">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of Partners -->
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="column">
-                    <p class="footer-message"> This project was created under the 
-                        <a href="#">GirlGoIT</a>
-                        SummerCamp event.
-                    </p> 
-                </div>  
-                <div class="column">
-                    <nav class="socials">
-                        <ul>
-                            <li><a href="https://www.facebook.com/GirlsGoIT/?fref=ts">Facebook</a>
-                            </li>
-                            <li><a href="https://www.instagram.com/explore/tags/GirlsGoIT/">Instagram</a>
-                            </li>
-                            <li><a href="https://www.youtube.com/channel/UCixmUgWhEp5Sj7kpzc6ZOTg">YouTube</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="column">
+        <p class="footer-message"> This project was created under the
+          <a href="#">GirlGoIT</a>
+                                   SummerCamp event.
+        </p>
+      </div>
+      <div class="column">
+        <nav class="socials">
+          <ul>
+            <li><a href="https://www.facebook.com/GirlsGoIT/?fref=ts">Facebook</a>
+            </li>
+            <li><a href="https://www.instagram.com/explore/tags/GirlsGoIT/">Instagram</a>
+            </li>
+            <li><a href="https://www.youtube.com/channel/UCixmUgWhEp5Sj7kpzc6ZOTg">YouTube</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End of Footer -->
 
 </body>
 </html>
