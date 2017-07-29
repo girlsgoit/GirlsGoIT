@@ -6,15 +6,16 @@
 {% endblock headtitle %}
 
 {% block pretitle %}
-    <p class="date">26 JULY 2017</p>
 {% endblock pretitle %}
 
 {% block title %}
-    Summer Engineering and Technology Camp for Girls
+  Tabăra de Vară STEM
+  <br />
+  65 de participante, 3 secțiuni
 {% endblock title %}
 
 {% block subtitle %}
-    Leverage agile frameworks to provide a robust synopsis for high level overviews
+  Subtitle: Oferim acces și educație tinerelor din Moldova în domeniul tehnologiilor
 {% endblock subtitle %}
 
 {% block heroimage %}
@@ -27,12 +28,9 @@
         <div class="container">
             <div class="row">
                 <div class="column">
-                    <h2>About GGIT</h2>
+                    <h2>Despre GirlsGoIT</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                        consequat.
+                        Misiunea GirlsGoIT este de a dezvolta competențele tehnice ale tinerelor din Moldova, de a le facilita accesul în sectoarele STEM (științe, tehnologii, inginerie și matematică) și de a promova implicarea femeilor în domeniile tehnice!
                     </p>
                 </div>
             </div>
@@ -43,9 +41,9 @@
     <!-- Tracks -->
     <section class="section section-gray">
         <header class="section-title">
-            <h2>Tracks</h2>
+            <h2>Secțiuni</h2>
             <p>
-                Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+              Dezvoltare Web Frontend și Backend, Robotică și Imprimare 3D.
             </p>
         </header>
 
@@ -70,10 +68,11 @@
     <section class="regions section">
         <header class="section-title">
             <h2>
-                Regions
+                Regiuni
             </h2>
             <p>
-                Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+              Programul GirlsGoIT este prezentă în 13 regiuni ale Republicii Moldova.
+              Nu ți-ai regăsit localitatea ta în listă? Dezvoltă un club local GirlsGoIT!
             </p>
         </header>
 
@@ -112,9 +111,9 @@
     <!-- Events -->
     <section class="events section">
         <header class="section-title">
-            <h2>Events</h2>
+            <h2>Evenimente</h2>
             <p>
-                Lorem ipsum amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+              Nu rata oportunitățile noastre! Fii la curent cu toate evenimentele.
             </p>
         </header>
         <div class="container">
@@ -139,7 +138,7 @@
                 </div>
 
                 <div class="column">
-                    {% if upcoming_event.id %}
+                      {% if upcoming_q.id %}
                         <a href="{% url 'event_detail' id=upcoming_event.id %}">
                             <article class="event-preview">
                                 <div class="thumb">
