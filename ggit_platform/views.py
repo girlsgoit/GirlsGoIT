@@ -203,7 +203,7 @@ def admin_event_new(request):
         form = EventForm(request.POST)
         if form.is_valid():
             event = form.save()
-            return redirect('event_list')
+            return redirect('admin_event_list')
     elif request.method == 'GET':
         form = EventForm()
     else:
@@ -219,7 +219,7 @@ def event_edit(request, id):
         form = EventForm(request.POST, instance=event)
         if form.is_valid():
             event = form.save()
-            return redirect('event_list')
+            return redirect('admin_event_list')
     else:
         form = None
     return render(request, 'event/admin-edit.html', {'form': form})
@@ -231,9 +231,11 @@ def event_delete(request, id):
         event.delete()
     return redirect('event_list')
 
+
 def event_list(request):
     events = Event.objects.all()
-    return render(request,'event/list.html', {'events': events})
+    return render(request, 'event/list.html', {'events': events})
+
 
 # Story views
 def story_list(request):
