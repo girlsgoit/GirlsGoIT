@@ -1,8 +1,6 @@
-import environ
-
 from .local import *
 
-env = environ.Env()
+env = os.environ.get
 
 INSTALLED_APPS += [
     'django.contrib.postgres'
