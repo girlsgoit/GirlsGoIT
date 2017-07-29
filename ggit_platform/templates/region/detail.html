@@ -92,7 +92,7 @@
         {% for event in events %}
             <article class="list-view">
                 <div class="row">
-                    
+
                         <div class="column column-40">
                             <a class="preview" href="#">
                                 <img src="{{ event.thumbnail_image }}">
@@ -100,7 +100,7 @@
                         </div>
                         <div class="column column-60">
                             <div class="content">
-                                <h6> {{ event.start_date }} </h6>
+                                <h6> {{ event.start_date.date }} </h6>
                                 <h3> {{ event.title }} </h3>
                                 <p>
                                     {{ event.short_description }}
@@ -109,7 +109,7 @@
                                 <a href="google.com" class="button button button-outline">Aplică acum</a>
                             </div>
                         </div>
-                   
+
                 </div>
             </article>
              {% endfor %}
@@ -137,7 +137,7 @@
                         </div>
                         <div class="column column-60">
                             <div class="content">
-                                <h6>{{ story.create_date }}</h6>
+                                <h6>{{ story.create_date.date }}</h6>
                                 <h3>{{ story.title }}</h3>
                                 <p>
                                     {{ story.short_description }}
