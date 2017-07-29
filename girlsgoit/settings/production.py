@@ -18,3 +18,8 @@ DATABASES = {
         'PORT': env('RDS_PORT'),
     }
 }
+
+ALLOWED_HOSTS = [
+    'girlsgoitplatform-env.g2ku3zr4a4.eu-west-1.elasticbeanstalk.com',
+    'moldova.girlsgoit.org',
+]

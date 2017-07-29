@@ -1,9 +1,6 @@
 Django==1.11.3
 django-markdownx==2.0.21
 Markdown==2.6.8
-olefile==0.44
-Pillow==4.2.1
-pytz==2017.2
-# Python-PostgreSQL Database Adapter
 psycopg2==2.6.2
-django-environ==0.4.1
+pytz==2017.2
+six==1.10.0
