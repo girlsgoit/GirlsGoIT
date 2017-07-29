@@ -87,8 +87,12 @@
                             <h3>{{ region.name }}</h3>
                         </a>
                     </div>
+                    {% if forloop.counter|divisibleby:4 %}
+                        </div>
+                        <div class="row">
+                    {% endif %}
                 {% endfor %}
-            </div>
+                </div>
             <div class="row">
                 <div class="column">
                     <!-- Region Button -->
@@ -116,56 +120,56 @@
         <div class="container">
             <div class="row">
                 <div class="column">
-                {% if last_event.id %}
-                    <a href="{% url 'event_detail' id=last_event.id %}">
-                        <article class="event-preview">
-                            <div class="thumb">
-                                <img src="{{ last_event.thumbnail_image }}">
-                                <div class="overlay">
-                                    <h3>{{ last_event.title }}</h3>
+                    {% if last_event.id %}
+                        <a href="{% url 'event_detail' id=last_event.id %}">
+                            <article class="event-preview">
+                                <div class="thumb">
+                                    <img src="{{ last_event.thumbnail_image }}">
+                                    <div class="overlay">
+                                        <h3>{{ last_event.title }}</h3>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="details clearfix">
-                                <h5 class="date float-left">{{ last_event.start_date }}</h5>
-                                <h5 class="type float-right">{{ last_event.end_date }}</h5>
-                            </div>
-                        </article>
-                    </a>
-                {% endif %}
+                                <div class="details clearfix">
+                                    <h5 class="date float-left">{{ last_event.start_date }}</h5>
+                                    <h5 class="type float-right">{{ last_event.end_date }}</h5>
+                                </div>
+                            </article>
+                        </a>
+                    {% endif %}
                 </div>
 
                 <div class="column">
-                {% if upcoming_event.id %}
-                    <a href="{% url 'event_detail' id=upcoming_event.id %}">
-                        <article class="event-preview">
-                            <div class="thumb">
-                                <img src="{{ upcoming_event.thumbnail_image }}">
-                                <div class="overlay">
-                                    <h3>{{ upcoming_event.title }}</h3>
+                    {% if upcoming_event.id %}
+                        <a href="{% url 'event_detail' id=upcoming_event.id %}">
+                            <article class="event-preview">
+                                <div class="thumb">
+                                    <img src="{{ upcoming_event.thumbnail_image }}">
+                                    <div class="overlay">
+                                        <h3>{{ upcoming_event.title }}</h3>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="details clearfix">
-                                <h5 class="date float-left">{{ upcoming_event.start_date }}</h5>
-                                <h5 class="type float-right">{{ upcoming_event.end_date }}</h5>
-                                {% if upcoming_event.short_description > 100 %}
-                                    <a href="{% url 'event_detail' id=upcoming_event.id %}">Mai mult</a>
-                                {% endif %}
-                            </div>
-                        </article>
-                    </a>
+                                <div class="details clearfix">
+                                    <h5 class="date float-left">{{ upcoming_event.start_date }}</h5>
+                                    <h5 class="type float-right">{{ upcoming_event.end_date }}</h5>
+                                    {% if upcoming_event.short_description > 100 %}
+                                        <a href="{% url 'event_detail' id=upcoming_event.id %}">Mai mult</a>
+                                    {% endif %}
+                                </div>
+                            </article>
+                        </a>
                     {% endif %}
                 </div>
             </div>
         </div>
-            <div class="row">
-                <div class="column">
-                    <!-- Events Button -->
-                    <div class="cta">
-                        <a class="button button-outline" href=" {% url 'event_list' %}" >Toate evenimentele</a>
-                    </div>
-                    <!-- Events Button -->
+        <div class="row">
+            <div class="column">
+                <!-- Events Button -->
+                <div class="cta">
+                    <a class="button button-outline" href=" {% url 'event_list' %}">Toate evenimentele</a>
                 </div>
+                <!-- Events Button -->
             </div>
+        </div>
     </section>
     <!-- End of Events -->
     <!-- Latest stories -->

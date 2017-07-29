@@ -56,7 +56,7 @@
                 {% for member in members %}
                     <div class="column">
                         <div class="member">
-                            <a href="{{ member.personal_page }}">
+                            <a target="_blank" href="{{ member.personal_page }}">
                                 <img src="{{ member.photo }}">
                                 <h3> {{ member.name }} {{ member.surname }} </h3>
                             </a>
@@ -101,13 +101,12 @@
                         <div class="column column-60">
                             <div class="content">
                                 <h6> {{ event.start_date }} </h6>
-                                <a href="#">
-                                    <h3> {{ event.name }} </h3>
-                                </a>
+                                <h3> {{ event.title }} </h3>
                                 <p>
                                     {{ event.short_description }}
                                 </p>
-                                <a href="{% url 'event_detail' id=event.id %}" class="button button button-outline"> Read more </a>
+                                <a href="{% url 'event_detail' id=event.id %}" class="button button button-outline"> Mai mult </a>
+                                <a href="google.com" class="button button button-outline">Aplică acum</a>
                             </div>
                         </div>
                    
@@ -139,9 +138,7 @@
                         <div class="column column-60">
                             <div class="content">
                                 <h6>{{ story.create_date }}</h6>
-                                <a href="#">
-                                    <h3>{{ story.title }}</h3>
-                                </a>
+                                <h3>{{ story.title }}</h3>
                                 <p>
                                     {{ story.short_description }}
                                 </p>
