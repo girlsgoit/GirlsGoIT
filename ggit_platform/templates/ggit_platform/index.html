@@ -129,8 +129,8 @@
                                     </div>
                                 </div>
                                 <div class="details clearfix">
-                                    <h5 class="date float-left">{{ last_event.start_date }}</h5>
-                                    <h5 class="type float-right">{{ last_event.end_date }}</h5>
+                                    <h5 class="date float-left">{{ last_event.start_date.date }}</h5>
+                                    <h5 class="type float-right">{{ last_event.end_date.date }}</h5>
                                 </div>
                             </article>
                         </a>
@@ -148,8 +148,8 @@
                                     </div>
                                 </div>
                                 <div class="details clearfix">
-                                    <h5 class="date float-left">{{ upcoming_event.start_date }}</h5>
-                                    <h5 class="type float-right">{{ upcoming_event.end_date }}</h5>
+                                    <h5 class="date float-left">{{ upcoming_event.start_date.date }}</h5>
+                                    <h5 class="type float-right">{{ upcoming_event.end_date.date }}</h5>
                                     {% if upcoming_event.short_description > 100 %}
                                         <a href="{% url 'event_detail' id=upcoming_event.id %}">Mai mult</a>
                                     {% endif %}
@@ -190,7 +190,7 @@
                         </div>
                         <div class="column column-60">
                             <div class="content">
-                                <h6>{{ story.create_date }}</h6>
+                                <h6>{{ story.create_date | date }}</h6>
                                 <a href="#">
                                     <h3>{{ story.title }}</h3>
                                 </a>
