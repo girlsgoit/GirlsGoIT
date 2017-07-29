@@ -21,8 +21,8 @@ def index(request):
     regions = Region.objects.all()
 
     now = datetime.datetime.now()
-    last_event = Event.objects.filter(end_date__lt=now).order_by('-end_date').first()
-    upcoming_event = Event.objects.filter(start_date__gt=now).order_by('start_date').first()
+    last_event = Event.objects.filter(end_date__lt=now, region=None).order_by('-end_date').first()
+    upcoming_event = Event.objects.filter(start_date__gt=now, region=None).order_by('start_date').first()
     last_stories = Story.objects.all().order_by('-create_date')[:5]
     params = {
         'regions': regions,
