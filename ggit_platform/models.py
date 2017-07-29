@@ -55,7 +55,7 @@ class Event(models.Model):
     end_date = models.DateTimeField(null=True, blank=True)
     application_start_date = models.DateTimeField(null=True, blank=True)
     application_end_date = models.DateTimeField(null=True, blank=True)
-    aplly_form = models.CharField(max_length=200)
+    apply_form = models.CharField(max_length=200)
     thumbnail_image = models.CharField(max_length=200)
     hero_image = models.CharField(max_length=200)
     region = models.ForeignKey(Region, null=True, blank=True)
