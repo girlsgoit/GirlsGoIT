@@ -94,6 +94,19 @@ a.logo {
 	background-image: url("../img/hero/home.jpg");
 	background-size: cover;
 	background-position: center;
+	z-index: 1;
+}
+
+.hero:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 0;
 }
 
 .hero .overlay {
@@ -102,6 +115,8 @@ a.logo {
 	justify-content: center;
 	padding-top: 17%;
 	padding-bottom: 9%;
+	position: relative;
+	z-index: 1
 }
 
 .hero .wrapper {
@@ -110,7 +125,7 @@ a.logo {
 	/*text-align: center;*/
 }
 
-.hero h1 { 
+.hero h1 {
 	text-align: center;
 	font-weight: 900;
 	font-size: 64px;
@@ -226,7 +241,7 @@ a.logo {
 	letter-spacing:1.1px;
 	margin-bottom: 20px;
 	font-weight: bold;
-	 
+
 }
 .track-preview p {
 	font-size: 15px;
@@ -255,7 +270,7 @@ a.logo {
 	display: block;
 	border: 1px solid #EDEDED;
 	margin-bottom: 20px;
-}	
+}
 
 .region-preview h3 {
 	line-height: 1.5;
@@ -281,7 +296,7 @@ a.logo {
 	.regions .container .row .column.region-column {
 		max-width: 50%;
 	}
-}	
+}
 
 @media screen and (max-width: 650px) {
 	.regions .container .row .column.region-column {
@@ -338,6 +353,7 @@ a.logo {
 
 .event-preview img {
 	max-width: 100%;
+	width: 100%;
 }
 
 .event-preview h3 {
@@ -346,7 +362,7 @@ a.logo {
  	text-align: center;
  	margin-top: -25px;
  	width : 100%;
- 	top: 50%;	
+ 	top: 50%;
  	font-size: 48px;
  	font-weight: bold;
  	letter-spacing: 2.4px;
@@ -355,7 +371,7 @@ a.logo {
  	transition: font-size 0.3s ease;
 }
 
-.event-preview h5 {	
+.event-preview h5 {
 	font-size: 16px;
 	color: #979797;
 	font-weight: 400;
@@ -366,7 +382,7 @@ a.logo {
 }
 
 @media screen and (max-width: 370px) {
-	.event-preview .date, 
+	.event-preview .date,
 	.event-preview .type {
 		float: none;
 		text-align: center;
@@ -522,9 +538,9 @@ a.logo {
 	letter-spacing: 1px;
 	line-height: 1.5;
 	letter-spacing: 0.9;
-	color: black;	
+	color: black;
 }
- 
+
 .list-view p {
 	font-size: 16px;
 	color: black;
@@ -590,7 +606,7 @@ a.logo {
 	}
 	.members  .column {
 		width: 50%;
-		padding-left: 10px; 
+		padding-left: 10px;
 		padding-right: 10px;
 	}
 }
@@ -613,14 +629,14 @@ a.logo {
 	padding-top: 150px;
 	padding-bottom: 150px;
 	display: block;
-	margin: 0 auto;	
+	margin: 0 auto;
 	max-width: 900px;
 }
 
 @media screen and (max-width: 800px ) {
 	.about-region {
 		font-size: 18px;
-		padding-top: 60px; 
+		padding-top: 60px;
 		padding-bottom: 60px ;
 	}
 }
@@ -628,7 +644,7 @@ a.logo {
 @media screen and (max-width: 500px ) {
 	.about-region {
 		font-size: 15px;
-		padding-bottom: 40px; 
+		padding-bottom: 40px;
 		padding-top: 40px ;
 	}
 }
