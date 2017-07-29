@@ -15,7 +15,7 @@
 {% endblock title %}
 
 {% block subtitle %}
-  Subtitle: Oferim acces și educație tinerelor din Moldova în domeniul tehnologiilor
+  Oferim acces și educație tinerelor din Moldova în domeniul tehnologiilor
 {% endblock subtitle %}
 
 {% block heroimage %}
@@ -71,7 +71,7 @@
                 Regiuni
             </h2>
             <p>
-              Programul GirlsGoIT este prezentă în 13 regiuni ale Republicii Moldova.
+              Programul GirlsGoIT este prezent în 13 regiuni ale Republicii Moldova.
             </p>
         </header>
 
@@ -118,7 +118,7 @@
         </header>
         <div class="container">
             <div class="row">
-                <div class="column">
+                <div class="column event-preview-column">
                     {% if last_event.id %}
                         <a href="{% url 'event_detail' id=last_event.id %}">
                             <article class="event-preview">
@@ -137,7 +137,7 @@
                     {% endif %}
                 </div>
 
-                <div class="column">
+                <div class="column event-preview-column">
                       {% if upcoming_q.id %}
                         <a href="{% url 'event_detail' id=upcoming_event.id %}">
                             <article class="event-preview">
