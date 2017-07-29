@@ -30,13 +30,15 @@
     </section>
 
     <!-- Region button -->
+    {% if event.application_open %}
     <div class="cta cta-white">
         <div class="container">
-            <a class="button button-outline" href="{{event.apply_form}}">
+            <a class="button button-outline" href="{{ event.apply_form }}">
                 aplică acum
             </a>
         </div>
     </div>
+    {% endif %}
     <!-- End of Region button -->
 
 {% endblock content %}

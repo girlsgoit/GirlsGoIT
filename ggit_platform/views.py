@@ -1,4 +1,4 @@
-import datetime
+from django.utils import timezone
 
 from django.shortcuts import render, get_object_or_404, redirect
 from markdownx.utils import markdownify
@@ -20,7 +20,7 @@ def index(request):
     tracks = Track.objects.all()
     regions = Region.objects.all()
 
-    now = datetime.datetime.now()
+    now = timezone.now()
     last_event = Event.objects.filter(start_date__lt=now, region=None).order_by('-end_date').first()
     upcoming_event = Event.objects.filter(start_date__gt=now, region=None).order_by('start_date').first()
     last_stories = Story.objects.all().order_by('-create_date')[:5]
@@ -93,7 +93,12 @@ def region_list(request):
 
 def region_detail(request, id):
     region = get_object_or_404(Region, id=id)
+
     events = Event.objects.filter(region=region).order_by('-start_date')[:3]
+    now = timezone.now()
+    for event in events:
+        event.application_open = event.application_start_date < now < event.application_end_date
+
     stories = Story.objects.filter(region=region).order_by('-create_date')[:3]
     members = Member.objects.filter(region=region)
     params = {
@@ -189,6 +194,8 @@ def member_delete(request, id):
 # Event views
 def event_detail(request, id):
     event = get_object_or_404(Event, id=id)
+    now = timezone.now()
+    event.application_open = event.application_start_date < now < event.application_end_date
     event.markdown = markdownify(event.long_description)
     return render(request, 'event/detail.html', {'event': event})
 

@@ -89,10 +89,10 @@
 
         <!-- End of Section title -->
         <div class="container">
-        {% for event in events %}
-            <article class="list-view">
-                <div class="row">
-                    
+            {% for event in events %}
+                <article class="list-view">
+                    <div class="row">
+
                         <div class="column column-40">
                             <a class="preview" href="#">
                                 <img src="{{ event.thumbnail_image }}">
@@ -105,14 +105,19 @@
                                 <p>
                                     {{ event.short_description }}
                                 </p>
-                                <a href="{% url 'event_detail' id=event.id %}" class="button button button-outline"> Mai mult </a>
-                                <a href="google.com" class="button button button-outline">Aplică acum</a>
+                                <a href="{% url 'event_detail' id=event.id %}" class="button button button-outline"> Mai
+                                    mult </a>
+
+                                {% if event.application_open %}
+                                    <a href="{{ event.apply_form }}" class="button button button-outline">Aplică
+                                        acum</a>
+                                {% endif %}
                             </div>
                         </div>
-                   
-                </div>
-            </article>
-             {% endfor %}
+
+                    </div>
+                </article>
+            {% endfor %}
         </div>
     </section>
     <!-- End of List view -->
