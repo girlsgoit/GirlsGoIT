@@ -272,6 +272,10 @@ a.logo {
 	margin-bottom: 20px;
 }
 
+.regions .region-column {
+	max-width: 33.3333%;
+}
+
 .region-preview h3 {
 	line-height: 1.5;
 	font-size: 21px;
@@ -337,6 +341,10 @@ a.logo {
 
 /*Event preview*/
 
+.events .event-preview-column {
+	max-width: 50%;
+}
+
 .event-preview .thumb {
 	position: relative;
 	line-height: 0;
@@ -399,6 +407,10 @@ a.logo {
 @media screen and (max-width: 639px) {
 	.event-preview h3 {
 		font-size: 48px;
+	}
+
+	.events .event-preview-column {
+		max-width: 100%;
 	}
 }
 

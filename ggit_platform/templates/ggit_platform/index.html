@@ -118,7 +118,7 @@
         </header>
         <div class="container">
             <div class="row">
-                <div class="column">
+                <div class="column event-preview-column">
                     {% if last_event.id %}
                         <a href="{% url 'event_detail' id=last_event.id %}">
                             <article class="event-preview">
@@ -137,7 +137,7 @@
                     {% endif %}
                 </div>
 
-                <div class="column">
+                <div class="column event-preview-column">
                       {% if upcoming_q.id %}
                         <a href="{% url 'event_detail' id=upcoming_event.id %}">
                             <article class="event-preview">
